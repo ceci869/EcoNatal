@@ -34,3 +34,5 @@
 * Página de contato, com:
   <br>- Formulário para envio de dúvidas e sugestões;
   <br>- Canal de comunicação direto com a equipe EcoNatal;
+* Cadastro de catadores;
+* Área de contato dos catadores disponíveis para a população.
