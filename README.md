@@ -11,3 +11,28 @@
 **OBJETIVO**
 
 <p align="justify">Para maior otimização e arranjo do processo organizado pela empresa, a guilda GeoFadas, integrante do curso técnico de Informática para Internet, ficará responsável por desenvolver um site, aspirando o bairro Pajuçara como público alvo. O objetivo do projeto desenvolvido pelo grupo é facilitar o descarte dos entulhos por parte da população, e assim, incentivando a adoção da reciclagem do mesmo através das lixeiras inteligentes da empresa. Os alunos envolvidos no trabalho acreditam que, com simplicidade e praticidade, é possível alcançar e atingir os objetivos declarados e visados. O projeto 'ECONatal' pretende trazer essa simplicidade à esse assunto que, embora seja muito conhecido, ainda demonstra dificuldade para ser executado, abrangendo, assim, a comunidade como um todo.</p>
+
+**ESCOPO**
+
+**Funcionalidades**
+* Website institucional da EcoNatal, com informações sobre o projeto, objetivos e impacto ambiental;
+* Interface responsiva e acessível, compatível com dispositivos móveis e computadores;
+* Design moderno e educativo, voltado à conscientização ambiental;
+* Sistema de login e cadastro, com:
+  <br>- Cadastro de usuários;
+  <br>- Autenticação por e-mail e senha;
+  <br>- Recuperação de senha;
+* Páginas informativas, incluindo:
+  <br>- O Projeto;
+  <br>- Objetivos;
+  <br>- Como vamos alcançar;
+* Mapeamento do funcionamento da plataforma;
+* Mapa interativo das lixeiras inteligentes, permitindo:
+  <br>- Localização dos pontos de descarte;
+  <br>- Visualização dos ecopontos disponíveis no bairro Pajuçara;
+* Sistema de monitoramento das lixeiras, com:
+  <br>- Indicação de nível de ocupação;
+  <br>-Alerta para manutenção;
+* Página de contato, com:
+  <br>- Formulário para envio de dúvidas e sugestões;
+  <br>- Canal de comunicação direto com a equipe EcoNatal;
