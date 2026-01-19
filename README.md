@@ -30,9 +30,7 @@
 * Mapa interativo das lixeiras inteligentes, permitindo:
   <br>- Localização dos pontos de descarte;
   <br>- Visualização dos ecopontos disponíveis no bairro Pajuçara;
-* Sistema de monitoramento das lixeiras, com:
-  <br>- Indicação de nível de ocupação;
-  <br>-Alerta para manutenção;
+* Sistema de monitoramento das lixeiras;
 * Página de contato, com:
   <br>- Formulário para envio de dúvidas e sugestões;
   <br>- Canal de comunicação direto com a equipe EcoNatal;
