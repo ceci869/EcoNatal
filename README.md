@@ -7,3 +7,7 @@
 **RELAÇÃO COM GEOGRAFIA**
 
 <p align="justify">A partir do terceiro bimestre da disciplina de Geografia II, a turma passou a estudar o processo de urbanização, ou seja, o crescimento da zona urbana em relação à zona rural, e seus consequentes problemas quando acontece sem planejamento. O Trabalho Final de Geografia busca trabalhar com os alunos os impactos desses problemas na população e, por isso, escolhemos trabalhar com o problema de produção e descarte inadequado de lixo, como dito anteriormente. Assim, o desenvolvimento do nosso site envolve assuntos da área de geografia como: desafios da urbanização, problemas urbanos, sustentabilidade, ecologia, inclusão social, poluição, origem e consequências da produção de lixo.</p>
+
+**OBJETIVO**
+
+<p align="justify">O objetivo do projeto desenvolvido pelo grupo é conscientizar a população sobre o descarte dos entulhos, alertando as consequências caso a rejeição do lixo seja feita de forma incorreta e assim, incentivando-as a adotar a reciclagem do mesmo. Os alunos envolvidos no trabalho acreditam que, com simplicidade e praticidade, é possível alcnçar e atingir os objetivos declarados e visados. O projeto 'ECONatal' pretende trazer essa simplicidade à esse asusunto que, embora seja muito conhecido, ainda demonstra dificuldade para ser executado, alcançando, assim, a comunidade como um todo.</p>
