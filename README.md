@@ -41,7 +41,21 @@
 * Cadastro de catadores;
 * Área de contato dos catadores disponíveis para a população.
 
-
+**Funcionalidades não incluídas no sistema**
+* Não haverá sistema de pagamentos online, como PIX, cartão de crédito ou boleto.
+* O sistema não contará com loja virtual ou venda de produtos ecológicos.
+* Não será implementado login por redes sociais (Google, Facebook, Instagram, etc.).
+* Não haverá chat em tempo real entre usuários, catadores ou equipe EcoNatal.
+* O website não possuirá fórum, comentários públicos ou rede social interna.
+* Não será possível que usuários comuniquem denúncias de descarte irregular diretamente pelo sistema.
+* O mapa das lixeiras inteligentes não utilizará rastreamento em tempo real via GPS dos usuários.
+* O sistema não contará com sensores IoT reais integrados às lixeiras, funcionando apenas como monitoramento informativo.
+* O site não permitirá edição avançada de perfis de usuários.
+* Não será desenvolvido aplicativo mobile nativo (Android ou iOS) para o site EcoNatal.
+* O sistema não fará integração com plataformas governamentais ou bancos de dados públicos oficiais.
+* Não haverá suporte técnico em tempo integral (24h).
+* O projeto não utilizará inteligência artificial ou análise preditiva de dados.
+* O sistema não realizará fiscalização, aplicação de multas ou penalidades ambientais.
 
 **PAPÉIS DO GRUPO**
 <p align="justify"> Para o desenvolvimento do site do projeto EcoNatal, as tarefas foram divididas entre os integrantes do grupo de acordo com áreas específicas, com o objetivo de organizar o processo de criação, otimizar o trabalho em equipe e garantir o bom funcionamento do site. </p> <p align="justify"> <b>Design:</b> Evellyn, Ágatha, Kérrina e Luísa. <br> As integrantes responsáveis pelo design cuidam da identidade visual do site, incluindo a composição das páginas, escolha de cores, tipografia, organização dos elementos visuais e criação da logo, garantindo uma interface atrativa e coerente com a proposta do projeto. </p> <p align="justify"> <b>Planejamento de Conteúdo:</b> Gustavo, Rayslane e Cecilia. <br> Equipe responsável pela definição, organização e revisão dos conteúdos textuais do site, assegurando clareza das informações, linguagem adequada ao público-alvo e boa estruturação das páginas. </p> <p align="justify"> <b>Front-end:</b> Rayslane, Luísa e Evellyn. <br> Área responsável pela implementação da interface do site, transformando o design e o conteúdo em páginas funcionais, garantindo usabilidade, responsividade e uma boa experiência para o usuário. </p> <p align="justify"> <b>Back-end:</b> Cecília, Ágatha, Gustavo e Kérrina. <br> Responsáveis pela lógica interna do site, incluindo o funcionamento de formulários, organização e processamento de dados, além das integrações necessárias para o correto funcionamento do sistema. </p>
