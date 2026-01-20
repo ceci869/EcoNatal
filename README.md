@@ -12,6 +12,15 @@
 
 <p align="justify">Para maior otimização e arranjo do processo organizado pela empresa, a guilda GeoFadas, integrante do curso técnico de Informática para Internet, ficará responsável por desenvolver um site, aspirando o bairro Pajuçara como público alvo. O objetivo do projeto desenvolvido pelo grupo é facilitar o descarte dos entulhos por parte da população, e assim, incentivando a adoção da reciclagem do mesmo através das lixeiras inteligentes da empresa. Os alunos envolvidos no trabalho acreditam que, com simplicidade e praticidade, é possível alcançar e atingir os objetivos declarados e visados. O projeto 'ECONatal' pretende trazer essa simplicidade à esse assunto que, embora seja muito conhecido, ainda demonstra dificuldade para ser executado, abrangendo, assim, a comunidade como um todo.</p>
 
+<p>Diminuição da poluição ambiental
+Nosso projeto diminui a poluição na cidade, baseando-se no fato de que dinamizando a coleta de lixo, as cidades ficariam mais limpas, melhorando a qualidade de vida da população.
+
+Novos empregos
+Nosso projeto profissionalizar os catadores de lixo, pessoas que receberiam para desempenhar a função de limpeza nas ruas gerando assim, novos empregos e impulsionando a economia.
+
+Conscientização ambiental
+Nosso aplicativo utiliza recursos visuais lúdicos para ensinar as crianças a respeitar, e a como tratar o próprio lixo, diminuindo a quantidade de lixo nas ruas.</p>
+
 **ESCOPO**
 
 **Funcionalidades**
