@@ -36,3 +36,9 @@
   <br>- Canal de comunicação direto com a equipe EcoNatal;
 * Cadastro de catadores;
 * Área de contato dos catadores disponíveis para a população.
+* 
+
+
+
+**PAPÉIS DO GRUPO**
+<p align="justify"> Para o desenvolvimento do site do projeto EcoNatal, as tarefas foram divididas entre os integrantes do grupo de acordo com áreas específicas, com o objetivo de organizar o processo de criação, otimizar o trabalho em equipe e garantir o bom funcionamento do site. </p> <p align="justify"> <b>Design:</b> Evellyn, Ágatha, Kérrina e Luísa. <br> As integrantes responsáveis pelo design cuidam da identidade visual do site, incluindo a composição das páginas, escolha de cores, tipografia, organização dos elementos visuais e criação da logo, garantindo uma interface atrativa e coerente com a proposta do projeto. </p> <p align="justify"> <b>Planejamento de Conteúdo:</b> Gustavo, Rayslane e Cecilia. <br> Equipe responsável pela definição, organização e revisão dos conteúdos textuais do site, assegurando clareza das informações, linguagem adequada ao público-alvo e boa estruturação das páginas. </p> <p align="justify"> <b>Front-end:</b> Rayslane, Luísa e Evellyn. <br> Área responsável pela implementação da interface do site, transformando o design e o conteúdo em páginas funcionais, garantindo usabilidade, responsividade e uma boa experiência para o usuário. </p> <p align="justify"> <b>Back-end:</b> Cecília, Ágatha, Gustavo e Kérrina. <br> Responsáveis pela lógica interna do site, incluindo o funcionamento de formulários, organização e processamento de dados, além das integrações necessárias para o correto funcionamento do sistema. </p>
