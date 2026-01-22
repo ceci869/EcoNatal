@@ -14,10 +14,10 @@
 </head>
 <body>
 
-    <header>
-        <img src="" alt="">
-        <nav>
-            <menu>
+    <header class="bg-[#E6E6E6] py-[19px] px-[22px] grid grid-cols-[1fr_1.5fr]">
+        <img src="img/logo-econatal.svg" alt="Logo da empresa EcoNatal">
+        <nav class="flex justify-between">
+            <menu class="grid grid-cols-3 gap-[26px]">
                 <button
                     @click="pagina = 'homepage'">
                     Home
@@ -34,13 +34,13 @@
                 </button>
             </menu>
 
-            <menu>
+            <menu class="grid grid-cols-2 gap-[26px]">
                 <button
-                    @click="pagina = 'login'">
+                    @click="pagina = 'login'" class="bg-[#1C370A] py-[4px] px-[28px] rounded-[15px] text-white">
                     Login
                 </button>
                 <button
-                    @click="pagina = 'solicitacao'">
+                    @click="pagina = 'solicitacao'" class="bg-[#5C7E1B] py-[4px] px-[28px] rounded-[15px] text-white">
                     Requisitar
                 </button>
             </menu>
@@ -48,7 +48,17 @@
     </header>
 
     <main>
-        <section x-show="pagina === 'homepage'"><p>Info1</p></section>
+        <section x-show="pagina === 'homepage'">
+            <div class="max-w-[90vw] ml-auto">
+            <section class="flex justify-between items-center">
+            <div class="max-w-[26vw]">
+            <h1 class="text-[48px] font-semibold">Sua coleta começa aqui!</h1>
+            <p class="text-[16px] font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus lorem eget luctus venenatis.</p>
+            </div>
+            <img src="img/imagem-ecologia.svg" alt="Imagem representativa de ecologia">
+            </section>
+        </div>
+        </section>
 
         <section x-show="pagina === 'contato'">
 
