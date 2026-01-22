@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="pt-br"
+    x-data="{
+        pagina: 'homepage'
+    }">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import de DaisyUI, Tailwind e AlpineJS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <title>EcoNatal</title>
+</head>
+<body>
+
+    <header>
+        <img src="" alt="">
+        <nav>
+            <menu>
+                <button
+                    @click="pagina = 'homepage'">
+                    Home
+                </button>
+
+                <button
+                    @click="pagina = 'contato'">
+                    Contato
+                </button>
+
+                <button
+                    @click="pagina = 'projeto'">
+                    Projeto
+                </button>
+            </menu>
+
+            <menu>
+                <button
+                    @click="pagina = 'login'">
+                    Login
+                </button>
+                <button
+                    @click="pagina = 'solicitacao'">
+                    Requisitar
+                </button>
+            </menu>
+        </nav>
+    </header>
+
+    <main>
+        <section x-show="pagina === 'homepage'"><p>Info1</p></section>
+
+        <section x-show="pagina === 'contato'">
+
+            <label for="">Assunto</label>
+            <input type="text">
+
+            <label for="">Mensagem</label>
+            <input type="text">
+
+            <button>Limpar</button>
+            <button>Enviar</button>
+
+        </section>
+
+        <section x-show="pagina === 'projeto'"><p>Info3</p></section>
+
+        <section x-show="pagina === 'login'"><p>Info4</p></section>
+
+        <section x-show="pagina === 'solicitacao'"><p>Info5</p></section>
+    </main>
+
+</body>
+</html>
