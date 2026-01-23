@@ -10,11 +10,11 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script defer src="scripts/script.js"></script>
+    <script defer src="scripts/message_form.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
     <title>EcoNatal</title>
 </head>
 <body class="bg-[#EFEFEF] m-0 p-0 font-[Albert_Sans]">
@@ -92,28 +92,28 @@
             <h1 class="text-[48px] font-semibold text-center my-[60px]">Fale com a EcoNatal</h1>
             <p class="text-[24px] font-normal text-center mb-[35px] w-[50vw] mx-auto">Tem alguma dúvida, sugestão ou deseja saber mais sobre o projeto EcoNatal? Entre em contato conosco!</p>
             <div class="bg-white p-[40px] border border-solid border-[#1C370A] rounded-[8px]">
-            <form action="https://formsubmit.co/ajax/econatal.meg@gmail.com" method="POST" class="flex flex-col gap-[32px]" data-form>
-                <div class="flex flex-col">
-                <label for="nome" class="text-[#1C2A02] text-[20px] font-normal">Seu nome</label>
-                <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="nome">
-                </div>
-                <div class="flex flex-col">
-                <label for="email" class="text-[#1C2A02] text-[20px] font-normal">Seu e-mail</label>
-                <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="email">
-                </div>
-                <div class="flex flex-col">
-                <label for="mensagem" class="text-[#1C2A02] text-[20px] font-normal">Assunto</label>
-                <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="assunto">
-                </div>
-                <div class="flex flex-col">
-                <label for="" class="text-[#1C2A02] text-[20px] font-normal">Mensagem</label>
-                <textarea name="mensagem" id="mensagem" class="border border-solid border-[#00000042] rounded-[6px] resize-none" rows="4" required></textarea>
-                </div>
-                <div class="grid grid-cols-2 gap-[56px]">
-                <button class="border border-solid border-[#00000042] py-[10px] rounded-[10px] text-[20px] font-bold">Limpar</button>
-                <button type="submit" class="bg-[#5C7E1B] py-[10px] rounded-[10px] text-white text-[20px] font-bold disabled:bg-gray-300 disabled:cursor-not-allowed" data-button>Enviar<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
-                </div>
-            </form>
+                <form action="https://formsubmit.co/ajax/econatal.meg@gmail.com" method="POST" class="flex flex-col gap-[32px]" data-form>
+                    <div class="flex flex-col">
+                        <label for="nome" class="text-[#1C2A02] text-[20px] font-normal">Seu nome</label>
+                        <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="nome">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="email" class="text-[#1C2A02] text-[20px] font-normal">Seu e-mail</label>
+                        <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="email">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="assunto" class="text-[#1C2A02] text-[20px] font-normal">Assunto</label>
+                        <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="assunto">
+                    </div>
+                    <div class="flex flex-col">
+                        <label for="mensagem" class="text-[#1C2A02] text-[20px] font-normal">Mensagem</label>
+                        <textarea name="mensagem" id="mensagem" class="border border-solid border-[#00000042] rounded-[6px] resize-none" rows="4" required></textarea>
+                    </div>
+                    <div class="grid grid-cols-2 gap-[56px]">
+                        <button type="reset" class="border border-solid border-[#00000042] py-[10px] rounded-[10px] text-[20px] font-bold">Limpar</button>
+                        <button type="submit" class="bg-[#5C7E1B] py-[10px] rounded-[10px] text-white text-[20px] font-bold disabled:bg-gray-300 disabled:cursor-not-allowed" data-button>Enviar<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
+                    </div>
+                </form>
             </div>
             <!-- <p class="text-[24px] font-normal text-center mt-[35px] w-[50vw] mx-auto">Responderemos o mais breve possível. Sua opinião é importante para melhorar nossas ações em prol do meio ambiente.</p> -->
             </section>
@@ -164,19 +164,19 @@
                 <form action="" class="w-[100%]">
                     <div class="flex flex-col mb-[18px]">
                         <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu nome (completo)</label>
-                        <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                        <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]" required>
                     </div>
                     <div class="flex flex-col mb-[18px]">
                         <label for="" class="text-[#1C2A02] text-[18px] font-normal">Data de nascimento</label>
-                        <input type="date" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                        <input type="date" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]" required>
                     </div>
                     <div class="flex flex-col mb-[35px]">
                         <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu e-mail</label>
-                        <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                        <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]" required>
                     </div>
                     <div class="flex flex-col justify-center w-[30vh] mx-auto">
-                    <button @click.prevent="pagina = 'cadastro2'" type="button" class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Avançar<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
-                    <a @click="pagina = 'login'" class="text-center underline text-[16px] font-normal mt-[10px] text-[#1C2A02] cursor-pointer">Já possui uma conta?</a>
+                        <button @click="pagina = 'cadastro2'" type="submit" class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Avançar<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
+                        <a @click="pagina = 'login'" class="text-center underline text-[16px] font-normal mt-[10px] text-[#1C2A02] cursor-pointer">Já possui uma conta?</a>
                     </div>
                 </form>
                 </div>
