@@ -16,7 +16,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
     <title>EcoNatal</title>
 </head>
-<body class="bg-[#EFEFEF] m-0 p-0">
+<body class="bg-[#EFEFEF] m-0 p-0 font-[Albert_Sans]">
 
     <header class="bg-[#E6E6E6] py-[19px] px-[22px] grid grid-cols-[1fr_1.5fr] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
         <img src="img/logo-econatal.svg" alt="Logo da empresa EcoNatal">
@@ -44,8 +44,8 @@
                     Login
                 </button>
                 <button
-                    @click="pagina = 'solicitacao'" class="bg-[#5C7E1B] py-[4px] px-[28px] rounded-[15px] text-white">
-                    Requisitar
+                    @click="pagina = 'cadastro'" class="bg-[#5C7E1B] py-[4px] px-[28px] rounded-[15px] text-white">
+                    Cadastrar
                 </button>
             </menu>
         </nav>
@@ -96,7 +96,7 @@
             </section>
         </section>
 
-        <section x-show="pagina === 'projeto'" class="min-h-[100vh] font-[Albert_Sans] text-[#1C2A02] mt-[60px]">
+        <section x-show="pagina === 'projeto'" class="min-h-[100vh] text-[#1C2A02] mt-[60px]">
             <section class="max-w-[90%] mx-auto">
             <div class="collapse collapse-arrow border border-solid border-[#1C2A02] rounded-bl-[0px] rounded-br-[0px]">
             <input type="radio" name="my-accordion-2" checked="checked" />
@@ -127,8 +127,33 @@
 
         <section x-show="pagina === 'login'"><p>Info4</p></section>
 
-        <section x-show="pagina === 'solicitacao'"><p>Info5</p></section>
+        <section x-show="pagina === 'cadastro'"><p>Info5</p></section>
     </main>
+    <footer class="grid grid-cols-3 gap-35 bg-[#1C2A02] text-white py-[100px] px-[40px]">
+        <div>
+            <h5 class="text-[20px] font-normal mb-[18px]">Sobre</h5>
+            <p class="text-[13px] font-normal mb-[15px] max-w-[50%]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            <p class="text-[13px] font-normal max-w-[50%]">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+        </div>
+        <div>
+            <h5 class="text-[20px] font-normal mb-[18px]">Links</h5>
+            <ul class="text-[13px] font-normal list-disc list-inside flex flex-col gap-2">
+                <li class="cursor-pointer"><a @click="pagina = 'contato'">Contato</a></li>
+                <li class="cursor-pointer"><a @click="pagina = 'projeto'">O projeto</a></li>
+                <li class="cursor-pointer"><a @click="pagina = 'login'">Login</a></li>
+                <li class="cursor-pointer"><a @click="pagina = 'cadastro'">Cadastro</a></li>
+            </ul>
+        </div>
+        <div>
+            <h5 class="text-[20px] font-normal mb-[18px]">Informações</h5>
+            <ul class="text-[13px] font-normal flex flex-col gap-2">
+                <li><i class="fa-solid fa-location-dot text-[#9BB569] mr-[8px]"></i>Lorem Ipsum, Natal 512</li>
+                <li><i class="fa-solid fa-envelope text-[#9BB569] mr-[8px]"></i>Email: econatal.meg@gmail.com</li>
+                <li><i class="fa-brands fa-instagram text-[#9BB569] mr-[8px]"></i>Instagram: eco_natal</li>
+                <li><i class="fa-brands fa-github text-[#9BB569] mr-[8px]"></i>GitHub: exemple-rep</li>
+            </ul>
+        </div>
+    </footer>
 
 </body>
 </html>
