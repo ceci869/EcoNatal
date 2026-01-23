@@ -45,7 +45,7 @@
                     Login
                 </button>
                 <button
-                    @click="pagina = 'cadastro1'" class="bg-[#5C7E1B] py-[4px] px-[28px] rounded-[15px] text-white">
+                    @click="pagina = 'cadastro'" class="bg-[#5C7E1B] py-[4px] px-[28px] rounded-[15px] text-white">
                     Cadastrar
                 </button>
             </menu>
@@ -181,7 +181,7 @@
 
         <section x-show="pagina === 'login'"><p>Info4</p></section>
 
-        <section x-show="pagina === 'cadastro1'" class="bg-[#F1F1F1] grid grid-cols-[1.5fr_1fr] min-h-[100vh]">
+        <section x-show="pagina === 'cadastro'" class="bg-[#F1F1F1] grid grid-cols-[1.5fr_1fr] min-h-[100vh]">
             <div>
                 <img src="img/logo-econatal.svg" alt="Logo da econatal" class="my-[19px] mx-[22px]">
                 <div class="flex flex-col justify-center align-center min-h-[80%]">
@@ -193,59 +193,45 @@
                 <h1 class="text-[40px] font-bold text-[#1C2A02] text-center">Primeira vez?</h1>
                 <p class="text-[20px] font-normal text-[#1C2A02] mb-[30px] text-center">Deixe-nos saber um pouco de você!</p>
                 <form action="" class="w-[100%]">
-                    <div class="flex flex-col mb-[18px]">
-                        <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu nome (completo)</label>
-                        <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
-                    </div>
-                    <div class="flex flex-col mb-[18px]">
-                        <label for="" class="text-[#1C2A02] text-[18px] font-normal">Data de nascimento</label>
-                        <input type="date" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
-                    </div>
-                    <div class="flex flex-col mb-[35px]">
-                        <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu e-mail</label>
-                        <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
-                    </div>
-                    <div class="flex flex-col justify-center w-[30vh] mx-auto">
-                    <button @click.prevent="pagina = 'cadastro2'" type="button" class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Avançar<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
-                    <a @click="pagina = 'login'" class="text-center underline text-[16px] font-normal mt-[10px] text-[#1C2A02] cursor-pointer">Já possui uma conta?</a>
-                    </div>
-                </form>
+                    <section>
+                        <div class="flex flex-col mb-[18px]">
+                            <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu nome (completo)</label>
+                            <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                        </div>
+                        <div class="flex flex-col mb-[18px]">
+                            <label for="" class="text-[#1C2A02] text-[18px] font-normal">Data de nascimento</label>
+                            <input type="date" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                        </div>
+                        <div class="flex flex-col mb-[35px]">
+                            <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu e-mail</label>
+                            <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                        </div>
+                        <div class="flex flex-col justify-center w-[30vh] mx-auto">
+                        <button type="button" class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Avançar<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
+                        <a @click="pagina = 'login'" class="text-center underline text-[16px] font-normal mt-[10px] text-[#1C2A02] cursor-pointer">Já possui uma conta?</a>
+                        </div>
+                    </section>
+                    <section>
+                            <div class="flex flex-col mb-[18px]">
+                                <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu CEP</label>
+                                <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                            </div>
+                            <div class="flex flex-col mb-[18px]">
+                                <label for="" class="text-[#1C2A02] text-[18px] font-normal">Escolha sua senha</label>
+                                <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                            </div>
+                            <div class="flex flex-col mb-[35px]">
+                                <label for="" class="text-[#1C2A02] text-[18px] font-normal">Confirme sua senha</label>
+                                <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                            </div>
+                            <div class="grid grid-cols-2 gap-[5px]">
+                            <button class="border border-[5px] border-[#1C2A02] text-[#1C2A02] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap"><i class="fa-solid fa-chevron-left mr-[5px]"></i>Voltar</button>
+                            <button class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Concluir<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
+                            </div>
+                    </section>
                 </div>
             </div>
         </section>
-
-        <section x-show="pagina === 'cadastro2'" class="bg-[#F1F1F1] grid grid-cols-[1.5fr_1fr] min-h-[100vh]">
-            <div>
-                <img src="img/logo-econatal.svg" alt="Logo da econatal" class="my-[19px] mx-[22px]">
-                <div class="flex flex-col justify-center align-center min-h-[80%]">
-                <img src="img/imagem-personagem.svg" alt="Imagem de personagem" class="mx-auto">
-                </div>
-            </div>
-            <div class="bg-[#F7F7F7] flex flex-col justify-center align-center">
-                <div class="mx-[78px]">
-                <h1 class="text-[40px] font-bold text-[#1C2A02] text-center mb-[30px]">Vamos precisar de mais alguns dados...</h1>
-                <form action="" class="w-[100%]">
-                    <div class="flex flex-col mb-[18px]">
-                        <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu CEP</label>
-                        <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
-                    </div>
-                    <div class="flex flex-col mb-[18px]">
-                        <label for="" class="text-[#1C2A02] text-[18px] font-normal">Escolha sua senha</label>
-                        <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
-                    </div>
-                    <div class="flex flex-col mb-[35px]">
-                        <label for="" class="text-[#1C2A02] text-[18px] font-normal">Confirme sua senha</label>
-                        <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
-                    </div>
-                    <div class="grid grid-cols-2 gap-[5px]">
-                    <button @click.prevent="pagina = 'cadastro1'" class="border border-[5px] border-[#1C2A02] text-[#1C2A02] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap"><i class="fa-solid fa-chevron-left mr-[5px]"></i>Voltar</button>
-                    <button class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Concluir<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
-                    </div>
-                </form>
-                </div>
-            </div>
-        </section>
-
     </main>
     <footer x-show="pagina === 'homepage' | pagina === 'contato' | pagina === 'projeto'" class="grid grid-cols-3 gap-35 bg-[#1C2A02] text-white py-[100px] px-[40px]">
         <div>
