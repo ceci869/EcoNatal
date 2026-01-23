@@ -10,6 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="scripts/script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <title>EcoNatal</title>
 </head>
@@ -66,30 +67,30 @@
             <h1 class="text-[48px] font-semibold text-center my-[60px]">Fale com a EcoNatal</h1>
             <p class="text-[24px] font-normal text-center mb-[35px] w-[50vw] mx-auto">Tem alguma dúvida, sugestão ou deseja saber mais sobre o projeto EcoNatal? Entre em contato conosco!</p>
             <div class="bg-white p-[40px] border border-solid border-[#1C370A] rounded-[8px]">
-            <form action="" class="flex flex-col gap-[32px]">
-            <div class="flex flex-col">
-            <label for="" class="text-[#1C2A02] text-[20px] font-normal">Seu nome</label>
-            <input type="text" class="border border-solid border-[#00000042] rounded-[6px]">
-            </div>
-            <div class="flex flex-col">
-            <label for="" class="text-[#1C2A02] text-[20px] font-normal">Seu e-mail</label>
-            <input type="text" class="border border-solid border-[#00000042] rounded-[6px]">
-            </div>
-            <div class="flex flex-col">
-            <label for="" class="text-[#1C2A02] text-[20px] font-normal">Assunto</label>
-            <input type="text" class="border border-solid border-[#00000042] rounded-[6px]">
-            </div>
-            <div class="flex flex-col">
-            <label for="" class="text-[#1C2A02] text-[20px] font-normal">Mensagem</label>
-            <textarea name="mensagem" id="" class="border border-solid border-[#00000042] rounded-[6px] resize-none" rows="4"></textarea>
-            </div>
-            <div class="grid grid-cols-2 gap-[56px]">
-            <button class="border border-solid border-[#00000042] py-[10px] rounded-[10px] text-[20px] font-bold">Limpar</button>
-            <button class="bg-[#5C7E1B] py-[10px] rounded-[10px] text-white text-[20px] font-bold">Enviar<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
-            </div>
+            <form action="https://formsubmit.co/ajax/econatal.meg@gmail.com" method="POST" class="flex flex-col gap-[32px]" data-form>
+                <div class="flex flex-col">
+                <label for="nome" class="text-[#1C2A02] text-[20px] font-normal">Seu nome</label>
+                <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="nome">
+                </div>
+                <div class="flex flex-col">
+                <label for="email" class="text-[#1C2A02] text-[20px] font-normal">Seu e-mail</label>
+                <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="email">
+                </div>
+                <div class="flex flex-col">
+                <label for="mensagem" class="text-[#1C2A02] text-[20px] font-normal">Assunto</label>
+                <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="assunto">
+                </div>
+                <div class="flex flex-col">
+                <label for="" class="text-[#1C2A02] text-[20px] font-normal">Mensagem</label>
+                <textarea name="mensagem" id="mensagem" class="border border-solid border-[#00000042] rounded-[6px] resize-none" rows="4" required></textarea>
+                </div>
+                <div class="grid grid-cols-2 gap-[56px]">
+                <button class="border border-solid border-[#00000042] py-[10px] rounded-[10px] text-[20px] font-bold">Limpar</button>
+                <button type="submit" class="bg-[#5C7E1B] py-[10px] rounded-[10px] text-white text-[20px] font-bold disabled:bg-gray-300 disabled:cursor-not-allowed" data-button>Enviar<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
+                </div>
             </form>
             </div>
-            <p class="text-[24px] font-normal text-center mt-[35px] w-[50vw] mx-auto">Responderemos o mais breve possível. Sua opinião é importante para melhorar nossas ações em prol do meio ambiente.</p>
+            <!-- <p class="text-[24px] font-normal text-center mt-[35px] w-[50vw] mx-auto">Responderemos o mais breve possível. Sua opinião é importante para melhorar nossas ações em prol do meio ambiente.</p> -->
             </section>
         </section>
 
