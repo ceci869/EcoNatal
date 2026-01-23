@@ -11,6 +11,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script defer src="scripts/message_form.js"></script>
+    <script defer src="scripts/cadastroUsuario_form.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -190,10 +191,10 @@
             </div>
             <div class="bg-[#F7F7F7] flex flex-col justify-center align-center">
                 <div class="mx-[78px]">
-                <h1 class="text-[40px] font-bold text-[#1C2A02] text-center">Primeira vez?</h1>
-                <p class="text-[20px] font-normal text-[#1C2A02] mb-[30px] text-center">Deixe-nos saber um pouco de você!</p>
+                <h1 class="text-[40px] font-bold text-[#1C2A02] text-center" id="titleC">Primeira vez?</h1>
+                <p class="text-[20px] font-normal text-[#1C2A02] mb-[30px] text-center" id="textC">Deixe-nos saber um pouco de você!</p>
                 <form action="" class="w-[100%]">
-                    <section>
+                    <section id="passo1">
                         <div class="flex flex-col mb-[18px]">
                             <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu nome (completo)</label>
                             <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
@@ -207,11 +208,11 @@
                             <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
                         </div>
                         <div class="flex flex-col justify-center w-[30vh] mx-auto">
-                        <button type="button" class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Avançar<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
+                        <button type="button" onclick="proximoPasso()" class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Avançar<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
                         <a @click="pagina = 'login'" class="text-center underline text-[16px] font-normal mt-[10px] text-[#1C2A02] cursor-pointer">Já possui uma conta?</a>
                         </div>
                     </section>
-                    <section>
+                    <section class="hidden" id="passo2">
                             <div class="flex flex-col mb-[18px]">
                                 <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu CEP</label>
                                 <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
@@ -225,8 +226,8 @@
                                 <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
                             </div>
                             <div class="grid grid-cols-2 gap-[5px]">
-                            <button class="border border-[5px] border-[#1C2A02] text-[#1C2A02] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap"><i class="fa-solid fa-chevron-left mr-[5px]"></i>Voltar</button>
-                            <button class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Concluir<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
+                            <button type="button" onclick="passoAnterior()" class="border border-[3px] border-[#1C2A02] text-[#1C2A02] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap"><i class="fa-solid fa-chevron-left mr-[5px]"></i>Voltar</button>
+                            <button type="submit" class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Concluir<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
                             </div>
                     </section>
                 </div>
