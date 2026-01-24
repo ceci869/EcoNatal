@@ -69,7 +69,7 @@
             <section class="max-w-[90vw] ml-auto max-md:mx-auto">
             <div class="flex justify-between items-center">
             <div class="max-w-[26vw] max-md:max-w-[100%]">
-            <h1 class="text-[48px] font-semibold max-md:text-center max-md:mt-[45px] max-md:mb-[25px]">Sua coleta começa aqui!</h1>
+            <h1 class="text-[48px] font-semibold max-md:text-center max-md:mt-[45px] max-md:mb-[25px] max-md:text-[38px]">Sua coleta começa aqui!</h1>
             <p class="text-[16px] font-normal max-md:text-center max-md:mb-[25px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus lorem eget luctus venenatis.</p>
             </div>
             <img src="img/imagem-ecologia.svg" alt="Imagem representativa de ecologia" class="max-md:hidden">
@@ -80,7 +80,7 @@
                     <img src="img/imagem-folha.svg" alt="Imagem de folha">
                 </div>
                 <div class="max-w-[90vw] mx-auto grid grid-cols-[1fr_1fr_1fr] justify-between max-md:grid-cols-[1fr_1fr] max-md:gap-[8px]">
-                <div class="content-center w-[50%] max-md:w-[100%] max-md:bg-[#EFEFEF] max-md:rounded-[10px] max-md:p-[12px] max-md:content-normal shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
+                <div class="content-center w-[50%] max-md:w-[100%] max-md:bg-[#EFEFEF] max-md:rounded-[10px] max-md:p-[12px] max-md:content-normal max-md:shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
                     <h3 class="text-[24px] font-semibold max-md:text-[20px]">Catador: comece agora!</h3>
                     <p class="text-[16px] font-normal max-md:my-[8px]">E ajude pequenos artesão e empreendedores.</p>
                     <button @click="pagina = 'registro'" class="bg-[#58971C] px-[30px] py-[14px] rounded-[10px] text-[#FBFFF8] text-[14px] font-semibold inline-flex text-nowrap items-baseline">Registre-se<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
@@ -88,7 +88,7 @@
                 <div class="justify-items-center max-md:hidden">
                     <img src="img/imagem-folha.svg" alt="Imagem de folha">
                 </div>
-                <div class="justify-items-end content-center max-md:bg-[#EFEFEF] max-md:rounded-[10px] max-md:p-[12px] max-md:content-normal shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
+                <div class="justify-items-end content-center max-md:bg-[#EFEFEF] max-md:rounded-[10px] max-md:p-[12px] max-md:content-normal max-md:shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
                     <div class="w-[50%] max-md:w-[100%]">
                     <h3 class="text-[24px] font-semibold max-md:text-[20px]">Venha fazer parte do time EcoNatal.</h3>
                     <p class="text-[16px] font-normal max-md:my-[8px]">Por uma Natal mais limpa, ecológica e consciente!</p>
@@ -144,33 +144,33 @@
 
         <section x-show="pagina === 'contato'" class="pb-[35px]">
             <section class="max-w-[80vw] mx-auto">
-            <h1 class="text-[48px] font-semibold text-center my-[60px]">Fale com a EcoNatal</h1>
-            <p class="text-[24px] font-normal text-center mb-[35px] w-[50vw] mx-auto">Tem alguma dúvida, sugestão ou deseja saber mais sobre o projeto EcoNatal? Entre em contato conosco!</p>
+            <h1 class="text-[48px] font-semibold text-center my-[60px] max-md:text-[38px] max-md:mb-[30px] max-md:mt-[35px]">Fale com a EcoNatal</h1>
+            <p class="text-[24px] font-normal text-center mb-[35px] w-[50vw] mx-auto max-md:text-[18px]">Tem alguma dúvida, sugestão ou deseja saber mais sobre o projeto EcoNatal? Entre em contato conosco!</p>
             <div class="bg-white p-[40px] border border-solid border-[#1C370A] rounded-[8px]">
                 <form action="https://formsubmit.co/ajax/econatal.meg@gmail.com" method="POST" class="flex flex-col gap-[32px]" data-form>
                     <div class="flex flex-col">
-                        <label for="nome" class="text-[#1C2A02] text-[20px] font-normal">Seu nome</label>
+                        <label for="nome" class="text-[#1C2A02] text-[20px] font-normal max-md:text-[18px]">Seu nome</label>
                         <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="nome">
                     </div>
                     <div class="flex flex-col">
-                        <label for="email" class="text-[#1C2A02] text-[20px] font-normal">Seu e-mail</label>
+                        <label for="email" class="text-[#1C2A02] text-[20px] font-normal max-md:text-[18px]">Seu e-mail</label>
                         <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="email">
                     </div>
                     <div class="flex flex-col">
-                        <label for="assunto" class="text-[#1C2A02] text-[20px] font-normal">Assunto</label>
+                        <label for="assunto" class="text-[#1C2A02] text-[20px] font-normal max-md:text-[18px]">Assunto</label>
                         <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="assunto">
                     </div>
                     <div class="flex flex-col">
-                        <label for="mensagem" class="text-[#1C2A02] text-[20px] font-normal">Mensagem</label>
+                        <label for="mensagem" class="text-[#1C2A02] text-[20px] font-normal max-md:text-[18px]">Mensagem</label>
                         <textarea name="mensagem" id="mensagem" class="border border-solid border-[#00000042] rounded-[6px] resize-none" rows="4" required></textarea>
                     </div>
-                    <div class="grid grid-cols-2 gap-[56px]">
-                        <button type="reset" class="border border-solid border-[#00000042] py-[10px] rounded-[10px] text-[20px] font-bold">Limpar</button>
-                        <button type="submit" class="bg-[#5C7E1B] py-[10px] rounded-[10px] text-white text-[20px] font-bold disabled:bg-gray-300 disabled:cursor-not-allowed" data-button>Enviar<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
+                    <div class="grid grid-cols-2 gap-[56px] max-md:gap-[30px]">
+                        <button type="reset" class="border border-solid border-[#00000042] py-[10px] rounded-[10px] text-[20px] font-bold max-md:py-[5px] max-md:text-[18px]">Limpar</button>
+                        <button type="submit" class="bg-[#5C7E1B] py-[10px] rounded-[10px] text-white text-[20px] font-bold disabled:bg-gray-300 disabled:cursor-not-allowed max-md:py-[5px] max-md:text-[18px]" data-button>Enviar<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
                     </div>
                 </form>
             </div>
-            <!-- <p class="text-[24px] font-normal text-center mt-[35px] w-[50vw] mx-auto">Responderemos o mais breve possível. Sua opinião é importante para melhorar nossas ações em prol do meio ambiente.</p> -->
+            <p class="text-[20px] font-normal text-center mt-[35px] w-[50vw] mx-auto max-md:text-[16px]">Responderemos o mais breve possível. Sua opinião é importante para melhorar nossas ações em prol do meio ambiente.</p>
             </section>
         </section>
 
