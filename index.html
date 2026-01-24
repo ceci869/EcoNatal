@@ -20,10 +20,10 @@
 </head>
 <body class="bg-[#EFEFEF] m-0 p-0 font-[Albert_Sans]">
 
-    <header x-show="pagina === 'homepage' | pagina === 'contato' | pagina === 'projeto'" class="bg-[#E6E6E6] py-[19px] px-[22px] grid grid-cols-[1fr_1.5fr] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
+    <header x-show="pagina === 'homepage' | pagina === 'contato' | pagina === 'projeto'" class="bg-[#E6E6E6] py-[19px] px-[22px] grid grid-cols-[1fr_1.5fr] max-md:grid-cols-[auto_1fr] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
         <img src="img/logo-econatal.svg" alt="Logo da empresa EcoNatal">
         <nav class="flex justify-between">
-            <menu class="grid grid-cols-3 gap-[26px]">
+            <menu class="grid grid-cols-[1fr_1.25fr_1.25fr] gap-[26px] max-md:hidden">
                 <button
                     @click="pagina = 'homepage'">
                     Home
@@ -40,7 +40,7 @@
                 </button>
             </menu>
 
-            <menu class="grid grid-cols-2 gap-[26px]">
+            <menu class="grid grid-cols-[1fr_1.25fr] gap-[26px] ml-[30px] max-md:mx-auto">
                 <button
                     @click="pagina = 'login'" class="bg-[#1C370A] py-[4px] px-[28px] rounded-[15px] text-white">
                     Login
@@ -50,34 +50,48 @@
                     Cadastrar
                 </button>
             </menu>
+            <div class="hidden max-md:flex max-md:self-center">
+                <button popovertarget="popover-1" style="anchor-name:--anchor-1" class="bg-none text-[5C7E1B] cursor-pointer">
+                <i class="fa-solid fa-bars"></i>
+                </button>
+                <ul class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm mr-[5px] mt-[10px]"
+                popover id="popover-1" style="position-anchor:--anchor-1">
+                <li><a @click="pagina = 'homepage'">Home</a></li>
+                <li><a @click="pagina = 'contato'">Contato</a></li>
+                <li><a @click="pagina = 'projeto'">Projeto</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
     <main>
         <section x-show="pagina === 'homepage'">
-            <section class="max-w-[90vw] ml-auto">
+            <section class="max-w-[90vw] ml-auto max-md:mx-auto">
             <div class="flex justify-between items-center">
-            <div class="max-w-[26vw]">
-            <h1 class="text-[48px] font-semibold">Sua coleta começa aqui!</h1>
-            <p class="text-[16px] font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus lorem eget luctus venenatis.</p>
+            <div class="max-w-[26vw] max-md:max-w-[100%]">
+            <h1 class="text-[48px] font-semibold max-md:text-center max-md:mt-[45px] max-md:mb-[25px]">Sua coleta começa aqui!</h1>
+            <p class="text-[16px] font-normal max-md:text-center max-md:mb-[25px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus lorem eget luctus venenatis.</p>
             </div>
-            <img src="img/imagem-ecologia.svg" alt="Imagem representativa de ecologia">
+            <img src="img/imagem-ecologia.svg" alt="Imagem representativa de ecologia" class="max-md:hidden">
             </div>
             </section>
             <section class="bg-[#D4E4CA] pt-[70px] pb-[25px]">
-                <div class="max-w-[90vw] mx-auto grid grid-cols-[1fr_1fr_1fr] justify-between">
-                <div class="content-center w-[50%]">
-                    <h3 class="text-[24px] font-semibold">Catador: comece agora!</h3>
-                    <p class="text-[16px] font-normal">E ajude pequenos artesão e empreendedores.</p>
-                    <button @click="pagina = 'registro'" class="bg-[#58971C] px-[30px] py-[14px] rounded-[10px] text-[#FBFFF8] text-[14px] font-semibold inline-flex text-nowrap items-baseline">Registre-se<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
-                </div>
-                <div class="justify-items-center">
+                <div class="justify-items-center hidden max-md:block">
                     <img src="img/imagem-folha.svg" alt="Imagem de folha">
                 </div>
-                <div class="justify-items-end content-center">
-                    <div class="w-[50%]">
-                    <h3 class="text-[24px] font-semibold">Venha fazer parte do time EcoNatal.</h3>
-                    <p class="text-[16px] font-normal">Por uma Natal mais limpa, ecológica e consciente!</p>
+                <div class="max-w-[90vw] mx-auto grid grid-cols-[1fr_1fr_1fr] justify-between max-md:grid-cols-[1fr_1fr] max-md:gap-[8px]">
+                <div class="content-center w-[50%] max-md:w-[100%] max-md:bg-[#EFEFEF] max-md:rounded-[10px] max-md:p-[12px] max-md:content-normal shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
+                    <h3 class="text-[24px] font-semibold max-md:text-[20px]">Catador: comece agora!</h3>
+                    <p class="text-[16px] font-normal max-md:my-[8px]">E ajude pequenos artesão e empreendedores.</p>
+                    <button @click="pagina = 'registro'" class="bg-[#58971C] px-[30px] py-[14px] rounded-[10px] text-[#FBFFF8] text-[14px] font-semibold inline-flex text-nowrap items-baseline">Registre-se<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
+                </div>
+                <div class="justify-items-center max-md:hidden">
+                    <img src="img/imagem-folha.svg" alt="Imagem de folha">
+                </div>
+                <div class="justify-items-end content-center max-md:bg-[#EFEFEF] max-md:rounded-[10px] max-md:p-[12px] max-md:content-normal shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
+                    <div class="w-[50%] max-md:w-[100%]">
+                    <h3 class="text-[24px] font-semibold max-md:text-[20px]">Venha fazer parte do time EcoNatal.</h3>
+                    <p class="text-[16px] font-normal max-md:my-[8px]">Por uma Natal mais limpa, ecológica e consciente!</p>
                     </div>
                 </div>
                 </div>
@@ -85,7 +99,7 @@
             <section class="max-w-[90vw] mx-auto mt-[85px] mb-[95px]">
                 <h6 class="text-[#5C7E1B] text-[16px] font-extrabold text-center">SERVIÇOS</h6>
                 <h1 class="text-[48px] font-normal text-center mb-[20px]">Nossa missão é:</h1>
-                <div class="grid grid-cols-3 gap-[26px] justify-items-center relative top-[30px]">
+                <div class="grid grid-cols-3 gap-[26px] justify-items-center relative top-[30px] max-md:hidden">
                     <div class="bg-[#D9D9D9] rounded-full w-[80px] h-[80px] content-center text-center">
                         <i class="fa-solid fa-truck text-[#1E1E1E]"></i>
                     </div>
@@ -96,21 +110,30 @@
                         <i class="fa-solid fa-user-group text-[#1E1E1E]"></i>
                     </div>
                 </div>
-                <div class="grid grid-cols-3 gap-[26px]">
-                    <div class="px-[40px] py-[54px] bg-[#E6E6E6] rounded-[7px] text-center">
-                        <div class="w-[70%] mx-auto">
+                <div class="grid grid-cols-3 gap-[26px] max-md:grid-cols-1">
+                    <div class="w-[70%] mx-auto px-[40px] py-[54px] bg-[#E6E6E6] rounded-[7px] text-center max-md:py-[5px] max-md:text-left max-md:px-[10px] max-md:grid max-md:grid-cols-[auto_1fr] max-md:w-[100%] max-md:items-center shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
+                        <div class="hidden max-md:block max-md:bg-[#D9D9D9] max-md:rounded-full max-md:w-[65px] max-md:h-[65px] max-md:content-center max-md:mr-[10px] max-md:text-center">
+                        <i class="fa-solid fa-truck text-[#1E1E1E]"></i>
+                        </div>
+                        <div>
                         <h4 class="text-[20px] font-semibold">Trabalho Eficiente</h4>
                         <p class="text-[13px] font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
                         </div>
                     </div>
-                    <div class="px-[40px] py-[54px] bg-[#E6E6E6] rounded-[7px] text-center">
-                        <div class="w-[70%] mx-auto">
+                    <div class="w-[70%] mx-auto px-[40px] py-[54px] bg-[#E6E6E6] rounded-[7px] text-center max-md:py-[5px] max-md:text-left max-md:px-[10px] max-md:grid max-md:grid-cols-[auto_1fr] max-md:w-[100%] max-md:items-center shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
+                        <div class="hidden max-md:block max-md:bg-[#D9D9D9] max-md:rounded-full max-md:w-[65px] max-md:h-[65px] max-md:content-center max-md:mr-[10px] max-md:text-center">
+                        <i class="fa-solid fa-leaf text-[#1E1E1E]"></i>
+                        </div>
+                        <div>
                         <h4 class="text-[20px] font-semibold">Coleta Inteligente</h4>
                         <p class="text-[13px] font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                         </div>
                     </div>
-                    <div class="px-[40px] py-[54px] bg-[#E6E6E6] rounded-[7px] text-center">
-                        <div class="w-[70%] mx-auto">
+                    <div class="w-[70%] mx-auto px-[40px] py-[54px] bg-[#E6E6E6] rounded-[7px] text-center max-md:py-[5px] max-md:text-left max-md:px-[10px] max-md:grid max-md:grid-cols-[auto_1fr] max-md:w-[100%] max-md:items-center shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
+                        <div class="hidden max-md:block max-md:bg-[#D9D9D9] max-md:rounded-full max-md:w-[65px] max-md:h-[65px] max-md:content-center max-md:mr-[10px] max-md:text-center">
+                        <i class="fa-solid fa-user-group text-[#1E1E1E]"></i>
+                        </div>
+                        <div>
                         <h4 class="text-[20px] font-semibold">Bem-estar</h4>
                         <p class="text-[13px] font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                         </div>
@@ -334,14 +357,16 @@
             </div>
         </section>
     </main>
-    <footer x-show="pagina === 'homepage' | pagina === 'contato' | pagina === 'projeto'" class="grid grid-cols-3 gap-35 bg-[#1C2A02] text-white py-[100px] px-[40px]">
+    <footer x-show="pagina === 'homepage' | pagina === 'contato' | pagina === 'projeto'" class="bg-[#1C2A02] text-white pt-[40px] pb-[100px] px-[40px]">
+        <img src="img/logo-econatal.svg" alt="Logo da EcoNatal" class="mb-[60px]">
+        <div class="grid grid-cols-3 gap-35 max-md:flex max-md:flex-col max-md:gap-[15px]">
         <div>
-            <h5 class="text-[20px] font-normal mb-[18px]">Sobre</h5>
+            <h5 class="text-[20px] font-normal mb-[18px] max-md:mb-[5px]">Sobre</h5>
             <p class="text-[13px] font-normal mb-[15px] max-w-[50%]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
             <p class="text-[13px] font-normal max-w-[50%]">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
         </div>
         <div>
-            <h5 class="text-[20px] font-normal mb-[18px]">Links</h5>
+            <h5 class="text-[20px] font-normal mb-[18px] max-md:mb-[5px]">Links</h5>
             <ul class="text-[13px] font-normal list-disc list-inside flex flex-col gap-2">
                 <li class="cursor-pointer"><a @click="pagina = 'contato'">Contato</a></li>
                 <li class="cursor-pointer"><a @click="pagina = 'projeto'">O projeto</a></li>
@@ -350,13 +375,14 @@
             </ul>
         </div>
         <div>
-            <h5 class="text-[20px] font-normal mb-[18px]">Informações</h5>
+            <h5 class="text-[20px] font-normal mb-[18px] max-md:mb-[5px]">Informações</h5>
             <ul class="text-[13px] font-normal flex flex-col gap-2">
                 <li><i class="fa-solid fa-location-dot text-[#9BB569] mr-[8px]"></i>Lorem Ipsum, Natal 512</li>
                 <li><i class="fa-solid fa-envelope text-[#9BB569] mr-[8px]"></i>Email: econatal.meg@gmail.com</li>
                 <li><i class="fa-brands fa-instagram text-[#9BB569] mr-[8px]"></i>Instagram: eco_natal</li>
                 <li><i class="fa-brands fa-github text-[#9BB569] mr-[8px]"></i>GitHub: exemple-rep</li>
             </ul>
+        </div>
         </div>
     </footer>
 
