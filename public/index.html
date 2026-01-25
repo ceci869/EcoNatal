@@ -283,8 +283,17 @@
             </section>
         </section>
 
-        <section x-show="pagina === 'login'"
-            class="bg-[#F1F1F1] grid grid-cols-[1fr_1.5fr] min-h-[100vh] max-md:flex max-md:flex-col max-md:bg-[#F7F7F7]">
+        <section x-show="pagina === 'login'" x-data="{
+        email: '',
+        senha: '',
+        emailValido() {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email);
+        },
+        podeEntrar() {
+            return this.emailValido() && this.senha;
+        }
+    }" class="bg-[#F1F1F1] grid grid-cols-[1fr_1.5fr] min-h-[100vh] max-md:flex max-md:flex-col max-md:bg-[#F7F7F7]">
+
             <div class="hidden max-md:block">
                 <img src="img/logo-econatal.svg" alt="Logo da econatal" class="my-[19px] mx-[22px]">
             </div>
@@ -296,20 +305,38 @@
                     <form action="" class="w-[100%]">
                         <section id="passo1">
                             <div class="flex flex-col mb-[18px]">
-                                <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu e-mail</label>
-                                <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                                <label class="text-[#1C2A02] text-[18px] font-normal pl-1">
+                                    Seu e-mail
+                                </label>
+
+                                <input type="email" x-model="email" placeholder="exemplo@gmail.com"
+                                    class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px] px-4 placeholder:text-gray-400">
+
+                                <span x-show="email && !emailValido()" class="text-red-500 text-sm mt-1 pl-1">
+                                    E-mail inválido.
+                                </span>
                             </div>
+
                             <div class="flex flex-col">
-                                <label for="" class="text-[#1C2A02] text-[18px] font-normal">Sua senha</label>
-                                <input type="password" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                                <label class="text-[#1C2A02] text-[18px] font-normal pl-1">
+                                    Sua senha
+                                </label>
+
+                                <input type="password" x-model="senha" placeholder="Digite sua senha"
+                                    class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px] px-4 placeholder:text-gray-400">
                             </div>
+
                             <p class="text-right"><a @click="pagina = 'cadastro'"
                                     class="underline text-[16px] font-normal mt-[10px] text-[#1C2A02] cursor-pointer">Esqueceu
                                     sua senha?</a></p>
                             <div class="flex flex-col justify-center mx-auto mt-[35px]">
-                                <button type="submit"
-                                    class="w-[30vh] mx-auto bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Entrar<i
-                                        class="fa-solid fa-chevron-right ml-[5px]"></i></button>
+                                <button type="submit" :disabled="!podeEntrar()" :class="{
+                                    'opacity-50 cursor-not-allowed': !podeEntrar()
+                                }"
+                                    class="w-[30vh] mx-auto bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] transition-opacity">
+                                    Entrar <i class="fa-solid fa-chevron-right ml-[5px]"></i>
+                                </button>
+
                                 <a @click="pagina = 'cadastro'"
                                     class="text-center underline text-[16px] font-normal mt-[10px] text-[#1C2A02] cursor-pointer">Ainda
                                     não possui uma conta?</a>
@@ -328,62 +355,114 @@
             </div>
         </section>
 
-        <section x-show="pagina === 'cadastro'"
-            class="bg-[#F1F1F1] grid grid-cols-[1.5fr_1fr] min-h-[100vh] max-md:flex max-md:flex-col max-md:bg-[#F7F7F7]">
+        <section x-show="pagina === 'cadastro'" x-data="{ 
+            passo: 1, 
+            nome: '', 
+            nasc: '', 
+            email: '', 
+            cep: '', 
+            senha: '', 
+            confSenha: '',
+            emailValido() {
+                return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email);
+            },
+    podeAvancar() {
+        return this.nome && this.nasc && this.emailValido();
+    }
+}" class="bg-[#F1F1F1] grid grid-cols-[1.5fr_1fr] min-h-[100vh] max-md:flex max-md:flex-col max-md:bg-[#F7F7F7]">
+
             <div>
                 <img src="img/logo-econatal.svg" alt="Logo da econatal" class="my-[19px] mx-[22px]">
                 <div class="flex flex-col justify-center align-center min-h-[80%] max-md:hidden">
                     <img src="img/imagem-personagem.svg" alt="Imagem de personagem" class="mx-auto">
                 </div>
             </div>
+
             <div class="bg-[#F7F7F7] flex flex-col justify-center align-center min-h-[80vh]">
-                <div class="mx-[78px]">
-                    <h1 class="text-[40px] font-bold text-[#1C2A02] text-center" id="titleC">Primeira vez?</h1>
-                    <p class="text-[20px] font-normal text-[#1C2A02] mb-[30px] text-center" id="textC">Deixe-nos saber
-                        um pouco de você!</p>
-                    <form action="" class="w-[100%]">
-                        <section id="passo1">
+                <div class="mx-[78px] max-md:mx-[20px]">
+
+                    <h1 class="text-[40px] font-bold text-[#1C2A02] text-center"
+                        x-text="passo === 1 ? 'Primeira vez?' : 'Falta pouco...'"></h1>
+
+                    <p class="text-[20px] font-normal text-[#1C2A02] mb-[30px] text-center"
+                        x-text="passo === 1 ? 'Deixe-nos saber um pouco de você!' : 'Precisamos de mais alguns dados.'">
+                    </p>
+
+                    <form id="Cadastro" class="w-[100%]">
+
+                        <section x-show="passo === 1" x-transition:enter="transition ease-out duration-300">
+
                             <div class="flex flex-col mb-[18px]">
-                                <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu nome (completo)</label>
-                                <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                                <label class="text-[#1C2A02] text-[18px] font-normal pl-1">Seu nome</label>
+                                <input type="text" name="nome" x-model="nome" placeholder="Digite seu nome completo"
+                                    class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px] px-4 placeholder:text-gray-400">
                             </div>
+
                             <div class="flex flex-col mb-[18px]">
-                                <label for="" class="text-[#1C2A02] text-[18px] font-normal">Data de nascimento</label>
-                                <input type="date" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                                <label class="text-[#1C2A02] text-[18px] font-normal pl-1">Data de nascimento</label>
+                                <input type="date" name="data_nascimento" x-model="nasc"
+                                    class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px] px-4 text-[#1C2A02]">
                             </div>
+
                             <div class="flex flex-col mb-[35px]">
-                                <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu e-mail</label>
-                                <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                                <label class="text-[#1C2A02] text-[18px] font-normal pl-1">Seu e-mail</label>
+
+                                <input type="email" name="email" x-model="email" placeholder="exemplo@gmail.com"
+                                    class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px] px-4 placeholder:text-gray-400">
+
+                                <span x-show="email && !emailValido()" class="text-red-500 text-sm mt-1 pl-1">
+                                    E-mail inválido.
+                                </span>
                             </div>
-                            <div class="flex flex-col justify-center w-[30vh] mx-auto">
-                                <button type="button" onclick="proximoPasso()"
-                                    class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Avançar<i
-                                        class="fa-solid fa-chevron-right ml-[5px]"></i></button>
+
+                            <div class="flex flex-col justify-center w-[30vh] mx-auto max-md:w-full">
+                                <button type="button" @click="if (podeAvancar()) passo = 2" :disabled="!podeAvancar()"
+                                    :class="{
+                                    'opacity-50 cursor-not-allowed': !podeAvancar()
+    }" class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] transition-opacity">
+                                    Avançar <i class="fa-solid fa-chevron-right ml-[5px]"></i>
+                                </button>
+
                                 <a @click="pagina = 'login'"
-                                    class="text-center underline text-[16px] font-normal mt-[10px] text-[#1C2A02] cursor-pointer">Já
-                                    possui uma conta?</a>
+                                    class="text-center underline text-[16px] font-normal mt-[10px] text-[#1C2A02] cursor-pointer">
+                                    Já possui uma conta?
+                                </a>
                             </div>
                         </section>
-                        <section class="hidden" id="passo2">
+
+                        <section x-show="passo === 2" x-transition:enter="transition ease-out duration-300">
                             <div class="flex flex-col mb-[18px]">
-                                <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu CEP</label>
-                                <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                                <label class="text-[#1C2A02] text-[18px] font-normal pl-1">Seu CEP</label>
+                                <input type="text" name="cep" x-model="cep" placeholder="00000-000"
+                                    class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px] px-4">
                             </div>
                             <div class="flex flex-col mb-[18px]">
-                                <label for="" class="text-[#1C2A02] text-[18px] font-normal">Escolha sua senha</label>
-                                <input type="password" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                                <label class="text-[#1C2A02] text-[18px] font-normal pl-1">Escolha sua senha</label>
+                                <input type="password" name="senha" x-model="senha"
+                                    class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px] px-4">
                             </div>
                             <div class="flex flex-col mb-[35px]">
-                                <label for="" class="text-[#1C2A02] text-[18px] font-normal">Confirme sua senha</label>
-                                <input type="password" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                                <label class="text-[#1C2A02] text-[18px] font-normal pl-1">Confirme sua senha</label>
+                                <input type="password" name="confirmandoSenha" x-model="confSenha"
+                                    class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px] px-4">
+
+                                <span x-show="senha && confSenha && senha !== confSenha"
+                                    class="text-red-500 text-sm mt-1 pl-1">
+                                    As senhas não coincidem.
+                                </span>
                             </div>
+
                             <div class="grid grid-cols-2 gap-[5px]">
-                                <button type="button" onclick="passoAnterior()"
-                                    class="border border-[3px] border-[#1C2A02] text-[#1C2A02] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap"><i
-                                        class="fa-solid fa-chevron-left mr-[5px]"></i>Voltar</button>
-                                <button type="submit"
-                                    class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Concluir<i
-                                        class="fa-solid fa-chevron-right ml-[5px]"></i></button>
+                                <button type="button" @click="passo = 1"
+                                    class="border border-[3px] border-[#1C2A02] text-[#1C2A02] px-[20px] py-[12px] rounded-[10px] text-[16px] font-bold text-nowrap hover:bg-gray-200">
+                                    <i class="fa-solid fa-chevron-left mr-[5px]"></i> Voltar
+                                </button>
+
+                                <button type="submit" :disabled="!cep || !senha || !confSenha || senha !== confSenha"
+                                    :class="{'opacity-50 cursor-not-allowed': !cep || !senha || !confSenha || senha !== confSenha}"
+                                    class="bg-[#9BB569] px-[20px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap transition-opacity">
+                                    Concluir <i class="fa-solid fa-chevron-right ml-[5px]"></i>
+                                </button>
                             </div>
                         </section>
                     </form>
@@ -407,67 +486,101 @@
                     <h1 class="text-[40px] font-bold text-[#EDFFCC] text-center" id="titleC">Novo por aqui?</h1>
                     <p class="text-[20px] font-normal text-[#EDFFCC] mb-[30px] text-center" id="textC">Registre-se para
                         se juntar à comunidade de catadores da EcoNatal</p>
-                    <form action="" class="w-[100%]">
-                        <section id="passo1">
+                    <form x-data="{
+                        passo: 1,
+                        nome: '',
+                        telefone: '',
+                        email: '',
+                        cep: '',
+                        coletas: [],
+                        emailValido() {
+                            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.email);
+                    },
+        podeAvancar() {
+            return this.nome && this.telefone && this.emailValido();
+        },
+        podeConcluir() {
+            return this.cep && this.coletas.length > 0;
+        }
+    }" class="w-[100%]">
+                        <section x-show="passo === 1">
                             <div class="flex flex-col mb-[18px]">
-                                <label for="" class="text-[#EDFFCC] text-[18px] font-normal">Seu nome (completo)</label>
-                                <input type="text" class="bg-[#EDFFCC] border-none rounded-[6px] h-[50px]">
+                                <label class="text-[#EDFFCC] text-[18px] font-normal">
+                                    Seu nome
+                                </label>
+                                <input type="text" x-model="nome" placeholder="Digite seu nome completo"
+                                    class="bg-[#EDFFCC] border-none rounded-[6px] h-[50px] px-4 placeholder:text-gray-500">
                             </div>
+
                             <div class="flex flex-col mb-[18px]">
-                                <label for="" class="text-[#EDFFCC] text-[18px] font-normal">Telefone/Celular</label>
-                                <input type="text" class="bg-[#EDFFCC] border-none rounded-[6px] h-[50px]">
+                                <label class="text-[#EDFFCC] text-[18px] font-normal">
+                                    Telefone/Celular
+                                </label>
+                                <input type="text" x-model="telefone" placeholder="(84) 9 9999-9999"
+                                    class="bg-[#EDFFCC] border-none rounded-[6px] h-[50px] px-4 placeholder:text-gray-500">
                             </div>
+
                             <div class="flex flex-col mb-[35px]">
-                                <label for="" class="text-[#EDFFCC] text-[18px] font-normal">Seu e-mail</label>
-                                <input type="text" class="bg-[#EDFFCC] border-none rounded-[6px] h-[50px]">
+                                <label class="text-[#EDFFCC] text-[18px] font-normal">
+                                    Seu e-mail
+                                </label>
+                                <input type="email" x-model="email" placeholder="exemplo@email.com"
+                                    class="bg-[#EDFFCC] border-none rounded-[6px] h-[50px] px-4 placeholder:text-gray-500">
+                                <span x-show="email && !emailValido()" class="text-red-400 text-sm mt-1 pl-1">
+                                    E-mail inválido.
+                                </span>
                             </div>
-                            <div class="flex flex-col justify-center w-[30vh] mx-auto">
-                                <button type="button"
-                                    class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Avançar<i
-                                        class="fa-solid fa-chevron-right ml-[5px]"></i></button>
+
+                            <div class="flex justify-center w-[30vh] mx-auto">
+                                <button type="button" @click="if (podeAvancar()) passo = 2" :disabled="!podeAvancar()"
+                                    :class="{ 'opacity-50 cursor-not-allowed': !podeAvancar() }"
+                                    class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02]">
+                                    Avançar
+                                    <i class="fa-solid fa-chevron-right ml-[5px]"></i>
+                                </button>
                             </div>
                         </section>
-                        <section id="passo2" class="hidden">
+
+                        <section x-show="passo === 2">
                             <div class="flex flex-col mb-[18px]">
-                                <label for="" class="text-[#EDFFCC] text-[18px] font-normal">Seu CEP</label>
-                                <input type="text" class="bg-[#EDFFCC] border-none rounded-[6px] h-[50px]">
+                                <label class="text-[#EDFFCC] text-[18px] font-normal">
+                                    Seu CEP
+                                </label>
+                                <input type="text" x-model="cep" placeholder="00000-000"
+                                    class="bg-[#EDFFCC] border-none rounded-[6px] h-[50px] px-4 placeholder:text-gray-500">
                             </div>
+
                             <div class="mb-[18px]">
-                                <label for="" class="text-[#EDFFCC] text-[18px] font-normal">Selecione as coletas que
-                                    você realiza:</label>
-                                <div class="flex items-center gap-[4px]">
-                                    <input type="checkbox" id="papel" name="papel"
-                                        class="appearance-none w-[14px] h-[14px] rounded-[3px] border border-[2px] border-[#EDFFCC] bg-none checked:bg-[#EDFFCC] cursor-pointer">
-                                    <label for="papel" class="text-[#EDFFCC]">Papel</label>
-                                </div>
-                                <div class="flex items-center gap-[4px]">
-                                    <input type="checkbox" id="metal" name="metal"
-                                        class="appearance-none w-[14px] h-[14px] rounded-[3px] border border-[2px] border-[#EDFFCC] bg-none checked:bg-[#EDFFCC] cursor-pointer">
-                                    <label for="metal" class="text-[#EDFFCC]">Metal</label>
-                                </div>
-                                <div class="flex items-center gap-[4px]">
-                                    <input type="checkbox" id="plastico" name="plastico"
-                                        class="appearance-none w-[14px] h-[14px] rounded-[3px] border border-[2px] border-[#EDFFCC] bg-none checked:bg-[#EDFFCC] cursor-pointer">
-                                    <label for="plastico" class="text-[#EDFFCC]">Plástico</label>
-                                </div>
-                                <div class="flex items-center gap-[4px]">
-                                    <input type="checkbox" id="vidro" name="vidro"
-                                        class="appearance-none w-[14px] h-[14px] rounded-[3px] border border-[2px] border-[#EDFFCC] bg-none checked:bg-[#EDFFCC] cursor-pointer">
-                                    <label for="vidro" class="text-[#EDFFCC]">Vidro</label>
-                                </div>
-                                <div class="flex items-center gap-[4px]">
-                                    <input type="checkbox" id="organico" name="organico"
-                                        class="appearance-none w-[14px] h-[14px] rounded-[3px] border border-[2px] border-[#EDFFCC] bg-none checked:bg-[#EDFFCC] cursor-pointer">
-                                    <label for="organico" class="text-[#EDFFCC]">Orgânico</label>
-                                </div>
+                                <label class="text-[#EDFFCC] text-[18px] font-normal">
+                                    Selecione as coletas que você realiza:
+                                </label>
+
+                                <template x-for="item in ['Papel','Metal','Plástico','Vidro','Orgânico']">
+                                    <div class="flex items-center gap-[4px]">
+                                        <input type="checkbox" :value="item" x-model="coletas"
+                                            class="appearance-none w-[14px] h-[14px] rounded-[3px] border border-[2px] border-[#EDFFCC] checked:bg-[#EDFFCC] cursor-pointer">
+                                        <label class="text-[#EDFFCC]" x-text="item"></label>
+                                    </div>
+                                </template>
+
+                                <span x-show="coletas.length === 0" class="text-red-400 text-sm mt-2 block">
+                                    Selecione pelo menos uma coleta.
+                                </span>
                             </div>
+
                             <div class="grid grid-cols-2 gap-[5px]">
-                                <button type="button"
-                                    class="border border-[3px] border-[#9BB569] text-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap"><i
-                                        class="fa-solid fa-chevron-left mr-[5px]"></i>Voltar</button>
-                                <button type="submit"
-                                    class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Concluir<i
-                                        class="fa-solid fa-chevron-right ml-[5px]"></i></button>
+                                <button type="button" @click="passo = 1"
+                                    class="border border-[3px] border-[#9BB569] text-[#9BB569] px-[45px] py-[12px] rounded-[10px] font-bold">
+                                    <i class="fa-solid fa-chevron-left mr-[5px]"></i>
+                                    Voltar
+                                </button>
+
+                                <button type="submit" :disabled="!podeConcluir()"
+                                    :class="{ 'opacity-50 cursor-not-allowed': !podeConcluir() }"
+                                    class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] font-bold text-[#1C2A02]">
+                                    Concluir
+                                    <i class="fa-solid fa-chevron-right ml-[5px]"></i>
+                                </button>
                             </div>
                         </section>
                     </form>
