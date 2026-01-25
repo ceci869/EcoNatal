@@ -44,15 +44,45 @@ class FormSubmit {
                 body: JSON.stringify(this.getFormObject()),
             });
             this.displaySuccess();
-        }   catch (error) {
+        } catch (error) {
             this.displayError();
             throw new Error(error);
         }
     }
 
     init() {
-        if (this.form) this.formButton.addEventListener("click", this.sendForm);
+        if (this.form) {
+            this.formButton.addEventListener("click", this.sendForm);
+
+            const fields = this.form.querySelectorAll("[name]");
+            fields.forEach((field) => {
+                field.addEventListener("input", () => this.validateForm());
+            });
+
+            this.form.addEventListener("reset", () => {
+                setTimeout(() => this.validateForm(), 0);
+            });
+
+            // Initial validation
+            this.validateForm();
+        }
         return this;
+    }
+
+    validateForm() {
+        const fields = this.form.querySelectorAll("[name]");
+        let allFilled = true;
+        fields.forEach((field) => {
+            if (!field.value.trim()) {
+                allFilled = false;
+            }
+        });
+
+        if (allFilled) {
+            this.formButton.removeAttribute("disabled");
+        } else {
+            this.formButton.setAttribute("disabled", "true");
+        }
     }
 }
 

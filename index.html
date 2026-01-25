@@ -1,8 +1,8 @@
 <!DOCTYPE html>
-<html lang="pt-br"
-    x-data="{
+<html lang="pt-br" x-data="{
         pagina: 'homepage'
     }">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -15,50 +15,50 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Sora:wght@100..800&display=swap" rel="stylesheet">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Sora:wght@100..800&display=swap"
+        rel="stylesheet">
     <title>EcoNatal</title>
 </head>
+
 <body class="bg-[#EFEFEF] m-0 p-0 font-[Albert_Sans]">
 
-    <header x-show="pagina === 'homepage' | pagina === 'contato' | pagina === 'projeto'" class="bg-[#E6E6E6] py-[19px] px-[22px] grid grid-cols-[1fr_1.5fr] max-md:grid-cols-[auto_1fr] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
+    <header x-show="pagina === 'homepage' | pagina === 'contato' | pagina === 'projeto'"
+        class="bg-[#E6E6E6] py-[19px] px-[22px] grid grid-cols-[1fr_1.5fr] max-md:grid-cols-[auto_1fr] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
         <img src="img/logo-econatal.svg" alt="Logo da empresa EcoNatal">
         <nav class="flex justify-between">
             <menu class="grid grid-cols-[1fr_1.25fr_1.25fr] gap-[26px] max-md:hidden">
-                <button
-                    @click="pagina = 'homepage'">
+                <button @click="pagina = 'homepage'">
                     Home
                 </button>
 
-                <button
-                    @click="pagina = 'contato'">
+                <button @click="pagina = 'contato'">
                     Contato
                 </button>
 
-                <button
-                    @click="pagina = 'projeto'">
+                <button @click="pagina = 'projeto'">
                     Projeto
                 </button>
             </menu>
 
             <menu class="grid grid-cols-[1fr_1.25fr] gap-[26px] ml-[30px] max-md:mx-auto">
-                <button
-                    @click="pagina = 'login'" class="bg-[#1C370A] py-[4px] px-[28px] rounded-[15px] text-white">
+                <button @click="pagina = 'login'" class="bg-[#1C370A] py-[4px] px-[28px] rounded-[15px] text-white">
                     Login
                 </button>
-                <button
-                    @click="pagina = 'cadastro'" class="bg-[#5C7E1B] py-[4px] px-[28px] rounded-[15px] text-white">
+                <button @click="pagina = 'cadastro'" class="bg-[#5C7E1B] py-[4px] px-[28px] rounded-[15px] text-white">
                     Cadastrar
                 </button>
             </menu>
             <div class="hidden max-md:flex max-md:self-center">
-                <button popovertarget="popover-1" style="anchor-name:--anchor-1" class="bg-none text-[5C7E1B] cursor-pointer">
-                <i class="fa-solid fa-bars"></i>
+                <button popovertarget="popover-1" style="anchor-name:--anchor-1"
+                    class="bg-none text-[5C7E1B] cursor-pointer">
+                    <i class="fa-solid fa-bars"></i>
                 </button>
-                <ul class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm mr-[5px] mt-[10px]"
-                popover id="popover-1" style="position-anchor:--anchor-1">
-                <li><a @click="pagina = 'homepage'">Home</a></li>
-                <li><a @click="pagina = 'contato'">Contato</a></li>
-                <li><a @click="pagina = 'projeto'">Projeto</a></li>
+                <ul class="dropdown menu w-52 rounded-box bg-base-100 shadow-sm mr-[5px] mt-[10px]" popover
+                    id="popover-1" style="position-anchor:--anchor-1">
+                    <li><a @click="pagina = 'homepage'">Home</a></li>
+                    <li><a @click="pagina = 'contato'">Contato</a></li>
+                    <li><a @click="pagina = 'projeto'">Projeto</a></li>
                 </ul>
             </div>
         </nav>
@@ -67,33 +67,44 @@
     <main>
         <section x-show="pagina === 'homepage'">
             <section class="max-w-[90vw] ml-auto max-md:mx-auto">
-            <div class="flex justify-between items-center">
-            <div class="max-w-[26vw] max-md:max-w-[100%]">
-            <h1 class="text-[48px] font-semibold max-md:text-center max-md:mt-[45px] max-md:mb-[25px] max-md:text-[38px]">Sua coleta começa aqui!</h1>
-            <p class="text-[16px] font-normal max-md:text-center max-md:mb-[25px]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam dapibus lorem eget luctus venenatis.</p>
-            </div>
-            <img src="img/imagem-ecologia.svg" alt="Imagem representativa de ecologia" class="max-md:hidden">
-            </div>
+                <div class="flex justify-between items-center">
+                    <div class="max-w-[26vw] max-md:max-w-[100%]">
+                        <h1
+                            class="text-[48px] font-semibold max-md:text-center max-md:mt-[45px] max-md:mb-[25px] max-md:text-[38px]">
+                            Sua coleta começa aqui!</h1>
+                        <p class="text-[16px] font-normal max-md:text-center max-md:mb-[25px]">Lorem ipsum dolor sit
+                            amet, consectetur adipiscing elit. Etiam dapibus lorem eget luctus venenatis.</p>
+                    </div>
+                    <img src="img/imagem-ecologia.svg" alt="Imagem representativa de ecologia" class="max-md:hidden">
+                </div>
             </section>
             <section class="bg-[#D4E4CA] pt-[70px] pb-[25px]">
                 <div class="justify-items-center hidden max-md:block">
                     <img src="img/imagem-folha.svg" alt="Imagem de folha">
                 </div>
-                <div class="max-w-[90vw] mx-auto grid grid-cols-[1fr_1fr_1fr] justify-between max-md:grid-cols-[1fr_1fr] max-md:gap-[8px]">
-                <div class="content-center w-[50%] max-md:w-[100%] max-md:bg-[#EFEFEF] max-md:rounded-[10px] max-md:p-[12px] max-md:content-normal max-md:shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
-                    <h3 class="text-[24px] font-semibold max-md:text-[20px]">Catador: comece agora!</h3>
-                    <p class="text-[16px] font-normal max-md:my-[8px]">E ajude pequenos artesão e empreendedores.</p>
-                    <button @click="pagina = 'registro'" class="bg-[#58971C] px-[30px] py-[14px] rounded-[10px] text-[#FBFFF8] text-[14px] font-semibold inline-flex text-nowrap items-baseline">Registre-se<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
-                </div>
-                <div class="justify-items-center max-md:hidden">
-                    <img src="img/imagem-folha.svg" alt="Imagem de folha">
-                </div>
-                <div class="justify-items-end content-center max-md:bg-[#EFEFEF] max-md:rounded-[10px] max-md:p-[12px] max-md:content-normal max-md:shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
-                    <div class="w-[50%] max-md:w-[100%]">
-                    <h3 class="text-[24px] font-semibold max-md:text-[20px]">Venha fazer parte do time EcoNatal.</h3>
-                    <p class="text-[16px] font-normal max-md:my-[8px]">Por uma Natal mais limpa, ecológica e consciente!</p>
+                <div
+                    class="max-w-[90vw] mx-auto grid grid-cols-[1fr_1fr_1fr] justify-between max-md:grid-cols-[1fr_1fr] max-md:gap-[8px]">
+                    <div
+                        class="content-center w-[50%] max-md:w-[100%] max-md:bg-[#EFEFEF] max-md:rounded-[10px] max-md:p-[12px] max-md:content-normal max-md:shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
+                        <h3 class="text-[24px] font-semibold max-md:text-[20px]">Catador: comece agora!</h3>
+                        <p class="text-[16px] font-normal max-md:my-[8px]">E ajude pequenos artesão e empreendedores.
+                        </p>
+                        <button @click="pagina = 'registro'"
+                            class="bg-[#58971C] px-[30px] py-[14px] rounded-[10px] text-[#FBFFF8] text-[14px] font-semibold inline-flex text-nowrap items-baseline">Registre-se<i
+                                class="fa-solid fa-chevron-right ml-[5px]"></i></button>
                     </div>
-                </div>
+                    <div class="justify-items-center max-md:hidden">
+                        <img src="img/imagem-folha.svg" alt="Imagem de folha">
+                    </div>
+                    <div
+                        class="justify-items-end content-center max-md:bg-[#EFEFEF] max-md:rounded-[10px] max-md:p-[12px] max-md:content-normal max-md:shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
+                        <div class="w-[50%] max-md:w-[100%]">
+                            <h3 class="text-[24px] font-semibold max-md:text-[20px]">Venha fazer parte do time EcoNatal.
+                            </h3>
+                            <p class="text-[16px] font-normal max-md:my-[8px]">Por uma Natal mais limpa, ecológica e
+                                consciente!</p>
+                        </div>
+                    </div>
                 </div>
             </section>
             <section class="max-w-[90vw] mx-auto mt-[85px] mb-[95px]">
@@ -111,31 +122,40 @@
                     </div>
                 </div>
                 <div class="grid grid-cols-3 gap-[26px] max-md:grid-cols-1">
-                    <div class="w-[70%] mx-auto px-[40px] py-[54px] bg-[#E6E6E6] rounded-[7px] text-center max-md:py-[5px] max-md:text-left max-md:px-[10px] max-md:grid max-md:grid-cols-[auto_1fr] max-md:w-[100%] max-md:items-center shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
-                        <div class="hidden max-md:block max-md:bg-[#D9D9D9] max-md:rounded-full max-md:w-[65px] max-md:h-[65px] max-md:content-center max-md:mr-[10px] max-md:text-center">
-                        <i class="fa-solid fa-truck text-[#1E1E1E]"></i>
+                    <div
+                        class="w-[70%] mx-auto px-[40px] py-[54px] bg-[#E6E6E6] rounded-[7px] text-center max-md:py-[5px] max-md:text-left max-md:px-[10px] max-md:grid max-md:grid-cols-[auto_1fr] max-md:w-[100%] max-md:items-center shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
+                        <div
+                            class="hidden max-md:block max-md:bg-[#D9D9D9] max-md:rounded-full max-md:w-[65px] max-md:h-[65px] max-md:content-center max-md:mr-[10px] max-md:text-center">
+                            <i class="fa-solid fa-truck text-[#1E1E1E]"></i>
                         </div>
                         <div>
-                        <h4 class="text-[20px] font-semibold">Trabalho Eficiente</h4>
-                        <p class="text-[13px] font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                            <h4 class="text-[20px] font-semibold">Trabalho Eficiente</h4>
+                            <p class="text-[13px] font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
                         </div>
                     </div>
-                    <div class="w-[70%] mx-auto px-[40px] py-[54px] bg-[#E6E6E6] rounded-[7px] text-center max-md:py-[5px] max-md:text-left max-md:px-[10px] max-md:grid max-md:grid-cols-[auto_1fr] max-md:w-[100%] max-md:items-center shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
-                        <div class="hidden max-md:block max-md:bg-[#D9D9D9] max-md:rounded-full max-md:w-[65px] max-md:h-[65px] max-md:content-center max-md:mr-[10px] max-md:text-center">
-                        <i class="fa-solid fa-leaf text-[#1E1E1E]"></i>
+                    <div
+                        class="w-[70%] mx-auto px-[40px] py-[54px] bg-[#E6E6E6] rounded-[7px] text-center max-md:py-[5px] max-md:text-left max-md:px-[10px] max-md:grid max-md:grid-cols-[auto_1fr] max-md:w-[100%] max-md:items-center shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
+                        <div
+                            class="hidden max-md:block max-md:bg-[#D9D9D9] max-md:rounded-full max-md:w-[65px] max-md:h-[65px] max-md:content-center max-md:mr-[10px] max-md:text-center">
+                            <i class="fa-solid fa-leaf text-[#1E1E1E]"></i>
                         </div>
                         <div>
-                        <h4 class="text-[20px] font-semibold">Coleta Inteligente</h4>
-                        <p class="text-[13px] font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            <h4 class="text-[20px] font-semibold">Coleta Inteligente</h4>
+                            <p class="text-[13px] font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
                         </div>
                     </div>
-                    <div class="w-[70%] mx-auto px-[40px] py-[54px] bg-[#E6E6E6] rounded-[7px] text-center max-md:py-[5px] max-md:text-left max-md:px-[10px] max-md:grid max-md:grid-cols-[auto_1fr] max-md:w-[100%] max-md:items-center shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
-                        <div class="hidden max-md:block max-md:bg-[#D9D9D9] max-md:rounded-full max-md:w-[65px] max-md:h-[65px] max-md:content-center max-md:mr-[10px] max-md:text-center">
-                        <i class="fa-solid fa-user-group text-[#1E1E1E]"></i>
+                    <div
+                        class="w-[70%] mx-auto px-[40px] py-[54px] bg-[#E6E6E6] rounded-[7px] text-center max-md:py-[5px] max-md:text-left max-md:px-[10px] max-md:grid max-md:grid-cols-[auto_1fr] max-md:w-[100%] max-md:items-center shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
+                        <div
+                            class="hidden max-md:block max-md:bg-[#D9D9D9] max-md:rounded-full max-md:w-[65px] max-md:h-[65px] max-md:content-center max-md:mr-[10px] max-md:text-center">
+                            <i class="fa-solid fa-user-group text-[#1E1E1E]"></i>
                         </div>
                         <div>
-                        <h4 class="text-[20px] font-semibold">Bem-estar</h4>
-                        <p class="text-[13px] font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                            <h4 class="text-[20px] font-semibold">Bem-estar</h4>
+                            <p class="text-[13px] font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            </p>
                         </div>
                     </div>
                 </div>
@@ -144,133 +164,199 @@
 
         <section x-show="pagina === 'contato'" class="pb-[35px]">
             <section class="max-w-[80vw] mx-auto">
-            <h1 class="text-[48px] font-semibold text-center my-[60px] max-md:text-[38px] max-md:mb-[30px] max-md:mt-[35px]">Fale com a EcoNatal</h1>
-            <p class="text-[24px] font-normal text-center mb-[35px] w-[50vw] mx-auto max-md:text-[18px]">Tem alguma dúvida, sugestão ou deseja saber mais sobre o projeto EcoNatal? Entre em contato conosco!</p>
-            <div class="bg-white p-[40px] border border-solid border-[#1C370A] rounded-[8px]">
-                <form action="https://formsubmit.co/ajax/econatal.meg@gmail.com" method="POST" class="flex flex-col gap-[32px]" data-form>
-                    <div class="flex flex-col">
-                        <label for="nome" class="text-[#1C2A02] text-[20px] font-normal max-md:text-[18px]">Seu nome</label>
-                        <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="nome">
-                    </div>
-                    <div class="flex flex-col">
-                        <label for="email" class="text-[#1C2A02] text-[20px] font-normal max-md:text-[18px]">Seu e-mail</label>
-                        <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="email">
-                    </div>
-                    <div class="flex flex-col">
-                        <label for="assunto" class="text-[#1C2A02] text-[20px] font-normal max-md:text-[18px]">Assunto</label>
-                        <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="assunto">
-                    </div>
-                    <div class="flex flex-col">
-                        <label for="mensagem" class="text-[#1C2A02] text-[20px] font-normal max-md:text-[18px]">Mensagem</label>
-                        <textarea name="mensagem" id="mensagem" class="border border-solid border-[#00000042] rounded-[6px] resize-none" rows="4" required></textarea>
-                    </div>
-                    <div class="grid grid-cols-2 gap-[56px] max-md:gap-[30px]">
-                        <button type="reset" class="border border-solid border-[#00000042] py-[10px] rounded-[10px] text-[20px] font-bold max-md:py-[5px] max-md:text-[18px]">Limpar</button>
-                        <button type="submit" class="bg-[#5C7E1B] py-[10px] rounded-[10px] text-white text-[20px] font-bold disabled:bg-gray-300 disabled:cursor-not-allowed max-md:py-[5px] max-md:text-[18px]" data-button>Enviar<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
-                    </div>
-                </form>
-            </div>
-            <p class="text-[20px] font-normal text-center mt-[35px] w-[50vw] mx-auto max-md:text-[16px]">Responderemos o mais breve possível. Sua opinião é importante para melhorar nossas ações em prol do meio ambiente.</p>
+                <h1
+                    class="text-[48px] font-semibold text-center my-[60px] max-md:text-[38px] max-md:mb-[30px] max-md:mt-[35px]">
+                    Fale com a EcoNatal</h1>
+                <p class="text-[24px] font-normal text-center mb-[35px] w-[50vw] mx-auto max-md:text-[18px]">Tem alguma
+                    dúvida, sugestão ou deseja saber mais sobre o projeto EcoNatal? Entre em contato conosco!</p>
+                <div class="bg-white p-[40px] border border-solid border-[#1C370A] rounded-[8px]">
+                    <form action="https://formsubmit.co/ajax/econatal.meg@gmail.com" method="POST"
+                        class="flex flex-col gap-[32px]" data-form>
+                        <div class="flex flex-col">
+                            <label for="nome" class="text-[#1C2A02] text-[20px] font-normal max-md:text-[18px]">Seu
+                                nome</label>
+                            <input type="text" name="nome" placeholder="Digite seu nome completo"
+                                class="border border-solid border-[#00000042] rounded-[6px] h-[50px] px-4 text-[16px]"
+                                id="nome" required>
+                        </div>
+                        <div class="flex flex-col">
+                            <label for="email" class="text-[#1C2A02] text-[20px] font-normal max-md:text-[18px]">Seu
+                                e-mail</label>
+                            <input type="email" name="email" placeholder="exemplo@email.com"
+                                class="border border-solid border-[#00000042] rounded-[6px] h-[50px] px-4 text-[16px]"
+                                id="email" required>
+                        </div>
+                        <div class="flex flex-col">
+                            <label for="assunto"
+                                class="text-[#1C2A02] text-[20px] font-normal max-md:text-[18px]">Assunto</label>
+                            <input type="text" name="assunto" placeholder="Sobre o que você quer falar?"
+                                class="border border-solid border-[#00000042] rounded-[6px] h-[50px] px-4 text-[16px]"
+                                id="assunto" required>
+                        </div>
+                        <div class="flex flex-col">
+                            <label for="mensagem"
+                                class="text-[#1C2A02] text-[20px] font-normal max-md:text-[18px]">Mensagem</label>
+                            <textarea name="mensagem" id="mensagem" placeholder="Escreva sua mensagem aqui..."
+                                class="border border-solid border-[#00000042] rounded-[6px] resize-none h-40 p-4 text-[16px]"
+                                rows="6" required></textarea>
+                        </div>
+                        <div class="grid grid-cols-2 gap-[56px] max-md:gap-[30px]">
+                            <button type="reset"
+                                class="border border-solid border-[#00000042] py-[10px] rounded-[10px] text-[20px] font-bold max-md:py-[5px] max-md:text-[18px]">Limpar</button>
+                            <button type="submit"
+                                class="bg-[#5C7E1B] py-[10px] rounded-[10px] text-white text-[20px] font-bold disabled:bg-gray-300 disabled:cursor-not-allowed max-md:py-[5px] max-md:text-[18px] transition-colors duration-200"
+                                data-button disabled>Enviar<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
+                        </div>
+                    </form>
+                </div>
             </section>
         </section>
 
         <section x-show="pagina === 'projeto'" class="min-h-[100vh] text-[#1C2A02] mt-[60px] max-md:mb-[25px]">
             <section class="max-w-[90%] mx-auto">
-            <div class="collapse collapse-arrow border border-solid border-[#1C2A02] rounded-bl-[0px] rounded-br-[0px]">
-            <input type="radio" name="my-accordion-2" checked="checked" />
-            <div class="collapse-title font-extrabold text-[30px] max-md:text-[25px]">O PROJETO</div>
-            <div class="collapse-content text-[20px] font-normal max-md:text-[15px]">
-                <p class="text-justify mb-[8px]">A empresa EcoNatal é composta por alunos do 2° ano do Ensino Médio, dos cursos técnicos integrados de Comércio e de Informática para Internet,  do IFRN Zona Norte. Ela é uma das soluções pensada para o trabalho final da disciplina de Geografia II, ministrada pela professora Maria José Marjorie Ramos da Silva, e interliga-se com outras disciplinas do currículo dos cursos, sendo elas APOO (Análise e Projeto Orientado a Objeto), Artes III, Banco de Dados, Design Web, Língua Portuguesa e Literatura II e Matemática Financeira, as quais seus responsáveis são respectivamente Pedro Baesse Alves Pereira, Zildalte Ramos de Macedo, Tiago de Oliveira Barreto, Cesimar Xavier de Souza Dias, Sandra Cristinne Xavier da Camara e Vanessa Camara de Medeiros Fernandes.</p>
-                <p class="text-justify">Este ano, o tema trabalhado com o MEG (Mundo Encantado da Geografia) para esse trabalho é “Olhares sobre o urbano’, no qual as guildas GeoFadas, de Informática, e Thunderbolts, de Comércio, decidiram trabalhar com o subtema ‘Poluição urbana’, voltando suas observações principalmente para o problema do descarte inadequado do lixo no bairro de Pajuçara, na zona norte da cidade de Natal, no estado do Rio Grande do Norte.</p>
-            </div>
-            </div>
-            <div class="collapse collapse-arrow border-x border-solid border-[#1C2A02] rounded-bl-[0px] rounded-br-[0px] rounded-tl-[0px] rounded-tr-[0px]">
-            <input type="radio" name="my-accordion-2" />
-            <div class="collapse-title font-extrabold text-[30px] max-md:text-[25px]">OBJETIVO</div>
-            <div class="collapse-content text-[20px] font-normal max-md:text-[15px]">
-                <p class="text-justify mb-[8px]">O projeto EcoNatal tem como objetivo conscientizar a população do bairro Pajuçara, na zona norte de Natal/RN, sobre os problemas causados pelo descarte inadequado do lixo e a importância de práticas sustentáveis, como a reciclagem e a reutilização de materiais. A partir disso, busca-se reduzir a poluição urbana e incentivar atitudes mais responsáveis no dia a dia da comunidade.</p>
-                <p class="text-justify">Para alcançar esse objetivo, o projeto propõe a criação da empresa EcoNatal, que contará com lixeiras inteligentes, um site informativo voltado para os moradores do bairro e o aplicativo EcoPlay, destinado principalmente a crianças. Essas ferramentas utilizam a tecnologia e a educação de forma acessível e interativa, contribuindo para a formação de uma população mais consciente e para a melhoria da qualidade de vida local.</p>
-            </div>
-            </div>
-            <div class="collapse collapse-arrow border border-solid border-[#1C2A02] rounded-tl-[0px] rounded-tr-[0px]">
-            <input type="radio" name="my-accordion-2" />
-            <div class="collapse-title font-extrabold text-[30px] max-md:text-[25px]">COMO VAMOS ALCANÇAR</div>
-            <div class="collapse-content text-[20px] font-normal max-md:text-[15px]">
-                <p class="text-justify mb-[8px]">Nós, da empresa EcoPlay, planejamos alcançar o objetivo de conscientização ecológica por meio de ensino interativo e descontraído. Pelo nosso aplicativo, as crianças têm acesso a informações sobre como cuidar bem do meio ambiente, com jogos disponibilizados pela plataforma e desafios desenvolvidos por professores filiados, para assim entenderem a importância dos recursos naturais e respeitá-los, garantindo um futuro sustentável.</p>
-                <p class="text-justify">Dessa forma, visamos a conscientização de uma nova geração mais bem preparada para discutir e remediar os problemas ambientais que vêm crescendo de forma alarmante no cenário tanto nacional quanto global. Nossa intenção é que nossa iniciativa ajude a sociedade como um todo, por meio de parcerias com ONGs, escolas e comunidades locais, melhorando a saúde do planeta e, consequentemente, a qualidade de vida da população.</p>
-            </div>
-            </div>
+                <div
+                    class="collapse collapse-arrow border border-solid border-[#1C2A02] rounded-bl-[0px] rounded-br-[0px]">
+                    <input type="radio" name="my-accordion-2" checked="checked" />
+                    <div class="collapse-title font-extrabold text-[30px] max-md:text-[25px]">O PROJETO</div>
+                    <div class="collapse-content text-[20px] font-normal max-md:text-[15px]">
+                        <p class="text-justify mb-[8px]">A empresa EcoNatal é composta por alunos do 2° ano do Ensino
+                            Médio, dos cursos técnicos integrados de Comércio e de Informática para Internet,  do IFRN
+                            Zona Norte. Ela é uma das soluções pensada para o trabalho final da disciplina de Geografia
+                            II, ministrada pela professora Maria José Marjorie Ramos da Silva, e interliga-se com outras
+                            disciplinas do currículo dos cursos, sendo elas APOO (Análise e Projeto Orientado a Objeto),
+                            Artes III, Banco de Dados, Design Web, Língua Portuguesa e Literatura II e Matemática
+                            Financeira, as quais seus responsáveis são respectivamente Pedro Baesse Alves Pereira,
+                            Zildalte Ramos de Macedo, Tiago de Oliveira Barreto, Cesimar Xavier de Souza Dias, Sandra
+                            Cristinne Xavier da Camara e Vanessa Camara de Medeiros Fernandes.</p>
+                        <p class="text-justify">Este ano, o tema trabalhado com o MEG (Mundo Encantado da Geografia)
+                            para esse trabalho é “Olhares sobre o urbano’, no qual as guildas GeoFadas, de Informática,
+                            e Thunderbolts, de Comércio, decidiram trabalhar com o subtema ‘Poluição urbana’, voltando
+                            suas observações principalmente para o problema do descarte inadequado do lixo no bairro de
+                            Pajuçara, na zona norte da cidade de Natal, no estado do Rio Grande do Norte.</p>
+                    </div>
+                </div>
+                <div
+                    class="collapse collapse-arrow border-x border-solid border-[#1C2A02] rounded-bl-[0px] rounded-br-[0px] rounded-tl-[0px] rounded-tr-[0px]">
+                    <input type="radio" name="my-accordion-2" />
+                    <div class="collapse-title font-extrabold text-[30px] max-md:text-[25px]">OBJETIVO</div>
+                    <div class="collapse-content text-[20px] font-normal max-md:text-[15px]">
+                        <p class="text-justify mb-[8px]">O projeto EcoNatal tem como objetivo conscientizar a população
+                            do bairro Pajuçara, na zona norte de Natal/RN, sobre os problemas causados pelo descarte
+                            inadequado do lixo e a importância de práticas sustentáveis, como a reciclagem e a
+                            reutilização de materiais. A partir disso, busca-se reduzir a poluição urbana e incentivar
+                            atitudes mais responsáveis no dia a dia da comunidade.</p>
+                        <p class="text-justify">Para alcançar esse objetivo, o projeto propõe a criação da empresa
+                            EcoNatal, que contará com lixeiras inteligentes, um site informativo voltado para os
+                            moradores do bairro e o aplicativo EcoPlay, destinado principalmente a crianças. Essas
+                            ferramentas utilizam a tecnologia e a educação de forma acessível e interativa, contribuindo
+                            para a formação de uma população mais consciente e para a melhoria da qualidade de vida
+                            local.</p>
+                    </div>
+                </div>
+                <div
+                    class="collapse collapse-arrow border border-solid border-[#1C2A02] rounded-tl-[0px] rounded-tr-[0px]">
+                    <input type="radio" name="my-accordion-2" />
+                    <div class="collapse-title font-extrabold text-[30px] max-md:text-[25px]">COMO VAMOS ALCANÇAR</div>
+                    <div class="collapse-content text-[20px] font-normal max-md:text-[15px]">
+                        <p class="text-justify mb-[8px]">Nós, da empresa EcoPlay, planejamos alcançar o objetivo de
+                            conscientização ecológica por meio de ensino interativo e descontraído. Pelo nosso
+                            aplicativo, as crianças têm acesso a informações sobre como cuidar bem do meio ambiente, com
+                            jogos disponibilizados pela plataforma e desafios desenvolvidos por professores filiados,
+                            para assim entenderem a importância dos recursos naturais e respeitá-los, garantindo um
+                            futuro sustentável.</p>
+                        <p class="text-justify">Dessa forma, visamos a conscientização de uma nova geração mais bem
+                            preparada para discutir e remediar os problemas ambientais que vêm crescendo de forma
+                            alarmante no cenário tanto nacional quanto global. Nossa intenção é que nossa iniciativa
+                            ajude a sociedade como um todo, por meio de parcerias com ONGs, escolas e comunidades
+                            locais, melhorando a saúde do planeta e, consequentemente, a qualidade de vida da população.
+                        </p>
+                    </div>
+                </div>
             </section>
         </section>
 
-        <section x-show="pagina === 'login'" class="bg-[#F1F1F1] grid grid-cols-[1fr_1.5fr] min-h-[100vh] max-md:flex max-md:flex-col max-md:bg-[#F7F7F7]">
+        <section x-show="pagina === 'login'"
+            class="bg-[#F1F1F1] grid grid-cols-[1fr_1.5fr] min-h-[100vh] max-md:flex max-md:flex-col max-md:bg-[#F7F7F7]">
             <div class="hidden max-md:block">
                 <img src="img/logo-econatal.svg" alt="Logo da econatal" class="my-[19px] mx-[22px]">
             </div>
             <div class="bg-[#F7F7F7] flex flex-col justify-center align-center min-h-[80vh]">
                 <div class="mx-[78px]">
-                <h1 class="text-[40px] font-bold text-[#1C2A02] text-center" id="titleC">Bem-vindo(a)!</h1>
-                <p class="text-[20px] font-normal text-[#1C2A02] mb-[30px] text-center" id="textC">Ficamos felizes de te ter de volta</p>
-                <form action="" class="w-[100%]">
-                    <section id="passo1">
-                        <div class="flex flex-col mb-[18px]">
-                            <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu e-mail</label>
-                            <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
-                        </div>
-                        <div class="flex flex-col">
-                            <label for="" class="text-[#1C2A02] text-[18px] font-normal">Sua senha</label>
-                            <input type="password" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
-                        </div>
-                        <p class="text-right"><a @click="pagina = 'cadastro'" class="underline text-[16px] font-normal mt-[10px] text-[#1C2A02] cursor-pointer">Esqueceu sua senha?</a></p>
-                        <div class="flex flex-col justify-center mx-auto mt-[35px]">
-                        <button type="submit" class="w-[30vh] mx-auto bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Entrar<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
-                        <a @click="pagina = 'cadastro'" class="text-center underline text-[16px] font-normal mt-[10px] text-[#1C2A02] cursor-pointer">Ainda não possui uma conta?</a>
-                        </div>
-                    </section>
+                    <h1 class="text-[40px] font-bold text-[#1C2A02] text-center" id="titleC">Bem-vindo(a)!</h1>
+                    <p class="text-[20px] font-normal text-[#1C2A02] mb-[30px] text-center" id="textC">Ficamos felizes
+                        de te ter de volta</p>
+                    <form action="" class="w-[100%]">
+                        <section id="passo1">
+                            <div class="flex flex-col mb-[18px]">
+                                <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu e-mail</label>
+                                <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                            </div>
+                            <div class="flex flex-col">
+                                <label for="" class="text-[#1C2A02] text-[18px] font-normal">Sua senha</label>
+                                <input type="password" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                            </div>
+                            <p class="text-right"><a @click="pagina = 'cadastro'"
+                                    class="underline text-[16px] font-normal mt-[10px] text-[#1C2A02] cursor-pointer">Esqueceu
+                                    sua senha?</a></p>
+                            <div class="flex flex-col justify-center mx-auto mt-[35px]">
+                                <button type="submit"
+                                    class="w-[30vh] mx-auto bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Entrar<i
+                                        class="fa-solid fa-chevron-right ml-[5px]"></i></button>
+                                <a @click="pagina = 'cadastro'"
+                                    class="text-center underline text-[16px] font-normal mt-[10px] text-[#1C2A02] cursor-pointer">Ainda
+                                    não possui uma conta?</a>
+                            </div>
+                        </section>
                     </form>
                 </div>
             </div>
             <div class="max-md:hidden">
                 <div class="flex justify-end">
-                <img src="img/logo-econatal.svg" alt="Logo da econatal" class="my-[19px] mx-[22px]">
+                    <img src="img/logo-econatal.svg" alt="Logo da econatal" class="my-[19px] mx-[22px]">
                 </div>
                 <div class="flex flex-col justify-center align-center min-h-[80%]">
-                <img src="img/imagem-personagem.svg" alt="Imagem de personagem" class="mx-auto">
+                    <img src="img/imagem-personagem.svg" alt="Imagem de personagem" class="mx-auto">
                 </div>
             </div>
         </section>
 
-        <section x-show="pagina === 'cadastro'" class="bg-[#F1F1F1] grid grid-cols-[1.5fr_1fr] min-h-[100vh] max-md:flex max-md:flex-col max-md:bg-[#F7F7F7]">
+        <section x-show="pagina === 'cadastro'"
+            class="bg-[#F1F1F1] grid grid-cols-[1.5fr_1fr] min-h-[100vh] max-md:flex max-md:flex-col max-md:bg-[#F7F7F7]">
             <div>
                 <img src="img/logo-econatal.svg" alt="Logo da econatal" class="my-[19px] mx-[22px]">
                 <div class="flex flex-col justify-center align-center min-h-[80%] max-md:hidden">
-                <img src="img/imagem-personagem.svg" alt="Imagem de personagem" class="mx-auto">
+                    <img src="img/imagem-personagem.svg" alt="Imagem de personagem" class="mx-auto">
                 </div>
             </div>
             <div class="bg-[#F7F7F7] flex flex-col justify-center align-center min-h-[80vh]">
                 <div class="mx-[78px]">
-                <h1 class="text-[40px] font-bold text-[#1C2A02] text-center" id="titleC">Primeira vez?</h1>
-                <p class="text-[20px] font-normal text-[#1C2A02] mb-[30px] text-center" id="textC">Deixe-nos saber um pouco de você!</p>
-                <form action="" class="w-[100%]">
-                    <section id="passo1">
-                        <div class="flex flex-col mb-[18px]">
-                            <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu nome (completo)</label>
-                            <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
-                        </div>
-                        <div class="flex flex-col mb-[18px]">
-                            <label for="" class="text-[#1C2A02] text-[18px] font-normal">Data de nascimento</label>
-                            <input type="date" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
-                        </div>
-                        <div class="flex flex-col mb-[35px]">
-                            <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu e-mail</label>
-                            <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
-                        </div>
-                        <div class="flex flex-col justify-center w-[30vh] mx-auto">
-                        <button type="button" onclick="proximoPasso()" class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Avançar<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
-                        <a @click="pagina = 'login'" class="text-center underline text-[16px] font-normal mt-[10px] text-[#1C2A02] cursor-pointer">Já possui uma conta?</a>
-                        </div>
-                    </section>
-                    <section class="hidden" id="passo2">
+                    <h1 class="text-[40px] font-bold text-[#1C2A02] text-center" id="titleC">Primeira vez?</h1>
+                    <p class="text-[20px] font-normal text-[#1C2A02] mb-[30px] text-center" id="textC">Deixe-nos saber
+                        um pouco de você!</p>
+                    <form action="" class="w-[100%]">
+                        <section id="passo1">
+                            <div class="flex flex-col mb-[18px]">
+                                <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu nome (completo)</label>
+                                <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                            </div>
+                            <div class="flex flex-col mb-[18px]">
+                                <label for="" class="text-[#1C2A02] text-[18px] font-normal">Data de nascimento</label>
+                                <input type="date" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                            </div>
+                            <div class="flex flex-col mb-[35px]">
+                                <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu e-mail</label>
+                                <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
+                            </div>
+                            <div class="flex flex-col justify-center w-[30vh] mx-auto">
+                                <button type="button" onclick="proximoPasso()"
+                                    class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Avançar<i
+                                        class="fa-solid fa-chevron-right ml-[5px]"></i></button>
+                                <a @click="pagina = 'login'"
+                                    class="text-center underline text-[16px] font-normal mt-[10px] text-[#1C2A02] cursor-pointer">Já
+                                    possui uma conta?</a>
+                            </div>
+                        </section>
+                        <section class="hidden" id="passo2">
                             <div class="flex flex-col mb-[18px]">
                                 <label for="" class="text-[#1C2A02] text-[18px] font-normal">Seu CEP</label>
                                 <input type="text" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
@@ -284,111 +370,135 @@
                                 <input type="password" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]">
                             </div>
                             <div class="grid grid-cols-2 gap-[5px]">
-                            <button type="button" onclick="passoAnterior()" class="border border-[3px] border-[#1C2A02] text-[#1C2A02] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap"><i class="fa-solid fa-chevron-left mr-[5px]"></i>Voltar</button>
-                            <button type="submit" class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Concluir<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
+                                <button type="button" onclick="passoAnterior()"
+                                    class="border border-[3px] border-[#1C2A02] text-[#1C2A02] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap"><i
+                                        class="fa-solid fa-chevron-left mr-[5px]"></i>Voltar</button>
+                                <button type="submit"
+                                    class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Concluir<i
+                                        class="fa-solid fa-chevron-right ml-[5px]"></i></button>
                             </div>
-                    </section>
+                        </section>
                     </form>
                 </div>
             </div>
         </section>
 
-        <section x-show="pagina === 'registro'" class="bg-[#9BB569] grid grid-cols-[1.5fr_1fr] min-h-[100vh] max-md:flex max-md:flex-col max-md:bg-[#1C2A02]">
+        <section x-show="pagina === 'registro'"
+            class="bg-[#9BB569] grid grid-cols-[1.5fr_1fr] min-h-[100vh] max-md:flex max-md:flex-col max-md:bg-[#1C2A02]">
             <div>
-                <img src="img/logo-econatal-2.svg" alt="Logo da econatal" class="my-[19px] mx-[22px] text-[#1C2A02] max-md:hidden">
-                <img src="img/logo-econatal-3.svg" alt="Logo da econatal" class="my-[19px] mx-[22px] text-[#1C2A02] hidden max-md:block">
+                <img src="img/logo-econatal-2.svg" alt="Logo da econatal"
+                    class="my-[19px] mx-[22px] text-[#1C2A02] max-md:hidden">
+                <img src="img/logo-econatal-3.svg" alt="Logo da econatal"
+                    class="my-[19px] mx-[22px] text-[#1C2A02] hidden max-md:block">
                 <div class="flex flex-col justify-center align-center min-h-[80%]">
-                <img src="img/imagem-personagem.svg" alt="Imagem de personagem" class="mx-auto max-md:hidden">
+                    <img src="img/imagem-personagem.svg" alt="Imagem de personagem" class="mx-auto max-md:hidden">
                 </div>
             </div>
             <div class="bg-[#1C2A02] flex flex-col justify-center align-center min-h-[80vh]">
                 <div class="mx-[78px]">
-                <h1 class="text-[40px] font-bold text-[#EDFFCC] text-center" id="titleC">Novo por aqui?</h1>
-                <p class="text-[20px] font-normal text-[#EDFFCC] mb-[30px] text-center" id="textC">Registre-se para se juntar à comunidade de catadores da EcoNatal</p>
-                <form action="" class="w-[100%]">
-                    <section id="passo1">
-                        <div class="flex flex-col mb-[18px]">
-                            <label for="" class="text-[#EDFFCC] text-[18px] font-normal">Seu nome (completo)</label>
-                            <input type="text" class="bg-[#EDFFCC] border-none rounded-[6px] h-[50px]">
-                        </div>
-                        <div class="flex flex-col mb-[18px]">
-                            <label for="" class="text-[#EDFFCC] text-[18px] font-normal">Telefone/Celular</label>
-                            <input type="text" class="bg-[#EDFFCC] border-none rounded-[6px] h-[50px]">
-                        </div>
-                        <div class="flex flex-col mb-[35px]">
-                            <label for="" class="text-[#EDFFCC] text-[18px] font-normal">Seu e-mail</label>
-                            <input type="text" class="bg-[#EDFFCC] border-none rounded-[6px] h-[50px]">
-                        </div>
-                        <div class="flex flex-col justify-center w-[30vh] mx-auto">
-                        <button type="button" class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Avançar<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
-                        </div>
-                    </section>
-                    <section id="passo2" class="hidden">
+                    <h1 class="text-[40px] font-bold text-[#EDFFCC] text-center" id="titleC">Novo por aqui?</h1>
+                    <p class="text-[20px] font-normal text-[#EDFFCC] mb-[30px] text-center" id="textC">Registre-se para
+                        se juntar à comunidade de catadores da EcoNatal</p>
+                    <form action="" class="w-[100%]">
+                        <section id="passo1">
+                            <div class="flex flex-col mb-[18px]">
+                                <label for="" class="text-[#EDFFCC] text-[18px] font-normal">Seu nome (completo)</label>
+                                <input type="text" class="bg-[#EDFFCC] border-none rounded-[6px] h-[50px]">
+                            </div>
+                            <div class="flex flex-col mb-[18px]">
+                                <label for="" class="text-[#EDFFCC] text-[18px] font-normal">Telefone/Celular</label>
+                                <input type="text" class="bg-[#EDFFCC] border-none rounded-[6px] h-[50px]">
+                            </div>
+                            <div class="flex flex-col mb-[35px]">
+                                <label for="" class="text-[#EDFFCC] text-[18px] font-normal">Seu e-mail</label>
+                                <input type="text" class="bg-[#EDFFCC] border-none rounded-[6px] h-[50px]">
+                            </div>
+                            <div class="flex flex-col justify-center w-[30vh] mx-auto">
+                                <button type="button"
+                                    class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Avançar<i
+                                        class="fa-solid fa-chevron-right ml-[5px]"></i></button>
+                            </div>
+                        </section>
+                        <section id="passo2" class="hidden">
                             <div class="flex flex-col mb-[18px]">
                                 <label for="" class="text-[#EDFFCC] text-[18px] font-normal">Seu CEP</label>
                                 <input type="text" class="bg-[#EDFFCC] border-none rounded-[6px] h-[50px]">
                             </div>
                             <div class="mb-[18px]">
-                                <label for="" class="text-[#EDFFCC] text-[18px] font-normal">Selecione as coletas que você realiza:</label>
+                                <label for="" class="text-[#EDFFCC] text-[18px] font-normal">Selecione as coletas que
+                                    você realiza:</label>
                                 <div class="flex items-center gap-[4px]">
-                                <input type="checkbox" id="papel" name="papel" class="appearance-none w-[14px] h-[14px] rounded-[3px] border border-[2px] border-[#EDFFCC] bg-none checked:bg-[#EDFFCC] cursor-pointer">
-                                <label for="papel" class="text-[#EDFFCC]">Papel</label>
+                                    <input type="checkbox" id="papel" name="papel"
+                                        class="appearance-none w-[14px] h-[14px] rounded-[3px] border border-[2px] border-[#EDFFCC] bg-none checked:bg-[#EDFFCC] cursor-pointer">
+                                    <label for="papel" class="text-[#EDFFCC]">Papel</label>
                                 </div>
                                 <div class="flex items-center gap-[4px]">
-                                <input type="checkbox" id="metal" name="metal" class="appearance-none w-[14px] h-[14px] rounded-[3px] border border-[2px] border-[#EDFFCC] bg-none checked:bg-[#EDFFCC] cursor-pointer">
-                                <label for="metal" class="text-[#EDFFCC]">Metal</label>
+                                    <input type="checkbox" id="metal" name="metal"
+                                        class="appearance-none w-[14px] h-[14px] rounded-[3px] border border-[2px] border-[#EDFFCC] bg-none checked:bg-[#EDFFCC] cursor-pointer">
+                                    <label for="metal" class="text-[#EDFFCC]">Metal</label>
                                 </div>
                                 <div class="flex items-center gap-[4px]">
-                                <input type="checkbox" id="plastico" name="plastico" class="appearance-none w-[14px] h-[14px] rounded-[3px] border border-[2px] border-[#EDFFCC] bg-none checked:bg-[#EDFFCC] cursor-pointer">
-                                <label for="plastico" class="text-[#EDFFCC]">Plástico</label>
+                                    <input type="checkbox" id="plastico" name="plastico"
+                                        class="appearance-none w-[14px] h-[14px] rounded-[3px] border border-[2px] border-[#EDFFCC] bg-none checked:bg-[#EDFFCC] cursor-pointer">
+                                    <label for="plastico" class="text-[#EDFFCC]">Plástico</label>
                                 </div>
                                 <div class="flex items-center gap-[4px]">
-                                <input type="checkbox" id="vidro" name="vidro" class="appearance-none w-[14px] h-[14px] rounded-[3px] border border-[2px] border-[#EDFFCC] bg-none checked:bg-[#EDFFCC] cursor-pointer">
-                                <label for="vidro" class="text-[#EDFFCC]">Vidro</label>
+                                    <input type="checkbox" id="vidro" name="vidro"
+                                        class="appearance-none w-[14px] h-[14px] rounded-[3px] border border-[2px] border-[#EDFFCC] bg-none checked:bg-[#EDFFCC] cursor-pointer">
+                                    <label for="vidro" class="text-[#EDFFCC]">Vidro</label>
                                 </div>
                                 <div class="flex items-center gap-[4px]">
-                                <input type="checkbox" id="organico" name="organico" class="appearance-none w-[14px] h-[14px] rounded-[3px] border border-[2px] border-[#EDFFCC] bg-none checked:bg-[#EDFFCC] cursor-pointer">
-                                <label for="organico" class="text-[#EDFFCC]">Orgânico</label>
+                                    <input type="checkbox" id="organico" name="organico"
+                                        class="appearance-none w-[14px] h-[14px] rounded-[3px] border border-[2px] border-[#EDFFCC] bg-none checked:bg-[#EDFFCC] cursor-pointer">
+                                    <label for="organico" class="text-[#EDFFCC]">Orgânico</label>
                                 </div>
                             </div>
                             <div class="grid grid-cols-2 gap-[5px]">
-                            <button type="button" class="border border-[3px] border-[#9BB569] text-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap"><i class="fa-solid fa-chevron-left mr-[5px]"></i>Voltar</button>
-                            <button type="submit" class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Concluir<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
+                                <button type="button"
+                                    class="border border-[3px] border-[#9BB569] text-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap"><i
+                                        class="fa-solid fa-chevron-left mr-[5px]"></i>Voltar</button>
+                                <button type="submit"
+                                    class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap">Concluir<i
+                                        class="fa-solid fa-chevron-right ml-[5px]"></i></button>
                             </div>
-                    </section>
+                        </section>
                     </form>
                 </div>
             </div>
         </section>
     </main>
-    <footer x-show="pagina === 'homepage' | pagina === 'contato' | pagina === 'projeto'" class="bg-[#1C2A02] text-white pt-[40px] pb-[100px] px-[40px]">
+    <footer x-show="pagina === 'homepage' | pagina === 'contato' | pagina === 'projeto'"
+        class="bg-[#1C2A02] text-white pt-[40px] pb-[100px] px-[40px]">
         <img src="img/logo-econatal.svg" alt="Logo da EcoNatal" class="mb-[60px]">
         <div class="grid grid-cols-3 gap-35 max-md:flex max-md:flex-col max-md:gap-[15px]">
-        <div>
-            <h5 class="text-[20px] font-normal mb-[18px] max-md:mb-[5px]">Sobre</h5>
-            <p class="text-[13px] font-normal mb-[15px] max-w-[50%]">Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
-            <p class="text-[13px] font-normal max-w-[50%]">Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
-        </div>
-        <div>
-            <h5 class="text-[20px] font-normal mb-[18px] max-md:mb-[5px]">Links</h5>
-            <ul class="text-[13px] font-normal list-disc list-inside flex flex-col gap-2">
-                <li class="cursor-pointer"><a @click="pagina = 'contato'">Contato</a></li>
-                <li class="cursor-pointer"><a @click="pagina = 'projeto'">O projeto</a></li>
-                <li class="cursor-pointer"><a @click="pagina = 'login'">Login</a></li>
-                <li class="cursor-pointer"><a @click="pagina = 'cadastro'">Cadastro</a></li>
-            </ul>
-        </div>
-        <div>
-            <h5 class="text-[20px] font-normal mb-[18px] max-md:mb-[5px]">Informações</h5>
-            <ul class="text-[13px] font-normal flex flex-col gap-2">
-                <li><i class="fa-solid fa-location-dot text-[#9BB569] mr-[8px]"></i>Lorem Ipsum, Natal 512</li>
-                <li><i class="fa-solid fa-envelope text-[#9BB569] mr-[8px]"></i>Email: econatal.meg@gmail.com</li>
-                <li><i class="fa-brands fa-instagram text-[#9BB569] mr-[8px]"></i>Instagram: eco_natal</li>
-                <li><i class="fa-brands fa-github text-[#9BB569] mr-[8px]"></i>GitHub: exemple-rep</li>
-            </ul>
-        </div>
+            <div>
+                <h5 class="text-[20px] font-normal mb-[18px] max-md:mb-[5px]">Sobre</h5>
+                <p class="text-[13px] font-normal mb-[15px] max-w-[50%]">Lorem ipsum dolor sit amet, consectetur
+                    adipiscing elit. </p>
+                <p class="text-[13px] font-normal max-w-[50%]">Ut enim ad minim veniam, quis nostrud exercitation
+                    ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div>
+                <h5 class="text-[20px] font-normal mb-[18px] max-md:mb-[5px]">Links</h5>
+                <ul class="text-[13px] font-normal list-disc list-inside flex flex-col gap-2">
+                    <li class="cursor-pointer"><a @click="pagina = 'contato'">Contato</a></li>
+                    <li class="cursor-pointer"><a @click="pagina = 'projeto'">O projeto</a></li>
+                    <li class="cursor-pointer"><a @click="pagina = 'login'">Login</a></li>
+                    <li class="cursor-pointer"><a @click="pagina = 'cadastro'">Cadastro</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="text-[20px] font-normal mb-[18px] max-md:mb-[5px]">Informações</h5>
+                <ul class="text-[13px] font-normal flex flex-col gap-2">
+                    <li><i class="fa-solid fa-location-dot text-[#9BB569] mr-[8px]"></i>Lorem Ipsum, Natal 512</li>
+                    <li><i class="fa-solid fa-envelope text-[#9BB569] mr-[8px]"></i>Email: econatal.meg@gmail.com</li>
+                    <li><i class="fa-brands fa-instagram text-[#9BB569] mr-[8px]"></i>Instagram: eco_natal</li>
+                    <li><i class="fa-brands fa-github text-[#9BB569] mr-[8px]"></i>GitHub: exemple-rep</li>
+                </ul>
+            </div>
         </div>
     </footer>
 
 </body>
+
 </html>
