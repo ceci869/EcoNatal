@@ -21,7 +21,7 @@ const Usuario = new Schema({
         type: String,
         required: true
     },
-    cep: {
+    rua: {
         type: String,
         required: true
     },

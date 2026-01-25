@@ -10,7 +10,7 @@
     <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
-    <script defer src="message_form.js"></script>
+        <script defer src="message_form.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -126,15 +126,15 @@
                 <form action="https://formsubmit.co/ajax/econatal.meg@gmail.com" method="POST" class="flex flex-col gap-[32px]" data-form>
                     <div class="flex flex-col">
                         <label for="nome" class="text-[#1C2A02] text-[20px] font-normal">Seu nome</label>
-                        <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="nome">
+                        <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="nome" required>
                     </div>
                     <div class="flex flex-col">
                         <label for="email" class="text-[#1C2A02] text-[20px] font-normal">Seu e-mail</label>
-                        <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="email">
+                        <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="email" required>
                     </div>
                     <div class="flex flex-col">
                         <label for="assunto" class="text-[#1C2A02] text-[20px] font-normal">Assunto</label>
-                        <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="assunto">
+                        <input type="text" class="border border-solid border-[#00000042] rounded-[6px]" id="assunto" required>
                     </div>
                     <div class="flex flex-col">
                         <label for="mensagem" class="text-[#1C2A02] text-[20px] font-normal">Mensagem</label>
@@ -214,8 +214,8 @@
 
                     <section class="hidden" id="passo2">
                             <div class="flex flex-col mb-[18px]">
-                                <label for="cep" class="text-[#1C2A02] text-[18px] font-normal">Seu CEP</label>
-                                <input type="text" name="cep" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]" required>
+                                <label for="rua" class="text-[#1C2A02] text-[18px] font-normal">Sua rua</label>
+                                <input type="text" name="rua" class="bg-[#F1F1F1] border-none rounded-[6px] h-[50px]" required>
                             </div>
                             <div class="flex flex-col mb-[18px]">
                                 <label for="senha" class="text-[#1C2A02] text-[18px] font-normal">Escolha sua senha</label>

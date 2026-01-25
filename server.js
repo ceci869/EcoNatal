@@ -23,7 +23,11 @@ app.post('/api/cadastro_usuarios', async (req, res) => {
     console.log('Recebendo pedido de cadastro:', req.body);
 
     try {
-        const {nome, data_nascimento, email, cep, senha } = req.body;
+        const {nome, data_nascimento, email, rua, senha } = req.body;
+
+        if (!nome || !data_nascimento || !email || !rua || !senha ) {
+            return res.status(400).json({ erro: 'Preencha todos os seus dados!!' })
+        }
 
         const usuarioExiste = await Usuario.findOne({ email: email });
         if (usuarioExiste) {
@@ -37,7 +41,7 @@ app.post('/api/cadastro_usuarios', async (req, res) => {
             nome,
             data_nascimento,
             email,
-            cep,
+            rua,
             senha: senhaHash
         });
 
