@@ -174,28 +174,28 @@
             </section>
         </section>
 
-        <section x-show="pagina === 'projeto'" class="min-h-[100vh] text-[#1C2A02] mt-[60px]">
+        <section x-show="pagina === 'projeto'" class="min-h-[100vh] text-[#1C2A02] mt-[60px] max-md:mb-[25px]">
             <section class="max-w-[90%] mx-auto">
             <div class="collapse collapse-arrow border border-solid border-[#1C2A02] rounded-bl-[0px] rounded-br-[0px]">
             <input type="radio" name="my-accordion-2" checked="checked" />
-            <div class="collapse-title font-extrabold text-[30px]">O PROJETO</div>
-            <div class="collapse-content text-[20px] font-normal">
+            <div class="collapse-title font-extrabold text-[30px] max-md:text-[25px]">O PROJETO</div>
+            <div class="collapse-content text-[20px] font-normal max-md:text-[15px]">
                 <p class="text-justify mb-[8px]">A empresa EcoNatal é composta por alunos do 2° ano do Ensino Médio, dos cursos técnicos integrados de Comércio e de Informática para Internet,  do IFRN Zona Norte. Ela é uma das soluções pensada para o trabalho final da disciplina de Geografia II, ministrada pela professora Maria José Marjorie Ramos da Silva, e interliga-se com outras disciplinas do currículo dos cursos, sendo elas APOO (Análise e Projeto Orientado a Objeto), Artes III, Banco de Dados, Design Web, Língua Portuguesa e Literatura II e Matemática Financeira, as quais seus responsáveis são respectivamente Pedro Baesse Alves Pereira, Zildalte Ramos de Macedo, Tiago de Oliveira Barreto, Cesimar Xavier de Souza Dias, Sandra Cristinne Xavier da Camara e Vanessa Camara de Medeiros Fernandes.</p>
                 <p class="text-justify">Este ano, o tema trabalhado com o MEG (Mundo Encantado da Geografia) para esse trabalho é “Olhares sobre o urbano’, no qual as guildas GeoFadas, de Informática, e Thunderbolts, de Comércio, decidiram trabalhar com o subtema ‘Poluição urbana’, voltando suas observações principalmente para o problema do descarte inadequado do lixo no bairro de Pajuçara, na zona norte da cidade de Natal, no estado do Rio Grande do Norte.</p>
             </div>
             </div>
             <div class="collapse collapse-arrow border-x border-solid border-[#1C2A02] rounded-bl-[0px] rounded-br-[0px] rounded-tl-[0px] rounded-tr-[0px]">
             <input type="radio" name="my-accordion-2" />
-            <div class="collapse-title font-extrabold text-[30px]">OBJETIVO</div>
-            <div class="collapse-content text-[20px] font-normal">
+            <div class="collapse-title font-extrabold text-[30px] max-md:text-[25px]">OBJETIVO</div>
+            <div class="collapse-content text-[20px] font-normal max-md:text-[15px]">
                 <p class="text-justify mb-[8px]">O projeto EcoNatal tem como objetivo conscientizar a população do bairro Pajuçara, na zona norte de Natal/RN, sobre os problemas causados pelo descarte inadequado do lixo e a importância de práticas sustentáveis, como a reciclagem e a reutilização de materiais. A partir disso, busca-se reduzir a poluição urbana e incentivar atitudes mais responsáveis no dia a dia da comunidade.</p>
                 <p class="text-justify">Para alcançar esse objetivo, o projeto propõe a criação da empresa EcoNatal, que contará com lixeiras inteligentes, um site informativo voltado para os moradores do bairro e o aplicativo EcoPlay, destinado principalmente a crianças. Essas ferramentas utilizam a tecnologia e a educação de forma acessível e interativa, contribuindo para a formação de uma população mais consciente e para a melhoria da qualidade de vida local.</p>
             </div>
             </div>
             <div class="collapse collapse-arrow border border-solid border-[#1C2A02] rounded-tl-[0px] rounded-tr-[0px]">
             <input type="radio" name="my-accordion-2" />
-            <div class="collapse-title font-extrabold text-[30px]">COMO VAMOS ALCANÇAR</div>
-            <div class="collapse-content text-[20px] font-normal">
+            <div class="collapse-title font-extrabold text-[30px] max-md:text-[25px]">COMO VAMOS ALCANÇAR</div>
+            <div class="collapse-content text-[20px] font-normal max-md:text-[15px]">
                 <p class="text-justify mb-[8px]">Nós, da empresa EcoPlay, planejamos alcançar o objetivo de conscientização ecológica por meio de ensino interativo e descontraído. Pelo nosso aplicativo, as crianças têm acesso a informações sobre como cuidar bem do meio ambiente, com jogos disponibilizados pela plataforma e desafios desenvolvidos por professores filiados, para assim entenderem a importância dos recursos naturais e respeitá-los, garantindo um futuro sustentável.</p>
                 <p class="text-justify">Dessa forma, visamos a conscientização de uma nova geração mais bem preparada para discutir e remediar os problemas ambientais que vêm crescendo de forma alarmante no cenário tanto nacional quanto global. Nossa intenção é que nossa iniciativa ajude a sociedade como um todo, por meio de parcerias com ONGs, escolas e comunidades locais, melhorando a saúde do planeta e, consequentemente, a qualidade de vida da população.</p>
             </div>
@@ -203,8 +203,11 @@
             </section>
         </section>
 
-        <section x-show="pagina === 'login'" class="bg-[#F1F1F1] grid grid-cols-[1fr_1.5fr] min-h-[100vh]">
-            <div class="bg-[#F7F7F7] flex flex-col justify-center align-center">
+        <section x-show="pagina === 'login'" class="bg-[#F1F1F1] grid grid-cols-[1fr_1.5fr] min-h-[100vh] max-md:flex max-md:flex-col max-md:bg-[#F7F7F7]">
+            <div class="hidden max-md:block">
+                <img src="img/logo-econatal.svg" alt="Logo da econatal" class="my-[19px] mx-[22px]">
+            </div>
+            <div class="bg-[#F7F7F7] flex flex-col justify-center align-center min-h-[80vh]">
                 <div class="mx-[78px]">
                 <h1 class="text-[40px] font-bold text-[#1C2A02] text-center" id="titleC">Bem-vindo(a)!</h1>
                 <p class="text-[20px] font-normal text-[#1C2A02] mb-[30px] text-center" id="textC">Ficamos felizes de te ter de volta</p>
@@ -227,7 +230,7 @@
                     </form>
                 </div>
             </div>
-            <div>
+            <div class="max-md:hidden">
                 <div class="flex justify-end">
                 <img src="img/logo-econatal.svg" alt="Logo da econatal" class="my-[19px] mx-[22px]">
                 </div>
@@ -237,14 +240,14 @@
             </div>
         </section>
 
-        <section x-show="pagina === 'cadastro'" class="bg-[#F1F1F1] grid grid-cols-[1.5fr_1fr] min-h-[100vh]">
+        <section x-show="pagina === 'cadastro'" class="bg-[#F1F1F1] grid grid-cols-[1.5fr_1fr] min-h-[100vh] max-md:flex max-md:flex-col max-md:bg-[#F7F7F7]">
             <div>
                 <img src="img/logo-econatal.svg" alt="Logo da econatal" class="my-[19px] mx-[22px]">
-                <div class="flex flex-col justify-center align-center min-h-[80%]">
+                <div class="flex flex-col justify-center align-center min-h-[80%] max-md:hidden">
                 <img src="img/imagem-personagem.svg" alt="Imagem de personagem" class="mx-auto">
                 </div>
             </div>
-            <div class="bg-[#F7F7F7] flex flex-col justify-center align-center">
+            <div class="bg-[#F7F7F7] flex flex-col justify-center align-center min-h-[80vh]">
                 <div class="mx-[78px]">
                 <h1 class="text-[40px] font-bold text-[#1C2A02] text-center" id="titleC">Primeira vez?</h1>
                 <p class="text-[20px] font-normal text-[#1C2A02] mb-[30px] text-center" id="textC">Deixe-nos saber um pouco de você!</p>
@@ -290,14 +293,15 @@
             </div>
         </section>
 
-        <section x-show="pagina === 'registro'" class="bg-[#9BB569] grid grid-cols-[1.5fr_1fr] min-h-[100vh]">
+        <section x-show="pagina === 'registro'" class="bg-[#9BB569] grid grid-cols-[1.5fr_1fr] min-h-[100vh] max-md:flex max-md:flex-col max-md:bg-[#1C2A02]">
             <div>
-                <img src="img/logo-econatal-2.svg" alt="Logo da econatal" class="my-[19px] mx-[22px] text-[#1C2A02]">
+                <img src="img/logo-econatal-2.svg" alt="Logo da econatal" class="my-[19px] mx-[22px] text-[#1C2A02] max-md:hidden">
+                <img src="img/logo-econatal-3.svg" alt="Logo da econatal" class="my-[19px] mx-[22px] text-[#1C2A02] hidden max-md:block">
                 <div class="flex flex-col justify-center align-center min-h-[80%]">
-                <img src="img/imagem-personagem.svg" alt="Imagem de personagem" class="mx-auto">
+                <img src="img/imagem-personagem.svg" alt="Imagem de personagem" class="mx-auto max-md:hidden">
                 </div>
             </div>
-            <div class="bg-[#1C2A02] flex flex-col justify-center align-center">
+            <div class="bg-[#1C2A02] flex flex-col justify-center align-center min-h-[80vh]">
                 <div class="mx-[78px]">
                 <h1 class="text-[40px] font-bold text-[#EDFFCC] text-center" id="titleC">Novo por aqui?</h1>
                 <p class="text-[20px] font-normal text-[#EDFFCC] mb-[30px] text-center" id="textC">Registre-se para se juntar à comunidade de catadores da EcoNatal</p>
