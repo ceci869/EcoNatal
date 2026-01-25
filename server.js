@@ -18,7 +18,7 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
-console.log('Tentando registar a rota aogra.')
+console.log('Tentando registar a rota agora.')
 app.post('/api/cadastro_usuarios', async (req, res) => {
     console.log('Recebendo pedido de cadastro:', req.body);
 
@@ -26,7 +26,7 @@ app.post('/api/cadastro_usuarios', async (req, res) => {
         const {nome, data_nascimento, email, rua, senha } = req.body;
 
         if (!nome || !data_nascimento || !email || !rua || !senha ) {
-            return res.status(400).json({ erro: 'Preencha todos os seus dados!!' })
+            return res.status(400).json({ erro: 'Preencha todos os seus dados!' })
         }
 
         const usuarioExiste = await Usuario.findOne({ email: email });

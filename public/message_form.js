@@ -63,7 +63,6 @@ class FormSubmit {
                 setTimeout(() => this.validateForm(), 0);
             });
 
-            // Initial validation
             this.validateForm();
         }
         return this;
