@@ -39,7 +39,7 @@
                 </div>
 
                 <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 rounded-lg" @click="pagina='perfil'">
-                   <p class="text-[#263A00]">Ely Neto</p> 
+                   <p class="text-[#263A00] font-medium">Ely Neto</p> 
                 </div>
             </aside>
 
@@ -51,10 +51,11 @@
                         <i class="fa-regular fa-bell"></i>
                     </nav>
 
-                    <section x-show="pagina === 'perfil'" class="flex min-h-screen bg-[#F7FAF5]">
+                    <h1 class="text-3xl font-bold mb-6 text-[#263A00] ml-10">Perfil</h1>
+ 
+                    <section x-show="pagina === 'perfil'" class="flex min-h-screen ml-40 bg-[#F7FAF5]">
                         <div class="flex-1 p-10">
-                            <h1 class="text-3xl font-bold mb-6 text-[#263A00]">Perfil</h1>
-
+                           
                             <div class="bg-white shadow p-8 w-[80%] h-[60%] flex flex-col gap-4">
                                 <div>
                                     <span class="font-light text-gray-500">Nome completo</span>
