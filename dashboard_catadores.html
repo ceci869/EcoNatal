@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="scripts/message_form.js"></script>
+    <script defer src="scripts/cadastroUsuario_form.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Sora:wght@100..800&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+    <section x-show="pagina === 'dashboard'" class="flex min-h-screen bg-[#F7FAF5]">
+
+        <aside class="w-[260px] bg-[#5C7E1B] text-white flex flex-col justify-between">
+            <div>
+                <div class="p-6">
+                    <img src="img/econatal-branca.png" alt="">
+                </div>
+
+                <div class="flex flex-col gap-4 px-6 mt-50">
+                    <button @click="pagina='dashboard'" class="flex items-center gap-3 cursor-pointer">
+                        <i class="fa-solid fa-house "></i> Home
+                    </button>
+                    <button @click="pagina='mapas'" class="flex items-center gap-3 cursor-pointer">
+                        <i class="fa-solid fa-map"></i> Mapas
+                    </button>
+                   
+                </div>
+            </div>
+
+            <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 rounded-lg" @click="pagina='perfil'">
+               <p class="text-[#263A00] font-medium">João da Silva</p> 
+            </div>
+        </aside>
+
+       
+            <div class="flex-1 p-10">
+                
+                <nav class="flex justify-end gap-6 text-xl"> 
+                    <button><img src="img/Letra.png" alt=""></button> 
+                    <i class="fa-regular fa-message"></i>
+                    <i class="fa-regular fa-bell"></i>
+                </nav>
+
+                <h1 class="text-3xl font-bold mb-1 text-[#263A00] ml-10">Bem-vindo, João da Silva!</h1>
+                <p class="mb-8 ml-10">Juntos por uma Natal mais limpa e sustentável.</p>
+
+
+                <div class="flex gap-3">
+
+                    <div class="card bg-white shadow p-6 cursor-pointer w-80 ml-10" @click="pagina='mapeamento'">
+                        <div class="flex gap-6">   
+                            <span class="w-10 h-10 flex items-center justify-center">
+                                <i class="fa-solid fa-map-location text-4xl text-[#263A00]"></i>
+                            </span>
+                             <h3 class="font-medium text-lg w-20 text-[#263A00] ">Mapa de lixeiras</h3>
+                        </div>
+                        <div>          
+                           
+                            <p>Encontre os pontos de descarte que precisam de coleta.</p>
+                        </div>
+
+                        <div class="flex justify-end ml-10">
+                            <img src="img/seta.png" alt="">
+                        </div>
+
+                    </div>
+
+                  <div class="card bg-white shadow p-6 cursor-pointer w-80" @click="pagina='catadores'">
+                        <div class="flex gap-6">   
+                            <span class="w-10 h-10 flex items-center justify-center">
+                                <i class="fa-solid fa-users text-4xl text-[#263A00]"></i>
+                            </span>
+                             <h3 class="font-medium text-lg w-40 text-[#263A00]">Levar para a página dos catadores</h3>
+                        </div>
+                        <div>          
+                           
+                            <p>Veja se há notificações novas para você.</p>
+                        </div>
+
+                        <div class="flex justify-end ">
+                            <img src="img/seta.png" alt="">
+                        </div>
+
+                      
+
+                    </div>
+                </div>
+
+
+                <div class="bg-white shadow p-6 flex justify-between mb-8 mt-7 ml-10">
+                    <div class="flex gap-5">
+                        <div class="text-4xl text-[#263A00]">
+                            <i class="fa-solid fa-recycle"></i>
+                        </div>
+
+                        <div>
+                           <span class="text-4xl font-bold">12</span> 
+                           <p>Lixeiras cadastradas</p>
+                        </div>
+    
+                    </div>
+
+                   <div class="flex gap-5">
+                        <div class="text-4xl text-[#263A00]">
+                            <i class="fa-solid fa-people-group"></i>
+                        </div>
+
+                        <div>
+                           <span class="text-4xl font-bold">8</span> 
+                           <p>Catadores registrados</p>
+                        </div>
+    
+                    </div>
+
+                  <div class="flex gap-5">
+                        <div class="text-4xl text-[#263A00]">
+                            <i class="fa-solid fa-hand-holding-seedling"></i>
+                        </div>
+
+                        <div>
+                           <span class="text-4xl font-bold">+ 200</span> 
+                           <p>Pessoas impactadas</p>
+                        </div>
+    
+                    </div>
+
+                </div>
+
+  
+                <div class="bg-white shadow p-4 mb-6 flex gap-5 ml-10">
+                    <div class="text-4xl ">
+                        <i class="fa-duotone fa-solid fa-circle-exclamation"></i>
+                    </div>
+                    <div >
+                        <span class="font-bold text-xl text-[#263A00] mb-4">Próxima coleta!</span>
+                        <p><span class="font-bold">Atenção: </span>A próxima coleta será no dia 26 de janeiro.</p>
+                    </div>
+                 
+                    
+                </div>
+
+                <div class="bg-[#E8FFD4] p-6 rounded shadow w-200 flex gap-3 ml-10">
+                    <div>
+                        <img src="img/Group 10.png" alt="" class="w-18">
+                    </div>
+                    <div>
+                        <h3 class="font-bold">EcoPlay - Aprenda se divertindo!</h3>
+                        <p>Um aplicativo educativo que ensina crianças a cuidarem do meio ambiente por meio de jogos e desafios.</p>
+                        <button class="btn btn-success mt-4 rounded-xl text-base-100">Conhecer o EcoPlay</button>
+                    </div>
+                   
+                </div>
+
+            </div>
+        </section>
+
+
+        </section>
+
+    </section>
+</body>
+</html>
