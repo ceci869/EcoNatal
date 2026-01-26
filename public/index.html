@@ -29,7 +29,7 @@
 <body class="bg-[#EFEFEF] m-0 p-0 font-[Albert_Sans]">
     <div id="meuMapa"></div>
 
-    <script src="mapa.js"></script>
+    <script src="scripts/mapa.js"></script>
 
     <header x-show="pagina === 'homepage' | pagina === 'contato' | pagina === 'projeto'"
         class="bg-[#E6E6E6] py-[19px] px-[22px] grid grid-cols-[1fr_1.5fr] max-md:grid-cols-[auto_1fr] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
@@ -178,7 +178,7 @@
                 <p class="text-[24px] font-normal text-center mb-[35px] w-[50vw] mx-auto max-md:text-[18px]">Tem alguma
                     dúvida, sugestão ou deseja saber mais sobre o projeto EcoNatal? Entre em contato conosco!</p>
                 <div class="bg-white p-[40px] border border-solid border-[#1C370A] rounded-[8px]">
-                    <form action="https://formsubmit.co/ajax/econatal.meg@gmail.com" method="POST"
+                    <form action="/api/contato" method="POST"
                         class="flex flex-col gap-[32px]" data-form>
                         <div class="flex flex-col">
                             <label for="nome" class="text-[#1C2A02] text-[20px] font-normal max-md:text-[18px]">Seu
@@ -483,8 +483,8 @@
             </div>
             <div class="bg-[#1C2A02] flex flex-col justify-center align-center min-h-[80vh]">
                 <div class="mx-[78px]">
-                    <h1 class="text-[40px] font-bold text-[#EDFFCC] text-center" id="titleC">Novo por aqui?</h1>
-                    <p class="text-[20px] font-normal text-[#EDFFCC] mb-[30px] text-center" id="textC">Registre-se para
+                    <h1 class="text-[40px] font-bold text-[#EDFFCC] text-center" id="titleC" x-show="passo !== 3">Novo por aqui?</h1>
+                    <p class="text-[20px] font-normal text-[#EDFFCC] mb-[30px] text-center" id="textC" x-show="passo !== 3">Registre-se para
                         se juntar à comunidade de catadores da EcoNatal</p>
                     <form x-data="{
                         passo: 1,
@@ -501,8 +501,31 @@
         },
         podeConcluir() {
             return this.cep && this.coletas.length > 0;
+        },
+        async enviarCadastro() {
+            try {
+                const response = await fetch('/api/cadastro_catadores', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        nome: this.nome,
+                        telefone: this.telefone,
+                        email: this.email,
+                        cep: this.cep,
+                        coletas: this.coletas
+                    })
+                });
+                const data = await response.json();
+                if (response.ok) {
+                    this.pagina = 'homepage';
+                } else {
+                    alert(data.erro);
+                }
+            } catch (error) {
+                alert('Erro ao enviar cadastro');
+            }
         }
-    }" class="w-[100%]">
+    }" @submit.prevent="enviarCadastro()" class="w-[100%]">
                         <section x-show="passo === 1">
                             <div class="flex flex-col mb-[18px]">
                                 <label class="text-[#EDFFCC] text-[18px] font-normal">
