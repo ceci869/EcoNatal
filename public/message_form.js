@@ -3,9 +3,6 @@ class FormSubmit {
         this.settings = settings;
         this.form = document.querySelector(settings.form);
         this.formButton = document.querySelector(settings.button);
-        if (this.form) {
-            this.url = this.form.getAttribute("action");
-        }
         this.sendForm = this.sendForm.bind(this);
     }
 
@@ -35,7 +32,7 @@ class FormSubmit {
     async sendForm(event) {
         try {
             this.onSubmission(event);
-            await fetch(this.url, {
+            await fetch('https://formsubmit.co/ajax/econatal.meg@gmail.com', {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",
@@ -63,7 +60,6 @@ class FormSubmit {
                 setTimeout(() => this.validateForm(), 0);
             });
 
-            // Initial validation
             this.validateForm();
         }
         return this;

@@ -8,6 +8,8 @@ const path = require('path');
 const bcrypt = require('bcrypt');
 const jsonwebtoken = require('jsonwebtoken');
 const Usuario = require('./models/usuario');
+const Contato = require('./models/contato');
+const Catador = require('./models/catador');
 
 
 const app = express();
@@ -30,7 +32,7 @@ app.post('/api/cadastro_usuarios', async (req, res) => {
         const {nome, data_nascimento, email, rua, senha } = req.body;
 
         if (!nome || !data_nascimento || !email || !rua || !senha ) {
-            return res.status(400).json({ erro: 'Preencha todos os seus dados!!' })
+            return res.status(400).json({ erro: 'Preencha todos os seus dados!' })
         }
 
         const usuarioExiste = await Usuario.findOne({ email: email });
@@ -91,6 +93,66 @@ app.post('/login', async (req, res) => {
 
 
 // Caminhos estáticos
+app.post('/api/contato', async (req, res) => {
+    console.log('Recebendo mensagem de contato:', req.body);
+
+    try {
+        const { nome, email, assunto, mensagem } = req.body;
+
+        if (!nome || !email || !assunto || !mensagem) {
+            return res.status(400).json({ erro: 'Preencha todos os campos!' });
+        }
+
+        const novoContato = new Contato({
+            nome,
+            email,
+            assunto,
+            mensagem
+        });
+
+        await novoContato.save();
+        console.log('Mensagem de contato salva com sucesso!');
+
+        res.status(201).json({ mensagem: 'Mensagem enviada com sucesso!' });
+    } catch (error) {
+        console.error('Erro no servidor:', error);
+        res.status(500).json({ erro: 'Erro interno', detalhe: error.message });
+    }
+});
+
+app.post('/api/cadastro_catadores', async (req, res) => {
+    console.log('Recebendo pedido de cadastro de catador:', req.body);
+
+    try {
+        const { nome, telefone, email, endereco, coletas } = req.body;
+
+        if (!nome || !telefone || !email || !endereco || !coletas || coletas.length === 0) {
+            return res.status(400).json({ erro: 'Preencha todos os campos!' });
+        }
+
+        const catadorExiste = await Catador.findOne({ email: email });
+        if (catadorExiste) {
+            return res.status(400).json({ erro: 'Este email já está cadastrado.' });
+        }
+
+        const novoCatador = new Catador({
+            nome,
+            telefone,
+            email,
+            endereco,
+            coletas
+        });
+
+        await novoCatador.save();
+        console.log('Catador cadastrado com sucesso!');
+
+        res.status(201).json({ mensagem: 'Catador cadastrado com sucesso!' });
+    } catch (error) {
+        console.error('Erro no servidor:', error);
+        res.status(500).json({ erro: 'Erro interno', detalhe: error.message });
+    }
+});
+
 app.use(express.static(path.join(__dirname, 'public')));
 
 mongoose.connect('mongodb://127.0.0.1:27017/econatal')

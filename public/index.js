@@ -7,9 +7,11 @@ function sistema() {
             nome: '',
             data_nascimento: '',
             email: '',
-            rua: '',
+            endereco: '',
             senha: '', 
             confirmandoSenha: '',
+            telefone: '',
+            coletas: []
         },
 
         navegacao(nomePagina) {
@@ -21,15 +23,8 @@ function sistema() {
             this.pagina = nomePagina;
         },
 
-        proximoPasso() {
-            if (!this.formulario.nome || !this.formulario.data_nascimento || !this.formulario.email ) {
-                return alert('Por favor, preencha todos os dados.');
-            }
-            this.passo = 2;
-        },
-
-        passoAnterior() {
-            this.passo = 1;
+        emailValido() {
+            return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(this.formulario.email);
         },
 
         async enviarCadastro() {
@@ -60,6 +55,28 @@ function sistema() {
             }
         },
 
+        podeConcluir() {
+            return this.formulario.endereco && this.formulario.coletas.length > 0;
+        },
+
+        async enviarCadastroDeCatador() {
+            try {
+                const resposta = await fetch('/api/cadastro_catadores', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(this.formulario)
+                });
+                const data = await resposta.json();
+                if (resposta.ok) {
+                    this.pagina = 'homepage';
+                } else {
+                    alert(data.erro);
+                }
+            } catch (error) {
+                alert('Erro ao enviar cadastro');
+            }
+        },
+
         async fazerLogin() {
             try {
                 const resposta = await fetch('/login', {
@@ -86,8 +103,22 @@ function sistema() {
             this.pagina = 'login';
             this.formulario.email = '';
             this.formulario.senha = '';
+        },
+
+        podeEntrar() {
+            return this.emailValido() && this.formulario.senha;
+        },
+
+        podeAvancar() {
+            const validacoesBasicas = this.formulario.nome && this.emailValido();
+
+            if (this.pagina === 'registro'){
+                return validacoesBasicas && this.formulario.telefone;        
+            }
+
+            return validacoesBasicas && this.formulario.data_nascimento;
         }
     }
 }
 
-window.sistema = sistema;
+window.sistema = sistema; 
