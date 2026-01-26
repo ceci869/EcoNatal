@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br" x-data="{
+        pagina: 'homepage'
+    }">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Import de DaisyUI, Tailwind e AlpineJS -->
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="scripts/message_form.js"></script>
+    <script defer src="scripts/cadastroUsuario_form.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Sora:wght@100..800&display=swap"
+        rel="stylesheet">
+    <title>EcoNatal</title>
+</head>
+
+<body class="bg-[#EFEFEF] m-0 p-0 font-[Albert_Sans]">
+    <main>
+        <section class="bg-[#1C2A02] min-h-[100vh] py-[19px] px-[22px]">
+            <div>
+                <img src="img/logo-econatal-3.svg" alt="Logo da EcoNatal">
+            </div>
+            <div class="hidden max-md:block max-md:flex max-md:justify-center">
+                <img src="img/imagem_sucesso.svg" alt="Imagem de emoji representativo de sucesso">
+            </div>
+            <div class="text-center mt-[35px]">
+                <h1 class="text-[#EDFFCC] font-bold text-[40px] mb-[25px]">Seu cadastro foi realizado com sucesso!</h1>
+                <p class="text-[#EDFFCC] font-normal text-[20px] max-md:hidden">Agora você já faz parte da EcoNatal.</p>
+                <p class="text-[#EDFFCC] font-normal text-[20px] mb-[25px]">Faça login para começar a utilizar a plataforma.</p>
+                <div class="max-md:flex max-md:justify-end">
+                <button class="bg-[#FE8E10] rounded-[10px] px-[50px] py-[10px] text-[#1C2A02] font-bold text-[15px] mb-[18px] max-md:px-[20px] max-md:py-[7px]">Ir até a página de login</button>
+                </div>
+            </div>
+            <div class="max-md:hidden">
+                <img src="img/imagem_sucesso.svg" alt="Imagem de emoji representativo de sucesso">
+            </div>
+        </section>
+    </main>
+</body>
