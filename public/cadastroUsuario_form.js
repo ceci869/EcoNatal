@@ -53,13 +53,8 @@ passoAnterior.addEventListener('click', () => {
     secao2.className = 'hidden';
     tituloCadastro.innerHTML = '<h1 class="text-[40px] font-bold text-[#1C2A02] text-center" id="titleC">Primeira vez?</h1>';
     textoCadastro.className = "text-[20px] font-normal text-[#1C2A02] mb-[30px] text-center";
-})
+});
 
-
-// Capturando dados dos usuários e enviando para o NodeJS
-
-
-    // Confirmando se senhas estão iguais
 
 
 

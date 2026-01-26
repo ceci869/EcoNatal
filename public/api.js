@@ -1,3 +1,4 @@
+// cadastro
 export async function cadastrandoUsuario(dadosUsuario) {
     try {
     const resposta = await fetch('/api/cadastro_usuarios', {

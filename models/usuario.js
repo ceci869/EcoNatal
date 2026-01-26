@@ -1,10 +1,5 @@
 const mongoose = require('mongoose');
 
-// Conecetando com o MongoDB
-// mongoose.connect('mongodb://127.0.0.1:27017/econatal')
-//     .then(() => console.log('MongoDB local foi conectado com sucesso.'))
-//     .catch((erro) => console.log('Erro ao conectar:', erro));
-
 // Definindo Schema
 const Schema = mongoose.Schema;
 
@@ -35,4 +30,4 @@ const Usuario = new Schema({
     }
 });
 
-module.exports = mongoose.model('usuario', Usuario)
+module.exports = mongoose.model('usuarios', Usuario)

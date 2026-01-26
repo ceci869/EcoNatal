@@ -1,11 +1,14 @@
+// Imports
+require('dotenv').config();
 const express = require('express');
+const router = express.Router();
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
 const bcrypt = require('bcrypt');
-
-
+const jsonwebtoken = require('jsonwebtoken');
 const Usuario = require('./models/usuario');
+
 
 const app = express();
 
@@ -18,6 +21,7 @@ app.use((req, res, next) => {
 
 app.use(express.json());
 
+// Rota de cadastro
 console.log('Tentando registar a rota aogra.')
 app.post('/api/cadastro_usuarios', async (req, res) => {
     console.log('Recebendo pedido de cadastro:', req.body);
@@ -55,6 +59,38 @@ app.post('/api/cadastro_usuarios', async (req, res) => {
     }
 });
 
+// Rota de login
+app.post('/login', async (req, res) => {
+    try {
+        const { email, senha } = req.body;
+        console.log("--- TENTATIVA DE LOGIN ---");
+        console.log("Body recebido:", req.body);
+        console.log("Email buscando:", email);
+
+        const usuario = await Usuario.findOne({ email: email });
+
+        if (!usuario) {
+            return res.status(404).json({ mensagem: 'Usuário não encontrado.' });
+        } 
+
+        const checarSenha = await bcrypt.compare(senha, usuario.senha);
+
+        if (!checarSenha) {
+            return res.status(422).json({ mensagem: 'Senha incorreta' });
+        }
+
+        const secreto = process.env.JWT_SECRET;
+        const token = jsonwebtoken.sign({ id: usuario._id }, secreto);
+        res.status(200).json({ mensagem: 'Autenticação realizada com sucesso!', token: token })
+
+    } catch (error) {
+        console.log(error);
+        res.status(500).json({ mensagem: 'Erro no servidor' });
+    }
+});
+
+
+// Caminhos estáticos
 app.use(express.static(path.join(__dirname, 'public')));
 
 mongoose.connect('mongodb://127.0.0.1:27017/econatal')
