@@ -25,7 +25,7 @@
 
     <header x-show="pagina === 'homepage' | pagina === 'contato' | pagina === 'projeto'"
         class="bg-[#E6E6E6] py-[19px] px-[22px] grid grid-cols-[1fr_1.5fr] max-md:grid-cols-[auto_1fr] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
-        <img src="img/logo-econatal.svg" alt="Logo da empresa EcoNatal">
+        <img src="img/logo_econatal.png" alt="Logo da empresa EcoNatal" class="w-15">
         <nav class="flex justify-between">
             <menu class="grid grid-cols-[1fr_1.25fr_1.25fr] gap-[26px] max-md:hidden">
                 <button @click="pagina = 'homepage'">
@@ -469,7 +469,7 @@
     </main>
     <footer x-show="pagina === 'homepage' | pagina === 'contato' | pagina === 'projeto'"
         class="bg-[#1C2A02] text-white pt-[40px] pb-[100px] px-[40px]">
-        <img src="img/logo-econatal.svg" alt="Logo da EcoNatal" class="mb-[60px]">
+        <img src="img/logo_econatal.png" alt="Logo da EcoNatal" class="mb-[60px] w-15">
         <div class="grid grid-cols-3 gap-35 max-md:flex max-md:flex-col max-md:gap-[15px]">
             <div>
                 <h5 class="text-[20px] font-normal mb-[18px] max-md:mb-[5px]">Sobre</h5>
