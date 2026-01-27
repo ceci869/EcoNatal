@@ -16,7 +16,7 @@ const Usuario = new Schema({
         type: String,
         required: true
     },
-    rua: {
+    endereco: {
         type: String,
         required: true
     },

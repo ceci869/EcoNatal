@@ -1,7 +1,6 @@
 // Imports
 require('dotenv').config();
 const express = require('express');
-const router = express.Router();
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
@@ -29,9 +28,9 @@ app.post('/api/cadastro_usuarios', async (req, res) => {
     console.log('Recebendo pedido de cadastro:', req.body);
 
     try {
-        const {nome, data_nascimento, email, rua, senha } = req.body;
+        const {nome, data_nascimento, email, endereco, senha } = req.body;
 
-        if (!nome || !data_nascimento || !email || !rua || !senha ) {
+        if (!nome || !data_nascimento || !email || !endereco || !senha ) {
             return res.status(400).json({ erro: 'Preencha todos os seus dados!' })
         }
 
@@ -47,7 +46,7 @@ app.post('/api/cadastro_usuarios', async (req, res) => {
             nome,
             data_nascimento,
             email,
-            rua,
+            endereco,
             senha: senhaHash
         });
 
