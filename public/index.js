@@ -35,7 +35,7 @@ function sistema() {
             console.log('Enviando dados:', this.formulario);
 
             try {
-                const resposta = await fetch('/api/cadastro_usuarios', {
+                const resposta = await fetch('https://apieconatal.onrender.com/api/cadastro_usuarios', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(this.formulario)
@@ -61,7 +61,7 @@ function sistema() {
 
         async enviarCadastroDeCatador() {
             try {
-                const resposta = await fetch('/api/cadastro_catadores', {
+                const resposta = await fetch('https://apieconatal.onrender.com/api/cadastro_catadores', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(this.formulario)
@@ -79,7 +79,7 @@ function sistema() {
 
         async fazerLogin() {
             try {
-                const resposta = await fetch('/login', {
+                const resposta = await fetch('https://apieconatal.onrender.com/login', {
                     method: 'POST',
                     headers: { 'Content-Type': 'application/json' },
                     body: JSON.stringify(this.formulario)

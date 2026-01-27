@@ -26,4 +26,4 @@ const Contato = new Schema({
     }
 });
 
-module.exports = mongoose.model('contato', Contato)
+module.exports = mongoose.model('contato', Contato);

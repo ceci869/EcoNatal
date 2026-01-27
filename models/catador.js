@@ -30,4 +30,4 @@ const Catador = new Schema({
     }
 });
 
-module.exports = mongoose.model('catador', Catador)
+module.exports = mongoose.model('catador', Catador);
