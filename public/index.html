@@ -9,6 +9,7 @@
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
     <script defer src="message_form.js"></script>
+    <script defer src="scripts/styles.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -16,6 +17,12 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="" />
     <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
     <title>EcoNatal</title>
+
+    <style>
+        button.active{
+            border-bottom: solid 1px;
+        }
+    </style>
 </head>
 
 <body class="bg-[#EFEFEF] m-0 p-0 font-[Albert_Sans]">
@@ -27,8 +34,8 @@
         class="bg-[#E6E6E6] py-[19px] px-[22px] grid grid-cols-[1fr_1.5fr] max-md:grid-cols-[auto_1fr] shadow-[0_4px_4px_0_rgba(0,0,0,0.25)]">
         <img src="img/logo-econatal.svg" alt="Logo da empresa EcoNatal">
         <nav class="flex justify-between">
-            <menu class="grid grid-cols-[1fr_1.25fr_1.25fr] gap-[26px] max-md:hidden">
-                <button @click="pagina = 'homepage'" class="cursor-pointer">
+            <menu class="grid grid-cols-[1fr_1.25fr_1.25fr] gap-[26px] max-md:hidden ativo">
+                <button @click="pagina = 'homepage'" class="cursor-pointer border-b-1" id="home">
                     Home
                 </button>
 
