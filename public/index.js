@@ -1,6 +1,6 @@
 function sistema() {
     return {
-        pagina: localStorage.getItem('token') ? 'login' : 'homepage',
+        pagina: localStorage.getItem('token') ? 'principal' : 'homepage',
 
         passo: 1,
         formulario: {
