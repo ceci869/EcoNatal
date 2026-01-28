@@ -44,14 +44,19 @@ function sistema() {
                 const dados = await resposta.json();
 
                 if (resposta.ok) {
-                    alert('Seu cadastro foi realizado com sucesso!');
-                    this.navegacao('login');
+                    // alert('Seu cadastro foi realizado com sucesso!');
+                    setTimeout(() => {
+                        this.pagina = 'cadastroSucesso';
+                    }, 5000)
                 } else {
                     alert('Erro: ' + (dados.erro || dados.mensagem));
                 }
             } catch (error) {
                 console.error(error);
-                alert('Não foi possível realizar o cadastro.')
+                // alert('Não foi possível realizar o cadastro.')
+                setTimeout(() => {
+                    this.pagina = 'erroCadastro';
+                })
             }
         },
 
@@ -68,12 +73,13 @@ function sistema() {
                 });
                 const data = await resposta.json();
                 if (resposta.ok) {
-                    this.pagina = 'homepage';
+                    this.pagina = 'registroSucesso';
                 } else {
                     alert(data.erro);
                 }
             } catch (error) {
-                alert('Erro ao enviar cadastro');
+                // alert('Erro ao enviar cadastro');
+                this.pagina = 'erroRegistro';
             }
         },
 

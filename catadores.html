@@ -17,7 +17,7 @@
         rel="stylesheet">
 </head>
 <body>
-      <section x-show="pagina === 'dashboard'" class="flex min-h-screen bg-[#F7FAF5]">
+      <section x-show="pagina === 'dashboard' | pagina === 'catadores' | pagina === 'mapas'" class="flex min-h-screen bg-[#F7FAF5]">
 
             <aside class="w-[260px] bg-[#5C7E1B] text-white flex flex-col justify-between">
                 <div>
@@ -29,10 +29,10 @@
                         <button @click="pagina='dashboard'" class="flex items-center gap-3">
                             <i class="fa-solid fa-house"></i> Home
                         </button>
-                        <button @click="pagina='mapas'" class="flex items-center gap-3">
+                        <button @click="pagina = 'mapas'" class="flex items-center gap-3">
                             <i class="fa-solid fa-map"></i> Mapas
                         </button>
-                        <button @click="pagina='catadores'" class="flex items-center gap-3">
+                        <button @click="pagina = 'catadores'" class="flex items-center gap-3">
                             <i class="fa-solid fa-users"></i> Catadores
                         </button>
                     </div>
@@ -134,7 +134,7 @@
                         </div>
 
                         <div class="card bg-white shadow p-4 carousel-item">
-                            <img src="img/catador4.png" alt="" class=" w-70 h-70"/>
+                            <img src="img/catador4.png" alt="" class="w-70 h-70"/>
                                <div class="flex flex-col gap-3">
                                 <div class="flex flex-col mt-4">
                                     <span class="text-gray-500 font-medium text-sm">NOME:</span>
