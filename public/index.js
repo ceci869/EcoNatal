@@ -1,6 +1,6 @@
 function sistema() {
     return {
-        pagina: localStorage.getItem('token') ? 'principal' : 'homepage',
+        pagina: localStorage.getItem('token') ? 'dashboard' : 'homepage',
 
         passo: 1,
         formulario: {
@@ -88,7 +88,7 @@ function sistema() {
 
                 if (resposta.ok) {
                     localStorage.setItem('token', dados.token);
-                    this.navegacao('principal');
+                    this.navegacao('dashboard');
                 } else {
                     alert('Erro:' + dados.mensagem);
                 }
