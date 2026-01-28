@@ -94,6 +94,10 @@ function sistema() {
 
                 if (resposta.ok) {
                     localStorage.setItem('token', dados.token);
+                    // preencher nome se retornado no login
+                    this.formulario.nome = dados.nome || (dados.user && dados.user.nome) || (dados.usuario && dados.usuario.nome) || this.formulario.nome;
+                    // tentar carregar dados do usuário usando o token (caso o login não retorne o nome)
+                    await this.carregarUsuario();
                     this.navegacao('dashboard');
                 } else {
                     alert('Erro:' + dados.mensagem);
@@ -101,6 +105,34 @@ function sistema() {
             } catch (error) {
                 console.error(error);
                 alert('Não foi possível conectar com o servidor')
+            }
+        },
+
+        async carregarUsuario() {
+            const token = localStorage.getItem('token');
+            if (!token) return;
+
+            const endpoints = [
+                'https://apieconatal.onrender.com/api/usuario',
+                'https://apieconatal.onrender.com/api/me',
+                'https://apieconatal.onrender.com/me',
+                'https://apieconatal.onrender.com/profile'
+            ];
+
+            for (const url of endpoints) {
+                try {
+                    const res = await fetch(url, { headers: { Authorization: 'Bearer ' + token } });
+                    if (!res.ok) continue;
+                    const data = await res.json();
+                    const nome = data.nome || (data.user && data.user.nome) || (data.usuario && data.usuario.nome) || data.nome_completo;
+                    if (nome) {
+                        this.formulario.nome = nome;
+                        return;
+                    }
+                } catch (e) {
+                    // tentar próximo endpoint
+                    console.debug('carregarUsuario falhou em', url, e.message);
+                }
             }
         },
 
