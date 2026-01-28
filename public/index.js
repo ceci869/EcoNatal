@@ -14,6 +14,14 @@ function sistema() {
             coletas: []
         },
 
+        usuarioLogado: {
+            nome: '',
+            data_nascimento: '',
+            email: '',
+            endereco: '',
+            senha: ''
+        },
+
         navegacao(nomePagina) {
             if (nomePagina !== 'login' && !localStorage.getItem('token')) {
                 this.pagina = 'login';
@@ -83,6 +91,31 @@ function sistema() {
             }
         },
 
+        async carregarUsuario() {
+            const token = localStorage.getItem('token');
+            if (!token) return;
+
+            try {
+                const resposta = await fetch('https://apieconatal.onrender.com/api/usuario_logado', {
+                    method: 'GET',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${token}`
+                    }
+                });
+
+            if (resposta.ok) {
+                const dados = await resposta.json();
+                this.usuarioLogado = dados;
+            } else {
+                console.log('Token é inválido ou expirou');
+                this.fazerLogout();
+            } 
+            } catch (error) {
+                console.error('Usuário não encontrado', error);
+            }
+        },
+
         async fazerLogin() {
             try {
                 const resposta = await fetch('https://apieconatal.onrender.com/login', {
@@ -95,12 +128,19 @@ function sistema() {
                 if (resposta.ok) {
                     localStorage.setItem('token', dados.token);
                     this.navegacao('dashboard');
+                    this.carregarUsuario();
                 } else {
                     alert('Erro:' + dados.mensagem);
                 }
             } catch (error) {
                 console.error(error);
                 alert('Não foi possível conectar com o servidor')
+            }
+        },
+
+        init() {
+            if (localStorage.getItem('token')) {
+                this.carregarUsuario();
             }
         },
 
