@@ -17,9 +17,9 @@
         rel="stylesheet">
 </head>
 <body>
-      <section x-show="pagina === 'dashboard'" class="flex min-h-screen bg-[#F7FAF5]">
+      <section x-show="pagina === 'dashboard'" class="flex flex-col md:flex-row min-h-screen bg-[#F7FAF5]">
 
-            <aside class="w-[260px] bg-[#5C7E1B] text-white flex flex-col justify-between">
+            <aside class="w-full md:w-[260px] bg-[#5C7E1B] text-white flex flex-col justify-between ">
                 <div>
                     <div class="p-6">
                         <img src="img/econtal_branca.png" alt="EcoNatal" class="w-15">
@@ -43,9 +43,9 @@
                 </div>
             </aside>
 
-                 <div class="flex-1 p-10">
+                 <div class="flex-1 p-10 max-md:p-4">
                     
-                    <nav class="flex justify-end gap-6 text-xl"> 
+                    <nav class="flex justify-end gap-6 text-xl max-md:justify-center"> 
                         <button><img src="img/Letra.png" alt=""></button> 
                         <i class="fa-regular fa-message"></i>
                         <i class="fa-regular fa-bell"></i>
@@ -53,7 +53,7 @@
 
 
 
-         <section x-show="pagina === 'catadores'" class="flex ml-10 bg-[#F7FAF5]">
+         <section x-show="pagina === 'catadores'" class="flex ml-10 bg-[#F7FAF5] max-md:flex-col max-md:ml-0"> 
                 <div class="flex-1 p-10">
                   <h1 class="text-3xl ml-10 font-bold mb-2 text-[#263A00]">Fale com um catador</h1>
                     <p class="mb-8 ml-10">Entre em contato com catadores parceiros da EcoNatal.</p>
@@ -63,7 +63,7 @@
                     </div>
 
 
-                     <div class="ml-10 mt-8 carousel carousel-center rounded-box space-x-4">
+                     <div class="ml-10 mt-8 carousel carousel-center rounded-box space-x-4 max-md:ml-10">
                         <div class="card bg-white shadow p-4 carousel-item">
                             <img src="img/catador1.png" alt="" class=" w-70 h-70"/>
                             <div class="flex flex-col gap-3">
