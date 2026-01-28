@@ -20,7 +20,7 @@
        <section x-show="pagina === 'dashboard'" class="drawer lg:drawer-open min-h-screen bg-[#F7FAF5]">
     <input id="my-drawer" type="checkbox" class="drawer-toggle" />
     
-    <div class="drawer-content flex flex-col">
+    <div class="drawer-content flex flex-col overflow-x-hidden">
         
         <div class="relative w-full p-6 md:p-10">
             
@@ -46,8 +46,9 @@
                     </div>
 
 
-                     <div class="ml-10 mt-8 carousel carousel-center rounded-box space-x-4 max-md:ml-10">
-                        <div class="card bg-white shadow p-4 carousel-item">
+                     <div class="ml-10 mt-8 carousel carousel-center rounded-box space-x-4 overflow-x-auto touch-pan-x snap-x snap-mandatory max-md:ml-4">
+
+                        <div class="card bg-white shadow p-4 carousel-item snap-center">
                             <img src="img/catador1.png" alt="" class=" w-70 h-70"/>
                             <div class="flex flex-col gap-3">
                                 <div class="flex flex-col mt-4">
@@ -71,7 +72,7 @@
                             
                         </div>
 
-                        <div class="card bg-white shadow p-4  carousel-item">
+                        <div class="card bg-white shadow p-4 carousel-item  snap-center">
                             <img src="img/catador2.png" alt="" class=" w-70 h-70"/>
                                <div class="flex flex-col gap-3">
                                 <div class="flex flex-col mt-4">
@@ -93,7 +94,7 @@
                             </div>
                         </div>
 
-                        <div class="card bg-white shadow p-4 carousel-item">
+                        <div class="card bg-white shadow p-4 carousel-item  snap-center">
                             <img src="img/catador3.png" alt="" class=" w-70 h-70"/>
                                <div class="flex flex-col gap-3">
                                 <div class="flex flex-col mt-4">
@@ -116,7 +117,7 @@
 
                         </div>
 
-                        <div class="card bg-white shadow p-4 carousel-item">
+                        <div class="card bg-white shadow p-4 carousel-item snap-center">
                             <img src="img/catador4.png" alt="" class=" w-70 h-70"/>
                                <div class="flex flex-col gap-3">
                                 <div class="flex flex-col mt-4">
@@ -169,8 +170,6 @@
         </aside>
     </div>
 </section>
-
-
 
 </body>
 </html>
