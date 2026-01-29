@@ -554,7 +554,7 @@
                     </div>
 
                     <div class="flex flex-col gap-4 px-6 mt-50">
-                        <button @click="pagina='dashboard'" class="flex items-center gap-3 cursor-pointer">
+                        <button @click="pagina = 'dashboard'" class="flex items-center gap-3 cursor-pointer">
                             <i class="fa-solid fa-house"></i> Home
                         </button>
                         <button @click="pagina = 'mapas'" class="flex items-center gap-3 cursor-pointer">
@@ -569,7 +569,7 @@
                     </div>
                 </div>
 
-                <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 rounded-lg" @click="pagina='perfil'">
+                <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 rounded-lg" @click="pagina = 'perfil'">
                    <p class="text-[#263A00] font-bold cursor-pointer" x-text="usuarioLogado.nome"></p> 
                 </div>
             </aside>
@@ -582,13 +582,13 @@
                         <i class="fa-regular fa-bell"></i>
                     </nav>
 
-                    <h1 class="text-3xl font-bold mb-1 text-[#263A00]">Bem-vindo, Ely Neto!</h1>
+                    <h1 class="text-3xl font-bold mb-1 text-[#263A00]" x-text="`Bem vindo(a), ${usuarioLogado.nome}!`"></h1>
                     <p class="mb-8">Juntos por uma Natal mais limpa e sustentável.</p>
 
 
                     <div class="flex gap-3">
 
-                        <div class="card bg-white shadow p-6 cursor-pointer w-80" @click="pagina='mapeamento'">
+                        <div class="card bg-white shadow p-6 cursor-pointer w-80" @click="pagina ='mapas'">
                             <div class="flex gap-6">   
                                 <span class="w-10 h-10 flex items-center justify-center">
                                     <i class="fa-solid fa-map-location text-4xl text-[#263A00]"></i>
@@ -620,13 +620,9 @@
 
                             <div class="flex justify-end ">
                                 <img src="img/seta.png" alt="">
-                            </div>
-
-                          
-
+                            </div>                        
                         </div>
                     </div>
-
    
                     <div class="bg-white shadow p-6 flex justify-between mb-8 mt-7">
                         <div class="flex gap-5">
@@ -809,7 +805,7 @@
                     </div>
     
                     <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 rounded-lg" @click="pagina = 'perfil'">
-                       <p class="text-[#263A00] font-bold cursor-pointer">Ely Neto</p> 
+                       <p class="text-[#263A00] font-bold cursor-pointer" x-text="usuarioLogado.nome"></p> 
                     </div>
                 </aside>
     
@@ -825,7 +821,6 @@
                             <div class="w-70 bg-[#F2F2F2] p-6 shadow ml-10">
                                 <h4 class="font-bold mb-3">Legenda</h4>
                                 <ul class="space-y-2">
-                                    <li><span class="inline-block mr-3 w-5 h-5 bg-red-500"></span> Onde você está</li>
                                     <li><span class="inline-block mr-3 w-5 h-5 bg-green-500"></span> Lixeira vazia</li>
                                     <li><span class="inline-block mr-3 w-5 h-5 bg-orange-500"></span> Parcialmente cheia</li>
                                     <li><span class="inline-block mr-3 w-5 h-5 bg-blue-700"></span> Lixeira cheia</li>
@@ -860,7 +855,7 @@
                 </div>
 
                 <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 rounded-lg" @click="pagina='perfil'">
-                   <p class="text-[#263A00] font-bold cursor-pointer">Ely Neto</p> 
+                   <p class="text-[#263A00] font-bold cursor-pointer" x-text="usuarioLogado.nome"></p> 
                 </div>
             </aside>
 
@@ -993,7 +988,7 @@
                 </div>
 
                 <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 rounded-lg" @click="pagina='perfil'">
-                   <p class="text-[#263A00] font-medium cursor-pointer">Ely Neto</p> 
+                   <p class="text-[#263A00] font-medium cursor-pointer" x-text="usuarioLogado.nome"></p> 
                 </div>
             </aside>
 
@@ -1013,17 +1008,17 @@
                             <div class="bg-white shadow p-8 w-[80%] h-[60%] flex flex-col gap-4">
                                 <div>
                                     <span class="font-light text-gray-500">Nome completo</span>
-                                    <p>Ely Felix dos Santos Neto</p>
+                                    <p x-text="usuarioLogado.nome"></p>
                                 </div>
 
                                 <div>
                                     <span class="font-light text-gray-500">E-mail</span>
-                                    <p>liriliiarila_n@gmail.com</p>
+                                    <p x-text="usuarioLogado.email"></p>
                                 </div>
 
                                 <div>
                                     <span class="font-light text-gray-500">Endereço</span>
-                                    <p>Rua Santa Clara, Cidade das Rosas; 123</p>
+                                    <p x-text="usuarioLogado.endereco"></p>
                                 </div>
 
                                 <div class="mt-15">
