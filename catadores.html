@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catadores</title>
+      <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="scripts/message_form.js"></script>
+    <script defer src="scripts/cadastroUsuario_form.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,100..900;1,100..900&family=Intel+One+Mono:ital,wght@0,300..700;1,300..700&family=Sora:wght@100..800&display=swap"
+        rel="stylesheet">
+</head>
+<body>
+      <section x-show="pagina === 'dashboard'" class="flex flex-col md:flex-row min-h-screen bg-[#F7FAF5]">
+
+            <aside class="w-full md:w-[260px] bg-[#5C7E1B] text-white flex flex-col justify-between ">
+                <div>
+                    <div class="p-6">
+                        <img src="img/econtal_branca.png" alt="EcoNatal" class="w-15">
+                    </div>
+
+                    <div class="flex flex-col gap-4 px-6 mt-50">
+                        <button @click="pagina='dashboard'" class="flex items-center gap-3">
+                            <i class="fa-solid fa-house"></i> Home
+                        </button>
+                        <button @click="pagina='mapas'" class="flex items-center gap-3">
+                            <i class="fa-solid fa-map"></i> Mapas
+                        </button>
+                        <button @click="pagina='catadores'" class="flex items-center gap-3">
+                            <i class="fa-solid fa-users"></i> Catadores
+                        </button>
+                    </div>
+                </div>
+
+                <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 rounded-lg" @click="pagina='perfil'">
+                   <p class="text-[#263A00]">Ely Neto</p> 
+                </div>
+            </aside>
+
+                 <div class="flex-1 p-10 max-md:p-4">
+                    
+                    <nav class="flex justify-end gap-6 text-xl max-md:justify-center"> 
+                        <button><img src="img/Letra.png" alt=""></button> 
+                        <i class="fa-regular fa-message"></i>
+                        <i class="fa-regular fa-bell"></i>
+                    </nav>
+
+
+
+         <section x-show="pagina === 'catadores'" class="flex ml-10 bg-[#F7FAF5] max-md:flex-col max-md:ml-0"> 
+                <div class="flex-1 p-10">
+                  <h1 class="text-3xl ml-10 font-bold mb-2 text-[#263A00]">Fale com um catador</h1>
+                    <p class="mb-8 ml-10">Entre em contato com catadores parceiros da EcoNatal.</p>
+
+                    <div class="font-medium text-[#263A00]">
+                        <p class="text-xl ml-10">Nossos catadores:</p>
+                    </div>
+
+
+                     <div class="ml-10 mt-8 carousel carousel-center rounded-box space-x-4 max-md:ml-10">
+                        <div class="card bg-white shadow p-4 carousel-item">
+                            <img src="img/catador1.png" alt="" class=" w-70 h-70"/>
+                            <div class="flex flex-col gap-3">
+                                <div class="flex flex-col mt-4">
+                                    <span class="text-gray-500 font-medium text-sm">NOME:</span>
+                                    <p class="font-medium">João da Silva</p>
+                                </div>
+
+                                <div class="flex flex-col mt-4">
+                                    <span class="text-gray-500 font-medium text-sm">NÚMERO PARA CONTATO:</span>
+                                    <p class="font-medium">(84) 91111-1111</p>
+                                </div>
+
+                                 <div class="flex flex-col mt-4">
+                                    <span class="text-gray-500 font-medium text-sm">TIPOS DE RESÍDUOS COM QUE TRABALHA:</span>
+                                    <img src="img/residuo1.png" alt="" class="w-25">
+                                </div>
+
+                                <button class="btn btn-warning w-full mt-2"> <i class="fa-solid fa-phone"></i> Contato</button>
+                            </div>
+                          
+                            
+                        </div>
+
+                        <div class="card bg-white shadow p-4  carousel-item">
+                            <img src="img/catador2.png" alt="" class=" w-70 h-70"/>
+                               <div class="flex flex-col gap-3">
+                                <div class="flex flex-col mt-4">
+                                    <span class="text-gray-500 font-medium text-sm">NOME:</span>
+                                    <p class="font-medium">Ana Oliveira</p>
+                                </div>
+
+                                <div class="flex flex-col mt-4">
+                                    <span class="text-gray-500 font-medium text-sm">NÚMERO PARA CONTATO:</span>
+                                    <p class="font-medium">(84) 92222-2222</p>
+                                </div>
+
+                                 <div class="flex flex-col mt-4">
+                                    <span class="text-gray-500 font-medium text-sm">TIPOS DE RESÍDUOS COM QUE TRABALHA:</span>
+                                    <img src="img/residuo2.png" alt="" class="w-40">
+                                </div>
+
+                                <button class="btn btn-warning w-full mt-2"> <i class="fa-solid fa-phone"></i> Contato</button>
+                            </div>
+                        </div>
+
+                        <div class="card bg-white shadow p-4 carousel-item">
+                            <img src="img/catador3.png" alt="" class=" w-70 h-70"/>
+                               <div class="flex flex-col gap-3">
+                                <div class="flex flex-col mt-4">
+                                    <span class="text-gray-500 font-medium text-sm">NOME:</span>
+                                    <p class="font-medium">João da Silva</p>
+                                </div>
+
+                                <div class="flex flex-col mt-4">
+                                    <span class="text-gray-500 font-medium text-sm">NÚMERO PARA CONTATO:</span>
+                                    <p class="font-medium">(84) 91111-1111</p>
+                                </div>
+
+                                 <div class="flex flex-col mt-4">
+                                    <span class="text-gray-500 font-medium text-sm">TIPOS DE RESÍDUOS COM QUE TRABALHA:</span>
+                                    <img src="img/residuo3.png" alt="" class="w-35">
+                                </div>
+
+                                <button class="btn btn-warning w-full mt-2"> <i class="fa-solid fa-phone"></i> Contato</button>
+                            </div>
+
+                        </div>
+
+                        <div class="card bg-white shadow p-4 carousel-item">
+                            <img src="img/catador4.png" alt="" class=" w-70 h-70"/>
+                               <div class="flex flex-col gap-3">
+                                <div class="flex flex-col mt-4">
+                                    <span class="text-gray-500 font-medium text-sm">NOME:</span>
+                                    <p class="font-medium">João da Silva</p>
+                                </div>
+
+                                <div class="flex flex-col mt-4">
+                                    <span class="text-gray-500 font-medium text-sm">NÚMERO PARA CONTATO:</span>
+                                    <p class="font-medium">(84) 91111-1111</p>
+                                </div>
+
+                                 <div class="flex flex-col mt-4">
+                                    <span class="text-gray-500 font-medium text-sm">TIPOS DE RESÍDUOS COM QUE TRABALHA:</span>
+                                    <img src="img/residuo4.png" alt="" class="w-20">
+                                </div>
+
+                                <button class="btn btn-warning w-full mt-2"> <i class="fa-solid fa-phone"></i> Contato</button>
+                            </div>
+                        
+                        </div>
+
+                </div>
+            </section>
+
+
+
+</body>
+</html>

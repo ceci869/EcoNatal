@@ -60,6 +60,10 @@ class FormSubmit {
                 setTimeout(() => this.validateForm(), 0);
             });
 
+<<<<<<< HEAD:public/scripts/message_form.js
+=======
+            // Initial validation
+>>>>>>> main:scripts/message_form.js
             this.validateForm();
         }
         return this;
