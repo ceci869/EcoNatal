@@ -4,45 +4,14 @@ class FormSubmit {
         this.form = document.querySelector(settings.form);
         this.formButton = document.querySelector(settings.button);
         this.sendForm = this.sendForm.bind(this);
-        if (this.formButton) {
-            this.originalButtonText = this.formButton.innerText;
-        }
-    }
-
-    displayMessage(message, isSuccess) {
-        const messageDiv = document.createElement('div');
-       messageDiv.innerHTML = message;
-       messageDiv.setAttribute('data-message', '');
-
-        Array.from(this.form.children).forEach(child => {
-            child.style.display = 'none';
-        });
-
-        this.form.appendChild(messageDiv);
-        setTimeout(() => {
-           messageDiv.remove();
-
-            Array.from(this.form.children).forEach(child => {
-                child.style.display = '';
-            })
-
-            this.formButton.disabled = false;
-            this.formButton.innerText = this.originalButtonText;
-
-            if (isSuccess) {
-                this.form.reset();
-            }
-
-            this.validateForm();
-        }, 3000);
     }
 
     displaySuccess() {
-        this.displayMessage(this.settings.success, true);
+        this.form.innerHTML = this.settings.success;
     }
 
     displayError() {
-        this.displayMessage(this.settings.error, false)
+        this.form.innerHTML = this.settings.error;
     }
 
     getFormObject() {
@@ -74,7 +43,7 @@ class FormSubmit {
             this.displaySuccess();
         } catch (error) {
             this.displayError();
-            console.error(error);
+            throw new Error(error);
         }
     }
 
