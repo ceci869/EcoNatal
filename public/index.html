@@ -785,14 +785,14 @@
         <!-- Mapa de lixeiras -->
         <section x-show="pagina === 'mapas'" class="flex min-h-screen bg-[#F7FAF5] drawer lg:drawer-open min-h-screen bg-[#F7FAF5]">
                 <section class="drawer lg:drawer-open min-h-screen bg-[#F7FAF5]">
-                <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+                <input id="my-drawer-mapas" type="checkbox" class="drawer-toggle" />
                     
                     <div class="drawer-content flex flex-col">
                         
                         <div class="relative w-full p-6 md:p-10">
                             
                             <div class="absolute left-4 top-4 lg:hidden">
-                                <label for="my-drawer" class="btn btn-ghost btn-circle p-0 min-h-0 h-auto">
+                                <label for="my-drawer-mapas" class="btn btn-ghost btn-circle p-0 min-h-0 h-auto">
                                     <i class="fa-solid fa-bars text-2xl"></i>
                                 </label>
                             </div>
@@ -832,7 +832,7 @@
                     </div>
 
                     <div class="drawer-side z-50">
-                    <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                    <label for="my-drawer-mapas" aria-label="close sidebar" class="drawer-overlay"></label>
                     <aside class="w-[260px] min-h-full bg-[#5C7E1B] text-white flex flex-col justify-between">
                         <div>
                             <div class="p-6 text-center">
@@ -864,14 +864,14 @@
             <!-- Catadores -->
             <section x-show="pagina === 'catadores'" class="flex min-h-screen bg-[#F7FAF5] max-md:flex-col max-md:ml-0 drawer lg:drawer-open">
                 <section class="drawer lg:drawer-open min-h-screen bg-[#F7FAF5]">
-                <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+                <input id="my-drawer-catadores" type="checkbox" class="drawer-toggle" />
                 
                 <div class="drawer-content flex flex-col overflow-x-hidden">
                     
                     <div class="relative w-full p-6 md:p-10">
                         
                         <div class="absolute left-4 top-4 lg:hidden">
-                            <label for="my-drawer" class="btn btn-ghost btn-circle p-0 min-h-0 h-auto">
+                            <label for="my-drawer-catadores" class="btn btn-ghost btn-circle p-0 min-h-0 h-auto">
                                 <i class="fa-solid fa-bars text-2xl"></i>
                             </label>
                         </div>
@@ -888,7 +888,7 @@
                                 <p class="mb-8 ml-10">Entre em contato com catadores parceiros da EcoNatal.</p>
                                 <div class="font-medium text-[#263A00] flex justify-between items-center">
                                     <p class="text-xl ml-10">Nossos catadores:</p>
-                                    <div class="flex gap-2 mr-10">
+                                    <div class="hidden md:flex gap-2 mr-10">
                                         <button onclick="document.querySelector('.carousel').scrollLeft -= 300" class="btn btn-circle btn-sm bg-[#9BB569] border-none text-white hover:bg-[#7a944d]">
                                             <i class="fa-solid fa-chevron-left"></i>
                                         </button>
@@ -951,12 +951,12 @@
                                         <div class="flex flex-col gap-3">
                                             <div class="flex flex-col mt-4">
                                                 <span class="text-gray-500 font-medium text-sm">NOME:</span>
-                                                <p class="font-medium">João da Silva</p>
+                                                <p class="font-medium">Marina de Souza</p>
                                             </div>
 
                                             <div class="flex flex-col mt-4">
                                                 <span class="text-gray-500 font-medium text-sm">NÚMERO PARA CONTATO:</span>
-                                                <p class="font-medium">(84) 91111-1111</p>
+                                                <p class="font-medium">(84) 93333-3333</p>
                                             </div>
 
                                             <div class="flex flex-col mt-4">
@@ -974,12 +974,12 @@
                                         <div class="flex flex-col gap-3">
                                             <div class="flex flex-col mt-4">
                                                 <span class="text-gray-500 font-medium text-sm">NOME:</span>
-                                                <p class="font-medium">João da Silva</p>
+                                                <p class="font-medium">Júlio Cezar</p>
                                             </div>
 
                                             <div class="flex flex-col mt-4">
                                                 <span class="text-gray-500 font-medium text-sm">NÚMERO PARA CONTATO:</span>
-                                                <p class="font-medium">(84) 91111-1111</p>
+                                                <p class="font-medium">(84) 94444-4444</p>
                                             </div>
 
                                             <div class="flex flex-col mt-4">
@@ -998,7 +998,7 @@
                 </div>
 
                 <div class="drawer-side z-50">
-                    <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                    <label for="my-drawer-catadores" aria-label="close sidebar" class="drawer-overlay"></label>
                     <aside class="w-[260px] min-h-full bg-[#5C7E1B] text-white flex flex-col justify-between">
                         <div>
                             <div class="p-6 text-center">
@@ -1030,14 +1030,14 @@
         <!-- Página Perfil -->
         <section x-show="pagina === 'perfil'" class="flex min-h-screen bg-[#F7FAF5]">
             <section class="drawer lg:drawer-open min-h-screen bg-[#F7FAF5]">
-                <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+                <input id="my-drawer-perfil" type="checkbox" class="drawer-toggle" />
                 
                 <div class="drawer-content flex flex-col">
                     
                     <div class="relative w-full p-6 md:p-10">
                         
                         <div class="absolute left-4 top-4 lg:hidden">
-                            <label for="my-drawer" class="btn btn-ghost btn-circle p-0 min-h-0 h-auto">
+                            <label for="my-drawer-perfil" class="btn btn-ghost btn-circle p-0 min-h-0 h-auto">
                                 <i class="fa-solid fa-bars text-2xl"></i>
                             </label>
                         </div>
@@ -1078,8 +1078,8 @@
                     </div>
                 </div> 
 
-                <div class="drawer-side z-50"">
-                    <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                <div class="drawer-side z-50">
+                    <label for="my-drawer-perfil" aria-label="close sidebar" class="drawer-overlay"></label>
                     <aside class="w-[260px] min-h-full bg-[#5C7E1B] text-white flex flex-col justify-between">
                         <div>
                             <div class="p-6 text-center">
