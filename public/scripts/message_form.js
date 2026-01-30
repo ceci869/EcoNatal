@@ -4,14 +4,45 @@ class FormSubmit {
         this.form = document.querySelector(settings.form);
         this.formButton = document.querySelector(settings.button);
         this.sendForm = this.sendForm.bind(this);
+        if (this.formButton) {
+            this.originalButtonText = this.formButton.innerText;
+        }
+    }
+
+    displayMessage(message, isSuccess) {
+        const messageDiv = document.createElement('div');
+       messageDiv.innerHTML = message;
+       messageDiv.setAttribute('data-message', '');
+
+        Array.from(this.form.children).forEach(child => {
+            child.style.display = 'none';
+        });
+
+        this.form.appendChild(messageDiv);
+        setTimeout(() => {
+           messageDiv.remove();
+
+            Array.from(this.form.children).forEach(child => {
+                child.style.display = '';
+            })
+
+            this.formButton.disabled = false;
+            this.formButton.innerText = this.originalButtonText;
+
+            if (isSuccess) {
+                this.form.reset();
+            }
+
+            this.validateForm();
+        }, 3000);
     }
 
     displaySuccess() {
-        this.form.innerHTML = this.settings.success;
+        this.displayMessage(this.settings.success, true);
     }
 
     displayError() {
-        this.form.innerHTML = this.settings.error;
+        this.displayMessage(this.settings.error, false)
     }
 
     getFormObject() {
@@ -43,7 +74,7 @@ class FormSubmit {
             this.displaySuccess();
         } catch (error) {
             this.displayError();
-            throw new Error(error);
+            console.error(error);
         }
     }
 
@@ -60,10 +91,6 @@ class FormSubmit {
                 setTimeout(() => this.validateForm(), 0);
             });
 
-<<<<<<< HEAD:public/scripts/message_form.js
-=======
-            // Initial validation
->>>>>>> main:scripts/message_form.js
             this.validateForm();
         }
         return this;

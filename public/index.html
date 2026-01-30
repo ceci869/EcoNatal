@@ -545,7 +545,7 @@
             </div>
         </section>
 
-        <section x-show="pagina === 'dashboard'" class="flex min-h-screen bg-[#F7FAF5]">
+        <section x-show="pagina === 'dashboard'" class="flex min-h-screen bg-[#F7FAF5] drawer lg:drawer-open min-h-screen bg-[#F7FAF5]">
 
             <aside class="w-[260px] bg-[#5C7E1B] text-white flex flex-col justify-between">
                 <div>
@@ -554,22 +554,22 @@
                     </div>
 
                     <div class="flex flex-col gap-4 px-6 mt-50">
-                        <button @click="pagina='dashboard'" class="flex items-center gap-3 cursor-pointer">
+                        <button @click="pagina = 'dashboard'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
                             <i class="fa-solid fa-house"></i> Home
                         </button>
-                        <button @click="pagina = 'mapas'" class="flex items-center gap-3 cursor-pointer">
+                        <button @click="pagina = 'mapas'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
                             <i class="fa-solid fa-map"></i> Mapas
                         </button>
-                        <button @click="pagina='catadores'" class="flex items-center gap-3 cursor-pointer">
+                        <button @click="pagina='catadores'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
                             <i class="fa-solid fa-users"></i> Catadores
                         </button>
-                        <button @click="fazerLogout()" class="flex items-center gap-3 cursor-pointer">
+                        <button @click="fazerLogout()" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
                             <i class="fa-solid fa-arrow-right-from-bracket scale-x-[-1]"></i> Logout
                         </button>
                     </div>
                 </div>
 
-                <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 rounded-lg" @click="pagina='perfil'">
+                <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 hover:bg-[#9BB569] rounded-lg" @click="pagina = 'perfil'">
                    <p class="text-[#263A00] font-bold cursor-pointer" x-text="usuarioLogado.nome"></p> 
                 </div>
             </aside>
@@ -582,13 +582,13 @@
                         <i class="fa-regular fa-bell"></i>
                     </nav>
 
-                    <h1 class="text-3xl font-bold mb-1 text-[#263A00]">Bem-vindo, Ely Neto!</h1>
+                    <h1 class="text-3xl font-bold mb-1 text-[#263A00]" x-text="`Bem vindo(a), ${usuarioLogado.nome}!`"></h1>
                     <p class="mb-8">Juntos por uma Natal mais limpa e sustentável.</p>
 
 
                     <div class="flex gap-3">
 
-                        <div class="card bg-white shadow p-6 cursor-pointer w-80" @click="pagina='mapeamento'">
+                        <div class="card bg-white shadow p-6 cursor-pointer w-80" @click="pagina ='mapas'">
                             <div class="flex gap-6">   
                                 <span class="w-10 h-10 flex items-center justify-center">
                                     <i class="fa-solid fa-map-location text-4xl text-[#263A00]"></i>
@@ -620,13 +620,9 @@
 
                             <div class="flex justify-end ">
                                 <img src="img/seta.png" alt="">
-                            </div>
-
-                          
-
+                            </div>                        
                         </div>
                     </div>
-
    
                     <div class="bg-white shadow p-6 flex justify-between mb-8 mt-7">
                         <div class="flex gap-5">
@@ -713,7 +709,7 @@
                 <p class="text-[#EDFFCC] font-normal text-[20px] max-md:hidden">Agora você já faz parte da EcoNatal.</p>
                 <p class="text-[#EDFFCC] font-normal text-[20px] mb-[25px]">Faça login para começar a utilizar a plataforma.</p>
                 <div class="max-md:flex max-md:justify-end">
-                <button @click="pagina = 'login'" class="bg-[#FE8E10] rounded-[10px] px-[50px] py-[10px] text-[#1C2A02] font-bold text-[15px] mb-[18px] max-md:px-[20px] max-md:py-[7px]">Ir até a página de login</button>
+                <button @click="pagina = 'login'" class="bg-[#FE8E10] hover:bg-[#DA7400] rounded-[10px] px-[50px] py-[10px] text-[#1C2A02] font-bold text-[15px] mb-[18px] max-md:px-[20px] max-md:py-[7px] cursor-pointer">Ir até a página de login</button>
                 </div>
             </div>
             <div class="max-md:hidden">
@@ -734,7 +730,7 @@
                 <p class="text-[#1C2A02] font-normal text-[20px] mb-[25px]">Seu contato estará disponível para toda a comunidade!</p>
                 <div class="max-md:flex max-md:justify-end">
                 <button @click="pagina = 'homepage'"
-                class="bg-[#FE8E10] rounded-[10px] px-[50px] py-[10px] text-[#1C2A02] font-bold text-[15px] mb-[18px] max-md:px-[20px] max-md:py-[7px]">Voltar para a homepage</button>
+                class="bg-[#FE8E10] hover:bg-[#DA7400] rounded-[10px] px-[50px] py-[10px] text-[#1C2A02] font-bold text-[15px] mb-[18px] max-md:px-[20px] max-md:py-[7px] cursor-pointer">Voltar para a homepage</button>
                 </div>
             </div>
             <div class="max-md:hidden">
@@ -744,7 +740,7 @@
 
         <section x-show="pagina === 'erroCadastro'" class="bg-[#1C2A02] min-h-[100vh] py-[19px] px-[22px]">
             <div>
-                <img src="img/logo-econatal-3.svg" alt="Logo da EcoNatal">
+                <img src="img/econtal_verde.png" alt="Logo da EcoNatal" class="w-15">
             </div>
             <div class="hidden max-md:block max-md:flex max-md:justify-center">
                 <img src="img/Imagem_erro.svg" alt="Imagem de emoji representativo de erro">
@@ -754,18 +750,17 @@
                 <p class="text-[#EDFFCC] font-normal text-[20px] max-md:hidden">Não foi possível concluir seu cadastro no momento.</p>
                 <p class="text-[#EDFFCC] font-normal text-[20px] mb-[25px]">Verifique as informações preenchidas e tente novamente.</p>
                 <div class="max-md:flex max-md:justify-end">
-                <button @click="pagina = 'cadastro'"
-                class="bg-[#FE8E10] rounded-[10px] px-[50px] py-[10px] text-[#1C2A02] font-bold text-[15px] mb-[18px] max-md:px-[20px] max-md:py-[7px]">Tentar novamente</button>
+                <button class="bg-[#FE8E10] hover:bg-[#DA7400] rounded-[10px] px-[50px] py-[10px] text-[#1C2A02] font-bold text-[15px] mb-[18px] max-md:px-[20px] max-md:py-[7px] cursor-pointer">Tentar novamente</button>
                 </div>
             </div>
-            <div class="max-md:hidden">
+            <div class="max-md:hidden mx-[60px]">
                 <img src="img/Imagem_erro.svg" alt="Imagem de emoji representativo de erro">
             </div>
         </section>
 
         <section x-show="pagina === 'erroRegistro'" class="bg-[#F1F1F1] min-h-[100vh] py-[19px] px-[22px]">
             <div>
-                <img src="img/logo-econatal.svg" alt="Logo da EcoNatal">
+                <img src="img/logo_econatal.png" alt="Logo da EcoNatal" class="w-15">
             </div>
             <div class="hidden max-md:block max-md:flex max-md:justify-center">
                 <img src="img/Imagem_erro.svg" alt="Imagem de emoji representativo de erro">
@@ -775,43 +770,42 @@
                 <p class="text-[#1C2A02] font-normal text-[20px] max-md:hidden">Não foi possível concluir seu registro no momento.</p>
                 <p class="text-[#1C2A02] font-normal text-[20px] mb-[25px]">Verifique as informações preenchidas e tente novamente.</p>
                 <div class="max-md:flex max-md:justify-end">
-                <button @click="pagina = 'registro'"
-                class="bg-[#FE8E10] rounded-[10px] px-[50px] py-[10px] text-[#1C2A02] font-bold text-[15px] mb-[18px] max-md:px-[20px] max-md:py-[7px]">Tentar novamente</button>
+                <button class="bg-[#FE8E10] hover:bg-[#DA7400] rounded-[10px] px-[50px] py-[10px] text-[#1C2A02] font-bold text-[15px] mb-[18px] max-md:px-[20px] max-md:py-[7px] cursor-pointer">Tentar novamente</button>
                 </div>
             </div>
-            <div class="max-md:hidden">
+            <div class="max-md:hidden mx-[60px]">
                 <img src="img/Imagem_erro.svg" alt="Imagem de emoji representativo de erro">
             </div>
         </section>
 
         <!-- Mapa de lixeiras -->
         <section x-show="pagina === 'mapas'" class="flex min-h-screen bg-[#F7FAF5]">
-                <aside class="w-[260px] bg-[#5C7E1B] text-white flex flex-col justify-between">
-                    <div>
-                        <div class="p-6">
-                            <img src="img/econatal-branca.png" alt="EcoNatal">
-                        </div>
-    
-                        <div class="flex flex-col gap-4 px-6 mt-50">
-                            <button @click="pagina='dashboard'" class="flex items-center gap-3 cursor-pointer">
-                                <i class="fa-solid fa-house"></i> Home
-                            </button>
-                            <button @click="pagina = 'mapas'" class="flex items-center gap-3 cursor-pointer">
-                                <i class="fa-solid fa-map"></i> Mapas
-                            </button>
-                            <button @click="pagina='catadores'" class="flex items-center gap-3 cursor-pointer">
-                                <i class="fa-solid fa-users"></i> Catadores
-                            </button>
-                            <button @click="fazerLogout()" class="flex items-center gap-3 cursor-pointer">
-                                <i class="fa-solid fa-arrow-right-from-bracket scale-x-[-1]"></i> Logout
-                            </button>
-                        </div>
+            <aside class="w-[260px] bg-[#5C7E1B] text-white flex flex-col justify-between">
+                <div>
+                    <div class="p-6">
+                        <img src="img/econatal-branca.png" alt="EcoNatal">
                     </div>
-    
-                    <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 rounded-lg" @click="pagina = 'perfil'">
-                       <p class="text-[#263A00] font-bold cursor-pointer">Ely Neto</p> 
+
+                    <div class="flex flex-col gap-4 px-6 mt-50">
+                        <button @click="pagina = 'dashboard'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                            <i class="fa-solid fa-house"></i> Home
+                        </button>
+                        <button @click="pagina = 'mapas'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                            <i class="fa-solid fa-map"></i> Mapas
+                        </button>
+                        <button @click="pagina='catadores'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                            <i class="fa-solid fa-users"></i> Catadores
+                        </button>
+                        <button @click="fazerLogout()" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                            <i class="fa-solid fa-arrow-right-from-bracket scale-x-[-1]"></i> Logout
+                        </button>
                     </div>
-                </aside>
+                </div>
+
+                <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 hover:bg-[#9BB569] rounded-lg" @click="pagina = 'perfil'">
+                <p class="text-[#263A00] font-bold cursor-pointer" x-text="usuarioLogado.nome"></p> 
+                </div>
+            </aside>
     
                     <div class="flex-1 p-10">
                         <h1 class="text-3xl font-bold mb-2 text-[#263A00] ml-10">Confira o Mapeamento</h1>
@@ -825,7 +819,6 @@
                             <div class="w-70 bg-[#F2F2F2] p-6 shadow ml-10">
                                 <h4 class="font-bold mb-3">Legenda</h4>
                                 <ul class="space-y-2">
-                                    <li><span class="inline-block mr-3 w-5 h-5 bg-red-500"></span> Onde você está</li>
                                     <li><span class="inline-block mr-3 w-5 h-5 bg-green-500"></span> Lixeira vazia</li>
                                     <li><span class="inline-block mr-3 w-5 h-5 bg-orange-500"></span> Parcialmente cheia</li>
                                     <li><span class="inline-block mr-3 w-5 h-5 bg-blue-700"></span> Lixeira cheia</li>
@@ -836,7 +829,7 @@
         </section>
 
         <!-- Catadores -->
-        <section x-show="pagina === 'catadores'" class="flex min-h-screen bg-[#F7FAF5]">
+        <section x-show="pagina === 'catadores'" class="flex min-h-screen bg-[#F7FAF5] max-md:flex-col max-md:ml-0">
             <aside class="w-[260px] bg-[#5C7E1B] text-white flex flex-col justify-between">
                 <div>
                     <div class="p-6">
@@ -844,23 +837,23 @@
                     </div>
 
                     <div class="flex flex-col gap-4 px-6 mt-50">
-                        <button @click="pagina='dashboard'" class="flex items-center gap-3 cursor-pointer">
+                        <button @click="pagina = 'dashboard'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
                             <i class="fa-solid fa-house"></i> Home
                         </button>
-                        <button @click="pagina = 'mapas'" class="flex items-center gap-3 cursor-pointer">
+                        <button @click="pagina = 'mapas'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
                             <i class="fa-solid fa-map"></i> Mapas
                         </button>
-                        <button @click="pagina='catadores'" class="flex items-center gap-3 cursor-pointer">
+                        <button @click="pagina='catadores'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
                             <i class="fa-solid fa-users"></i> Catadores
                         </button>
-                        <button @click="fazerLogout()" class="flex items-center gap-3 cursor-pointer">
+                        <button @click="fazerLogout()" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
                             <i class="fa-solid fa-arrow-right-from-bracket scale-x-[-1]"></i> Logout
                         </button>
                     </div>
                 </div>
 
-                <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 rounded-lg" @click="pagina='perfil'">
-                   <p class="text-[#263A00] font-bold cursor-pointer">Ely Neto</p> 
+                <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 hover:bg-[#9BB569] rounded-lg" @click="pagina = 'perfil'">
+                   <p class="text-[#263A00] font-bold cursor-pointer" x-text="usuarioLogado.nome"></p> 
                 </div>
             </aside>
 
@@ -969,7 +962,6 @@
 
         <!-- Página Perfil -->
         <section x-show="pagina === 'perfil'" class="flex min-h-screen bg-[#F7FAF5]">
-
             <aside class="w-[260px] bg-[#5C7E1B] text-white flex flex-col justify-between">
                 <div>
                     <div class="p-6">
@@ -977,23 +969,23 @@
                     </div>
 
                     <div class="flex flex-col gap-4 px-6 mt-50">
-                        <button @click="pagina='dashboard'" class="flex items-center gap-3 cursor-pointer">
+                        <button @click="pagina = 'dashboard'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
                             <i class="fa-solid fa-house"></i> Home
                         </button>
-                        <button @click="pagina='mapas'" class="flex items-center gap-3 cursor-pointer">
+                        <button @click="pagina = 'mapas'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
                             <i class="fa-solid fa-map"></i> Mapas
                         </button>
-                        <button @click="pagina='catadores'" class="flex items-center gap-3 cursor-pointer">
+                        <button @click="pagina='catadores'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
                             <i class="fa-solid fa-users"></i> Catadores
                         </button>
-                        <button @click="fazerLogout()" class="flex items-center gap-3 cursor-pointer">
+                        <button @click="fazerLogout()" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
                             <i class="fa-solid fa-arrow-right-from-bracket scale-x-[-1]"></i> Logout
                         </button>
                     </div>
                 </div>
 
-                <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 rounded-lg" @click="pagina='perfil'">
-                   <p class="text-[#263A00] font-medium cursor-pointer">Ely Neto</p> 
+                <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 hover:bg-[#9BB569] rounded-lg" @click="pagina = 'perfil'">
+                   <p class="text-[#263A00] font-bold cursor-pointer" x-text="usuarioLogado.nome"></p> 
                 </div>
             </aside>
 
@@ -1013,17 +1005,17 @@
                             <div class="bg-white shadow p-8 w-[80%] h-[60%] flex flex-col gap-4">
                                 <div>
                                     <span class="font-light text-gray-500">Nome completo</span>
-                                    <p>Ely Felix dos Santos Neto</p>
+                                    <p x-text="usuarioLogado.nome"></p>
                                 </div>
 
                                 <div>
                                     <span class="font-light text-gray-500">E-mail</span>
-                                    <p>liriliiarila_n@gmail.com</p>
+                                    <p x-text="usuarioLogado.email"></p>
                                 </div>
 
                                 <div>
                                     <span class="font-light text-gray-500">Endereço</span>
-                                    <p>Rua Santa Clara, Cidade das Rosas; 123</p>
+                                    <p x-text="usuarioLogado.endereco"></p>
                                 </div>
 
                                 <div class="mt-15">
