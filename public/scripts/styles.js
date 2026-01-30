@@ -1,6 +1,5 @@
 var ativo = document.querySelector('.ativo'),
     meusbotoes = ativo.querySelectorAll('button');
-    home = document.getElementById('home');
 
 meusbotoes.forEach(function(a){
     a.addEventListener('click', botaoAtivado);

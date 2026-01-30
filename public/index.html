@@ -31,24 +31,24 @@
         <img src="img/logo-econatal.svg" alt="Logo da empresa EcoNatal">
         <nav class="flex justify-between">
             <menu class="grid grid-cols-[1fr_1.25fr_1.25fr] gap-[26px] max-md:hidden ativo">
-                <button @click="pagina = 'homepage'" class="cursor-pointer border-b-1" id="home">
+                <button @click="pagina = 'homepage'" class="cursor-pointer border-b-1 hover:bg-[#C6C1C1] hover:rounded-[10px] hover:border-0 px-[5px]">
                     Home
                 </button>
 
-                <button @click="pagina = 'contato'" class="cursor-pointer">
+                <button @click="pagina = 'contato'" class="cursor-pointer hover:bg-[#C6C1C1] hover:rounded-[10px] hover:border-0 px-[5px]">
                     Contato
                 </button>
 
-                <button @click="pagina = 'projeto'" class="cursor-pointer">
+                <button @click="pagina = 'projeto'" class="cursor-pointer hover:bg-[#C6C1C1] hover:rounded-[10px] hover:border-0 px-[5px]">
                     Projeto
                 </button>
             </menu>
 
             <menu class="grid grid-cols-[1fr_1.25fr] gap-[26px] ml-[30px] max-md:mx-auto">
-                <button @click="pagina = 'login'" class="bg-[#1C370A] py-[4px] px-[28px] rounded-[15px] text-white cursor-pointer">
+                <button @click="pagina = 'login'" class="bg-[#1C370A] py-[4px] px-[28px] rounded-[15px] text-white cursor-pointer hover:bg-[#375523]">
                     Login
                 </button>
-                <button @click="pagina = 'cadastro'" class="bg-[#5C7E1B] py-[4px] px-[28px] rounded-[15px] text-white cursor-pointer">
+                <button @click="pagina = 'cadastro'" class="bg-[#5C7E1B] py-[4px] px-[28px] rounded-[15px] text-white cursor-pointer hover:bg-[#375523]">
                     Cadastrar
                 </button>
             </menu>
@@ -93,7 +93,7 @@
                         <p class="text-[16px] font-normal max-md:my-[8px]">E ajude pequenos artesão e empreendedores.
                         </p>
                         <button type="button" @click="pagina = 'registro'"
-                            class="bg-[#58971C] px-[30px] py-[14px] rounded-[10px] text-[#FBFFF8] text-[14px] font-semibold inline-flex text-nowrap items-baseline cursor-pointer">Registre-se<i
+                            class="bg-[#58971C] px-[30px] py-[14px] rounded-[10px] text-[#FBFFF8] text-[14px] font-semibold inline-flex text-nowrap items-baseline cursor-pointer hover:bg-[#375523]">Registre-se<i
                             class="fa-solid fa-chevron-right ml-[5px]"></i></button>
                     </div>
                     <div class="justify-items-center max-md:hidden">
@@ -206,9 +206,9 @@
                         </div>
                         <div class="grid grid-cols-2 gap-[56px] max-md:gap-[30px]">
                             <button type="reset"
-                                class="border border-solid border-[#00000042] py-[10px] rounded-[10px] text-[20px] font-bold max-md:py-[5px] max-md:text-[18px]">Limpar</button>
+                                class="border border-solid border-[#00000042] py-[10px] rounded-[10px] text-[20px] font-bold max-md:py-[5px] max-md:text-[18px] cursor-pointer hover:bg-[#E6E6E6]">Limpar</button>
                             <button type="submit"
-                                class="bg-[#5C7E1B] py-[10px] rounded-[10px] text-white text-[20px] font-bold disabled:bg-gray-300 disabled:cursor-not-allowed max-md:py-[5px] max-md:text-[18px] transition-colors duration-200"
+                                class="bg-[#5C7E1B] py-[10px] rounded-[10px] text-white text-[20px] font-bold disabled:bg-gray-300 disabled:cursor-not-allowed max-md:py-[5px] max-md:text-[18px] cursor-pointer transition-colors duration-200"
                                 data-button disabled>Enviar<i class="fa-solid fa-chevron-right ml-[5px]"></i></button>
                         </div>
                     </form>
@@ -322,7 +322,7 @@
                                 <button type="submit" :disabled="!podeEntrar()" :class="{
                                     'opacity-50 cursor-not-allowed': !podeEntrar()
                                 }"
-                                    class="w-[30vh] mx-auto bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] transition-opacity">
+                                    class="w-[30vh] mx-auto bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] transition-opacity cursor-pointer hover:bg-[#5C7E1B82]">
                                     Entrar <i class="fa-solid fa-chevron-right ml-[5px]"></i>
                                 </button>
 
@@ -335,7 +335,8 @@
                 </div>
             </div>
             <div class="max-md:hidden">
-                <div class="flex justify-end">
+                <div class="flex justify-between">
+                    <button class="my-[19px] mx-[22px] rounded-[5px] bg-[#5C7E1B82] px-[6px] py-[2px] font-bold cursor-pointer hover:bg-[#9BB569]" @click="pagina = 'homepage'">Voltar</button>
                     <img src="img/logo-econatal.svg" alt="Logo da econatal" class="my-[19px] mx-[22px]">
                 </div>
                 <div class="flex flex-col justify-center align-center min-h-[80%]">
@@ -347,7 +348,9 @@
         <section x-show="pagina === 'cadastro'" class="bg-[#F1F1F1] grid grid-cols-[1.5fr_1fr] min-h-[100vh] max-md:flex max-md:flex-col max-md:bg-[#F7F7F7]">
 
             <div>
+                <button class="my-[19px] mx-[22px] rounded-[5px] bg-[#5C7E1B82] px-[6px] py-[2px] font-bold cursor-pointer hover:bg-[#9BB569]" @click="pagina = 'homepage'">Voltar</button>
                 <img src="img/logo-econatal.svg" alt="Logo da econatal" class="my-[19px] mx-[22px]">
+                
                 <div class="flex flex-col justify-center align-center min-h-[80%] max-md:hidden">
                     <img src="img/imagem-personagem.svg" alt="Imagem de personagem" class="mx-auto">
                 </div>
@@ -394,7 +397,7 @@
                                 <button type="button" @click="if (podeAvancar()) passo = 2" :disabled="!podeAvancar()"
                                     :class="{
                                     'opacity-50 cursor-not-allowed': !podeAvancar()}" 
-                                    class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] transition-opacity">
+                                    class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] transition-opacity cursor-pointer hover:bg-[#5C7E1B82]">
                                     Avançar <i class="fa-solid fa-chevron-right ml-[5px]"></i>
                                 </button>
 
@@ -435,7 +438,7 @@
                                   <button type="submit" :disabled="!formulario.endereco || !formulario.senha || !formulario.confirmandoSenha || formulario.senha !== formulario.confirmandoSenha"
                                     :class="{'opacity-50 cursor-not-allowed': !formulario.endereco || !formulario.senha || !formulario.confirmandoSenha || formulario.senha !== formulario.confirmandoSenha}"
                                     class="bg-[#9BB569] px-[20px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] text-nowrap transition-opacity">
-                                    Concluir <i class="fa-solid fa-chevron-right ml-[5px]"></i>
+                                    Concluir <i class="fa-solid fa-chevron-right ml-[5px] hover:bg-[#5C7E1B82]"></i>
                                 </button>
                             </div>
                         </section>
@@ -446,10 +449,16 @@
 
         <section x-show="pagina === 'registro'" class="bg-[#9BB569] grid grid-cols-[1.5fr_1fr] min-h-[100vh] max-md:flex max-md:flex-col max-md:bg-[#1C2A02]">
             <div>
-                <img src="img/logo-econatal-2.svg" alt="Logo da econatal"
-                    class="my-[19px] mx-[22px] text-[#1C2A02] max-md:hidden">
-                <img src="img/logo-econatal-3.svg" alt="Logo da econatal"
-                    class="my-[19px] mx-[22px] text-[#1C2A02] hidden max-md:block">
+                <div class="flex flex-row justify-between">
+                    <img src="img/logo-econatal-2.svg" alt="Logo da econatal"
+                        class="my-[19px] mx-[22px] text-[#1C2A02] max-md:hidden">
+                    <button class="my-[19px] mx-[22px] rounded-[5px] bg-[#1C2A02] px-[6px] py-[2px] text-[#EDFFCC] font-bold cursor-pointer hover:bg-[#263706] max-md:hidden" @click="pagina = 'homepage'">Voltar</button>
+                </div>
+                <div class="flex flex-row justify-between">
+                    <img src="img/logo-econatal-3.svg" alt="Logo da econatal"
+                        class="my-[19px] mx-[22px] text-[#1C2A02] hidden max-md:block">
+                    <button class="my-[19px] mx-[22px] rounded-[5px] bg-[#9BB569] px-[6px] py-[2px] text-[#1C2A02] font-bold cursor-pointer hover:bg-[#5C7E1B82] hidden max-md:block" @click="pagina = 'homepage'">Voltar</button>
+                </div>
                 <div class="flex flex-col justify-center align-center min-h-[80%]">
                     <img src="img/imagem-personagem.svg" alt="Imagem de personagem" class="mx-auto max-md:hidden">
                 </div>
@@ -491,7 +500,7 @@
                             <div class="flex justify-center w-[30vh] mx-auto">
                                 <button type="button" @click="if (podeAvancar()) passo = 2" :disabled="!podeAvancar()"
                                     :class="{ 'opacity-50 cursor-not-allowed': !podeAvancar() }"
-                                    class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02]">
+                                    class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] text-[16px] font-bold text-[#1C2A02] cursor-pointer hover:bg-[#5C7E1B82]">
                                     Avançar
                                     <i class="fa-solid fa-chevron-right ml-[5px]"></i>
                                 </button>
@@ -520,6 +529,17 @@
                                     </div>
                                 </template>
 
+                                <div class="mb-[18px] flex flex-col">
+                                    <label for="" class="text-[#EDFFCC] text-[18px] font-normal">Adicione uma foto sua:</label>
+                                    <input id="file-upload" type="file" accept="image/*" @change="processarImagem($event)" class="hidden">
+                                    <label for="file-upload" class="bg-[#EDFFCC] rounded-[5px] flex m-[2px] justify-center cursor-pointer hover:bg-[#2E3F0E]">Selecionar Foto</label>
+                                </div>
+
+                                <div x-show="formulario.foto" class="mt-2">
+                                    <p class="text-[#EDFFCC] text-[14px] font-normal">Prévia:</p>
+                                    <img :src="formulario.foto" class="w-[100px] h-[100px] object-cover rounded-[50%] mt-2">
+                                </div>
+
                                 <span x-show="formulario.coletas.length === 0" class="text-red-400 text-sm mt-2 block">
                                     Selecione pelo menos uma coleta.
                                 </span>
@@ -527,14 +547,14 @@
 
                             <div class="grid grid-cols-2 gap-[5px]">
                                 <button type="button" @click="passo = 1"
-                                    class="border border-[3px] border-[#9BB569] text-[#9BB569] px-[45px] py-[12px] rounded-[10px] font-bold">
+                                    class="border border-[3px] border-[#9BB569] text-[#9BB569] px-[45px] py-[12px] rounded-[10px] font-bold cursor-pointer hover:bg-[#2E3F0E]">
                                     <i class="fa-solid fa-chevron-left mr-[5px]"></i>
                                     Voltar
                                 </button>
 
                                 <button type="submit" :disabled="!podeConcluir()"
                                     :class="{ 'opacity-50 cursor-not-allowed': !podeConcluir() }"
-                                    class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] font-bold text-[#1C2A02]">
+                                    class="bg-[#9BB569] px-[45px] py-[12px] rounded-[10px] font-bold text-[#1C2A02] cursor-pointer hover:bg-[#2E3F0E]">
                                     Concluir
                                     <i class="fa-solid fa-chevron-right ml-[5px]"></i>
                                 </button>
@@ -692,9 +712,6 @@
             </section>  
             </section>
         </section>
-
-
-
 
         <!-- Páginas de alerta (sucesso e erro) -->
         <section x-show="pagina === 'cadastroSucesso'" class="bg-[#1C2A02] min-h-[100vh] py-[19px] px-[22px]">
@@ -861,8 +878,16 @@
               <h1 class="text-3xl ml-10 font-bold mb-2 text-[#263A00]">Fale com um catador</h1>
                 <p class="mb-8 ml-10">Entre em contato com catadores parceiros da EcoNatal.</p>
 
-                <div class="font-medium text-[#263A00]">
+                <div class="font-medium text-[#263A00] flex justify-between items-center">
                     <p class="text-xl ml-10">Nossos catadores:</p>
+                    <div class="flex gap-2 mr-10">
+                        <button onclick="document.querySelector('.carousel').scrollLeft -= 300" class="btn btn-circle btn-sm bg-[#9BB569] border-none text-white hover:bg-[#7a944d]">
+                            <i class="fa-solid fa-chevron-left"></i>
+                        </button>
+                        <button onclick="document.querySelector('.carousel').scrollLeft += 300" class="btn btn-circle btn-sm bg-[#9BB569] border-none text-white hover:bg-[#7a944d]">
+                            <i class="fa-solid fa-chevron-right"></i>
+                        </button>
+                    </div>
                 </div>
 
 
@@ -887,8 +912,8 @@
 
                             <button class="btn btn-warning w-full mt-2"> <i class="fa-solid fa-phone"></i> Contato</button>
                         </div>
-                      
-                        
+                     
+                       
                     </div>
 
                     <div class="card bg-white shadow p-4  carousel-item">
@@ -918,12 +943,12 @@
                            <div class="flex flex-col gap-3">
                             <div class="flex flex-col mt-4">
                                 <span class="text-gray-500 font-medium text-sm">NOME:</span>
-                                <p class="font-medium">João da Silva</p>
+                                <p class="font-medium">Maria de Souza</p>
                             </div>
 
                             <div class="flex flex-col mt-4">
                                 <span class="text-gray-500 font-medium text-sm">NÚMERO PARA CONTATO:</span>
-                                <p class="font-medium">(84) 91111-1111</p>
+                                <p class="font-medium">(84) 93333-3333</p>
                             </div>
 
                              <div class="flex flex-col mt-4">
@@ -941,12 +966,12 @@
                            <div class="flex flex-col gap-3">
                             <div class="flex flex-col mt-4">
                                 <span class="text-gray-500 font-medium text-sm">NOME:</span>
-                                <p class="font-medium">João da Silva</p>
+                                <p class="font-medium">Júlio Cezar</p>
                             </div>
 
                             <div class="flex flex-col mt-4">
                                 <span class="text-gray-500 font-medium text-sm">NÚMERO PARA CONTATO:</span>
-                                <p class="font-medium">(84) 91111-1111</p>
+                                <p class="font-medium">(84) 94444-4444</p>
                             </div>
 
                              <div class="flex flex-col mt-4">

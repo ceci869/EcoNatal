@@ -11,7 +11,8 @@ function sistema() {
             senha: '', 
             confirmandoSenha: '',
             telefone: '',
-            coletas: []
+            coletas: [],
+            foto: ''
         },
 
         usuarioLogado: {
@@ -52,9 +53,7 @@ function sistema() {
                 const dados = await resposta.json();
 
                 if (resposta.ok) {
-                    setTimeout(() => {
-                        this.pagina = 'cadastroSucesso';
-                    }, 5000)
+                    this.pagina = 'cadastroSucesso';
                 } else {
                     alert('Erro: ' + (dados.erro || dados.mensagem));
                 }
@@ -86,6 +85,23 @@ function sistema() {
             } catch (error) {
                 this.pagina = 'erroRegistro';
             }
+        },
+
+        processarImagem(event) {
+            const arquivo = event.target.files[0];
+            if (!arquivo) return;
+
+            if (arquivo.size > 5 * 1024 * 1024) {
+                alert('Limite de arquivo excedido. Escolha uma imagem menor que 5MB.');
+                return;
+            }
+
+            const leitor = new FileReader();
+            leitor.onloadend = () => {
+                this.formulario.foto = leitor.result;
+                console.log('Imagem processada com sucesso!')
+            };
+            leitor.readAsDataURL(arquivo);
         },
         
         async carregarUsuario() {
