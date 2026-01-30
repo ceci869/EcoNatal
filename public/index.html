@@ -339,7 +339,7 @@
                     <img src="img/logo-econatal.svg" alt="Logo da econatal" class="my-[19px] mx-[22px]">
                 </div>
                 <div class="flex flex-col justify-center align-center min-h-[80%] max-md:hidden">
-                    <img src="img/bukz 1.png" alt="Imagem de personagem" class="mx-auto">
+                    <img src="img/bukz 1.png" alt="Imagem de personagem" class="mx-auto w-[50%]">
                 </div>
             </div>
         </section>
@@ -681,10 +681,10 @@
                             <button @click="pagina = 'dashboard'; document.getElementById('my-drawer').checked = false" class="flex items-center gap-3 p-2 cursor-pointer hover:bg-[#4a6616] rounded-lg">
                                 <i class="fa-solid fa-house"></i> Home
                             </button>
-                            <button @click="pagina='mapas'; document.getElementById('my-drawer').checked = false" class="flex items-center gap-3 p-2 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                            <button @click="pagina = 'mapas'; document.getElementById('my-drawer').checked = false" class="flex items-center gap-3 p-2 cursor-pointer hover:bg-[#4a6616] rounded-lg">
                                 <i class="fa-solid fa-map"></i> Mapas
                             </button>
-                            <button @click="pagina='catadores'; document.getElementById('my-drawer').checked = false" class="flex items-center gap-3 p-2 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                            <button @click="pagina = 'catadores'; document.getElementById('my-drawer').checked = false" class="flex items-center gap-3 p-2 cursor-pointer hover:bg-[#4a6616] rounded-lg">
                                 <i class="fa-solid fa-users"></i> Catadores
                             </button>
                             <button @click="fazerLogout(); document.getElementById('my-drawer').checked = false" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
@@ -853,7 +853,7 @@
                                 </button>
                             </div>
                         </div>
-                        <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 hover:bg-[#9BB569] rounded-lg" @click="pagina='perfil'; document.getElementById('my-drawer').checked = false">
+                        <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 hover:bg-[#9BB569] rounded-lg" @click="pagina = 'perfil'; document.getElementById('my-drawer').checked = false">
                             <p class="text-[#263A00] font-bold cursor-pointer" x-text="usuarioLogado.nome"></p> 
                         </div>
                     </aside>
