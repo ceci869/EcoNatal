@@ -339,7 +339,7 @@
                     <img src="img/logo-econatal.svg" alt="Logo da econatal" class="my-[19px] mx-[22px]">
                 </div>
                 <div class="flex flex-col justify-center align-center min-h-[80%] max-md:hidden">
-                    <img src="img/imagem-personagem.svg" alt="Imagem de personagem" class="mx-auto">
+                    <img src="img/bukz 1.png" alt="Imagem de personagem" class="mx-auto">
                 </div>
             </div>
         </section>
@@ -350,8 +350,12 @@
                 <button class="my-[19px] mx-[22px] rounded-[5px] bg-[#5C7E1B82] px-[6px] py-[2px] font-bold cursor-pointer hover:bg-[#9BB569]" @click="pagina = 'homepage'">Voltar</button>
                 <img src="img/logo-econatal.svg" alt="Logo da econatal" class="my-[19px] mx-[22px]">
                 
-                <div class="flex flex-col justify-center align-center min-h-[80%] max-md:hidden">
-                    <img src="img/imagem-personagem.svg" alt="Imagem de personagem" class="mx-auto">
+                <div class="flex flex-col justify-center align-center min-h-[80%] max-md:hidden" x-show="passo === 1">
+                    <img src="img/bukz 1.png" alt="Imagem de personagem" class="mx-auto w-[50%]">
+                </div>
+
+                <div class="flex flex-col justify-center align-center min-h-[80%] max-md:hidden" x-show="passo === 2">
+                    <img src="img/bukz 2.png" alt="Imagem de personagem" class="mx-auto w-[50%]">
                 </div>
             </div>
 
@@ -458,8 +462,11 @@
                         class="my-[19px] mx-[22px] text-[#1C2A02] hidden max-md:block">
                     <button class="my-[19px] mx-[22px] rounded-[5px] bg-[#9BB569] px-[6px] py-[2px] text-[#1C2A02] font-bold cursor-pointer hover:bg-[#5C7E1B82] hidden max-md:block" @click="pagina = 'homepage'">Voltar</button>
                 </div>
-                <div class="flex flex-col justify-center align-center min-h-[80%]">
-                    <img src="img/imagem-personagem.svg" alt="Imagem de personagem" class="mx-auto max-md:hidden">
+                <div class="flex flex-col justify-center align-center min-h-[80%] max-md:hidden" x-show="passo === 1">
+                    <img src="img/bukz 1.png" alt="Imagem de personagem" class="mx-auto w-[50%]">
+                </div>
+                <div class="flex flex-col justify-center align-center min-h-[80%] max-md:hidden" x-show="passo === 2">
+                    <img src="img/bukz 2.png" alt="Imagem de personagem 2" class="mx-auto  w-[50%]">
                 </div>
             </div>
             <div class="bg-[#1C2A02] flex flex-col justify-center align-center min-h-[80vh]">
