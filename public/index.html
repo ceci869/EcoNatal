@@ -75,8 +75,7 @@
                         <h1
                             class="text-[48px] font-semibold max-md:text-center max-md:mt-[45px] max-md:mb-[25px] max-md:text-[38px]">
                             Sua coleta começa aqui!</h1>
-                        <p class="text-[16px] font-normal max-md:text-center max-md:mb-[25px]">Lorem ipsum dolor sit
-                            amet, consectetur adipiscing elit. Etiam dapibus lorem eget luctus venenatis.</p>
+                        <p class="text-[16px] font-normal max-md:text-center max-md:mb-[25px]">Conheça mais do projeto EcoNatal, que trouxe inovação para a coleta e reutilização do lixo em Natal.</p>
                     </div>
                     <img src="img/imagem-ecologia.svg" alt="Imagem representativa de ecologia" class="max-md:hidden">
                 </div>
@@ -133,7 +132,7 @@
                         </div>
                         <div>
                             <h4 class="text-[20px] font-semibold">Trabalho Eficiente</h4>
-                            <p class="text-[13px] font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            <p class="text-[13px] font-normal">Capacitando profissionais para realizar a sua coleta
                             </p>
                         </div>
                     </div>
@@ -145,7 +144,7 @@
                         </div>
                         <div>
                             <h4 class="text-[20px] font-semibold">Coleta Inteligente</h4>
-                            <p class="text-[13px] font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            <p class="text-[13px] font-normal">Nossas lixeiras nos informam o momento exato para realizar a coleta
                             </p>
                         </div>
                     </div>
@@ -157,7 +156,7 @@
                         </div>
                         <div>
                             <h4 class="text-[20px] font-semibold">Bem-estar</h4>
-                            <p class="text-[13px] font-normal">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            <p class="text-[13px] font-normal">Buscamos contribuir para uma cidade mais limpa e sustentável
                             </p>
                         </div>
                     </div>
@@ -565,152 +564,133 @@
             </div>
         </section>
 
-        <section x-show="pagina === 'dashboard'" class="flex min-h-screen bg-[#F7FAF5] drawer lg:drawer-open min-h-screen bg-[#F7FAF5]">
+        <!-- Página de dashboard -->
 
-            <aside class="w-[260px] bg-[#5C7E1B] text-white flex flex-col justify-between">
-                <div>
-                    <div class="p-6">
-                        <img src="img/econatal-branca.png" alt="EcoNatal">
-                    </div>
+        <section x-show="pagina === 'dashboard'" class="flex min-h-screen bg-[#F7FAF5] drawer lg:drawer-open">
 
-                    <div class="flex flex-col gap-4 px-6 mt-50">
-                        <button @click="pagina = 'dashboard'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
-                            <i class="fa-solid fa-house"></i> Home
-                        </button>
-                        <button @click="pagina = 'mapas'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
-                            <i class="fa-solid fa-map"></i> Mapas
-                        </button>
-                        <button @click="pagina='catadores'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
-                            <i class="fa-solid fa-users"></i> Catadores
-                        </button>
-                        <button @click="fazerLogout()" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
-                            <i class="fa-solid fa-arrow-right-from-bracket scale-x-[-1]"></i> Logout
-                        </button>
-                    </div>
-                </div>
-
-                <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 hover:bg-[#9BB569] rounded-lg" @click="pagina = 'perfil'">
-                   <p class="text-[#263A00] font-bold cursor-pointer" x-text="usuarioLogado.nome"></p> 
-                </div>
-            </aside>
-           
-                <div class="flex-1 p-10">
+            <section class="drawer lg:drawer-open min-h-screen bg-[#F7FAF5]">
+            <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+            
+            <div class="drawer-content flex flex-col">
+                
+                <div class="relative w-full p-6 md:p-10">
                     
-                    <nav class="flex justify-end gap-6 text-xl"> 
-                        <button><img src="img/Letra.png" alt=""></button> 
-                        <i class="fa-regular fa-message"></i>
-                        <i class="fa-regular fa-bell"></i>
+                    <div class="absolute left-4 top-4 lg:hidden">
+                        <label for="my-drawer" class="btn btn-ghost btn-circle p-0 min-h-0 h-auto">
+                            <i class="fa-solid fa-bars text-2xl"></i>
+                        </label>
+                    </div>
+
+                    <nav class="flex items-center justify-center md:justify-end gap-6 text-xl "> 
+                        <button><img src="img/Letra.png" alt="" class="w-6"></button> 
+                        <i class="fa-regular fa-message text-[#263A00]"></i>
+                        <i class="fa-regular fa-bell text-[#263A00]"></i>
                     </nav>
 
-                    <h1 class="text-3xl font-bold mb-1 text-[#263A00]" x-text="`Bem vindo(a), ${usuarioLogado.nome}!`"></h1>
-                    <p class="mb-8">Juntos por uma Natal mais limpa e sustentável.</p>
+                    <div class="mt-8">
+                        <h1 class="text-3xl font-bold mb-1 text-[#263A00]" x-text="`Bem vindo(a), ${usuarioLogado.nome}!`"></h1>
+                        <p class="mb-8">Juntos por uma Natal mais limpa e sustentável.</p>
 
-
-                    <div class="flex gap-3">
-
-                        <div class="card bg-white shadow p-6 cursor-pointer w-80" @click="pagina ='mapas'">
-                            <div class="flex gap-6">   
-                                <span class="w-10 h-10 flex items-center justify-center">
-                                    <i class="fa-solid fa-map-location text-4xl text-[#263A00]"></i>
-                                </span>
-                                 <h3 class="font-bold text-lg w-20 text-[#263A00] ">Mapa de lixeiras</h3>
-                            </div>
-                            <div>          
-                               
-                                <p>Encontre os pontos de descarte mais próximos de você.</p>
-                            </div>
-
-                            <div class="flex justify-end ">
-                                <img src="img/seta.png" alt="">
+                        <div class="flex flex-wrap gap-3">
+                            <div class="card bg-white shadow p-6 cursor-pointer w-full md:w-80" @click="pagina = 'mapas'">
+                                <div class="flex gap-6">   
+                                    <span class="w-10 h-10 flex items-center justify-center">
+                                        <i class="fa-solid fa-map-location text-4xl text-[#263A00]"></i>
+                                    </span>
+                                    <h3 class="font-bold text-lg w-20 text-[#263A00]">Mapa de lixeiras</h3>
+                                </div>
+                                <p class="mt-2">Encontre os pontos de descarte mais próximos de você.</p>
+                                <div class="flex justify-end mt-4">
+                                    <img src="img/seta.png" alt="">
+                                </div>
                             </div>
 
+                            <div class="card bg-white shadow p-6 cursor-pointer w-full md:w-80" @click="pagina='catadores'">
+                                <div class="flex gap-6">   
+                                    <span class="w-10 h-10 flex items-center justify-center">
+                                        <i class="fa-solid fa-users text-4xl text-[#263A00]"></i>
+                                    </span>
+                                    <h3 class="font-bold text-lg w-30 text-[#263A00]">Fale com um catador</h3>
+                                </div>
+                                <p class="mt-2">Entre em contato com os catadores parceiros.</p>
+                                <div class="flex justify-end mt-4">
+                                    <img src="img/seta.png" alt="">
+                                </div>
+                            </div>
                         </div>
 
-                      <div class="card bg-white shadow p-6 cursor-pointer w-80" @click="pagina='catadores'">
-                            <div class="flex gap-6">   
-                                <span class="w-10 h-10 flex items-center justify-center">
-                                    <i class="fa-solid fa-users text-4xl text-[#263A00]"></i>
-                                </span>
-                                 <h3 class="font-bold text-lg w-30 text-[#263A00]">Fale com um catador</h3>
+                        <div class="bg-white shadow p-6 flex flex-col md:flex-row justify-between gap-8 mb-8 mt-7 rounded-lg">
+                            <div class="flex gap-5">
+                                <i class="fa-solid fa-recycle text-4xl text-[#263A00]"></i>
+                                <div>
+                                <span class="text-4xl font-bold">12</span> 
+                                <p>Lixeiras cadastradas</p>
+                                </div>
                             </div>
-                            <div>          
-                               
-                                <p>Entre em contato com os catadores parceiros.</p>
+                            <div class="flex gap-5">
+                                <i class="fa-solid fa-people-group text-4xl text-[#263A00]"></i>
+                                <div>
+                                <span class="text-4xl font-bold">8</span> 
+                                <p>Catadores registrados</p>
+                                </div>
                             </div>
-
-                            <div class="flex justify-end ">
-                                <img src="img/seta.png" alt="">
-                            </div>                        
+                            <div class="flex gap-5">
+                                <i class="fa-solid fa-hand-holding-seedling text-4xl text-[#263A00]"></i>
+                                <div>
+                                <span class="text-4xl font-bold">+ 200</span> 
+                                <p>Pessoas impactadas</p>
+                                </div>
+                            </div>
                         </div>
-                    </div>
-   
-                    <div class="bg-white shadow p-6 flex justify-between mb-8 mt-7">
-                        <div class="flex gap-5">
-                            <div class="text-4xl text-[#263A00]">
-                                <i class="fa-solid fa-recycle"></i>
-                            </div>
 
+                        <div class="bg-white shadow p-4 mb-6 flex gap-5 rounded-lg">
+                            <i class="fa-solid fa-circle-exclamation text-4xl text-[#263A00]"></i>
                             <div>
-                               <span class="text-4xl font-bold">12</span> 
-                               <p>Lixeiras cadastradas</p>
+                                <span class="font-bold text-xl text-[#263A00]">Você sabia?</span>
+                                <p>O descarte incorreto de lixo contribui para alagamentos urbanos.</p>
                             </div>
-        
                         </div>
 
-                       <div class="flex gap-5">
-                            <div class="text-4xl text-[#263A00]">
-                                <i class="fa-solid fa-people-group"></i>
-                            </div>
-
+                        <div class="bg-[#E8FFD4] p-6 rounded-lg shadow w-full md:w-200 flex flex-col md:flex-row gap-4">
+                            <img src="img/Group_10.png" alt="" class="w-18 h-18 mx-auto md:mx-0">
                             <div>
-                               <span class="text-4xl font-bold">8</span> 
-                               <p>Catadores registrados</p>
+                                <h3 class="font-bold text-[#263A00]">EcoPlay - Aprenda se divertindo!</h3>
+                                <p>Um aplicativo educativo que ensina crianças a cuidarem do meio ambiente.</p>
+                                <button class="btn btn-success mt-4 rounded-xl text-white bg-[#5C7E1B] border-none">Conhecer o EcoPlay</button>
                             </div>
-        
                         </div>
-
-                      <div class="flex gap-5">
-                            <div class="text-4xl text-[#263A00]">
-                                <i class="fa-solid fa-hand-holding-seedling"></i>
-                            </div>
-
-                            <div>
-                               <span class="text-4xl font-bold">+ 200</span> 
-                               <p>Pessoas impactadas</p>
-                            </div>
-        
-                        </div>
-
                     </div>
-
-      
-                    <div class="bg-white shadow p-4 mb-6 flex gap-5">
-                        <div class="text-4xl ">
-                            <i class="fa-duotone fa-solid fa-circle-exclamation"></i>
-                        </div>
-                        <div >
-                            <span class="font-bold text-xl text-[#263A00] mb-4">Você sabia?</span>
-                            <p>O descarte incorreto de lixo contribui para alagamentos urbanos.</p>
-                        </div>
-                     
-                        
-                    </div>
-
-                    <div class="bg-[#E8FFD4] p-6 rounded shadow w-200 flex gap-3">
-                        <div>
-                            <img src="img/Group_10.png" alt="" class="w-18">
-                        </div>
-                        <div>
-                            <h3 class="font-bold">EcoPlay - Aprenda se divertindo!</h3>
-                            <p>Um aplicativo educativo que ensina crianças a cuidarem do meio ambiente por meio de jogos e desafios.</p>
-                            <button class="btn btn-success mt-4 rounded-xl text-base-100">Conhecer o EcoPlay</button>
-                        </div>
-                       
-                    </div>
-
                 </div>
-            </section>  
-            </section>
+            </div>
+
+            <div class="drawer-side z-50">
+                <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                <aside class="w-[260px] min-h-full bg-[#5C7E1B] text-white flex flex-col justify-between">
+                    <div>
+                        <div class="p-6 text-center">
+                            <img src="img/econtal_branca.png" alt="EcoNatal" class="w-15">
+                        </div>
+                        <div class="flex flex-col gap-4 px-6 mt-10">
+                            <button @click="pagina = 'dashboard'; document.getElementById('my-drawer').checked = false" class="flex items-center gap-3 p-2 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                                <i class="fa-solid fa-house"></i> Home
+                            </button>
+                            <button @click="pagina='mapas'; document.getElementById('my-drawer').checked = false" class="flex items-center gap-3 p-2 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                                <i class="fa-solid fa-map"></i> Mapas
+                            </button>
+                            <button @click="pagina='catadores'; document.getElementById('my-drawer').checked = false" class="flex items-center gap-3 p-2 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                                <i class="fa-solid fa-users"></i> Catadores
+                            </button>
+                            <button @click="fazerLogout(); document.getElementById('my-drawer').checked = false" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                                <i class="fa-solid fa-arrow-right-from-bracket scale-x-[-1]"></i> Logout
+                            </button>
+                        </div>
+                    </div>
+                    <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 hover:bg-[#9BB569] rounded-lg" @click="pagina='perfil'; document.getElementById('my-drawer').checked = false">
+                        <p class="text-[#263A00] font-bold cursor-pointer" x-text="usuarioLogado.nome"></p> 
+                    </div>
+                </aside>
+            </div>
+        </section>
         </section>
 
         <!-- Páginas de alerta (sucesso e erro) -->
@@ -796,263 +776,330 @@
         </section>
 
         <!-- Mapa de lixeiras -->
-        <section x-show="pagina === 'mapas'" class="flex min-h-screen bg-[#F7FAF5]">
-            <aside class="w-[260px] bg-[#5C7E1B] text-white flex flex-col justify-between">
-                <div>
-                    <div class="p-6">
-                        <img src="img/econatal-branca.png" alt="EcoNatal">
-                    </div>
-
-                    <div class="flex flex-col gap-4 px-6 mt-50">
-                        <button @click="pagina = 'dashboard'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
-                            <i class="fa-solid fa-house"></i> Home
-                        </button>
-                        <button @click="pagina = 'mapas'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
-                            <i class="fa-solid fa-map"></i> Mapas
-                        </button>
-                        <button @click="pagina='catadores'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
-                            <i class="fa-solid fa-users"></i> Catadores
-                        </button>
-                        <button @click="fazerLogout()" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
-                            <i class="fa-solid fa-arrow-right-from-bracket scale-x-[-1]"></i> Logout
-                        </button>
-                    </div>
-                </div>
-
-                <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 hover:bg-[#9BB569] rounded-lg" @click="pagina = 'perfil'">
-                <p class="text-[#263A00] font-bold cursor-pointer" x-text="usuarioLogado.nome"></p> 
-                </div>
-            </aside>
-    
-                    <div class="flex-1 p-10">
-                        <h1 class="text-3xl font-bold mb-2 text-[#263A00] ml-10">Confira o Mapeamento</h1>
-                        <p class="mb-10 ml-10">Veja as lixeiras mais perto de você!</p>
-    
-    
-                        <div class="flex gap-6 items-start">
-    
-                            <div id="meuMapa" class="flex-2 h-[500px] rounded-xl shadow-md z-0 border border-gray-300"></div>
-    
-                            <div class="w-70 bg-[#F2F2F2] p-6 shadow ml-10">
-                                <h4 class="font-bold mb-3">Legenda</h4>
-                                <ul class="space-y-2">
-                                    <li><span class="inline-block mr-3 w-5 h-5 bg-green-500"></span> Lixeira vazia</li>
-                                    <li><span class="inline-block mr-3 w-5 h-5 bg-orange-500"></span> Parcialmente cheia</li>
-                                    <li><span class="inline-block mr-3 w-5 h-5 bg-blue-700"></span> Lixeira cheia</li>
-                                </ul>
-                            </div>
-                        </div>
-                    </div>
-        </section>
-
-        <!-- Catadores -->
-        <section x-show="pagina === 'catadores'" class="flex min-h-screen bg-[#F7FAF5] max-md:flex-col max-md:ml-0">
-            <aside class="w-[260px] bg-[#5C7E1B] text-white flex flex-col justify-between">
-                <div>
-                    <div class="p-6">
-                        <img src="img/econatal-branca.png" alt="EcoNatal">
-                    </div>
-
-                    <div class="flex flex-col gap-4 px-6 mt-50">
-                        <button @click="pagina = 'dashboard'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
-                            <i class="fa-solid fa-house"></i> Home
-                        </button>
-                        <button @click="pagina = 'mapas'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
-                            <i class="fa-solid fa-map"></i> Mapas
-                        </button>
-                        <button @click="pagina='catadores'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
-                            <i class="fa-solid fa-users"></i> Catadores
-                        </button>
-                        <button @click="fazerLogout()" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
-                            <i class="fa-solid fa-arrow-right-from-bracket scale-x-[-1]"></i> Logout
-                        </button>
-                    </div>
-                </div>
-
-                <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 hover:bg-[#9BB569] rounded-lg" @click="pagina = 'perfil'">
-                   <p class="text-[#263A00] font-bold cursor-pointer" x-text="usuarioLogado.nome"></p> 
-                </div>
-            </aside>
-
-            <div class="flex-1 p-10">
-              <h1 class="text-3xl ml-10 font-bold mb-2 text-[#263A00]">Fale com um catador</h1>
-                <p class="mb-8 ml-10">Entre em contato com catadores parceiros da EcoNatal.</p>
-
-                <div class="font-medium text-[#263A00] flex justify-between items-center">
-                    <p class="text-xl ml-10">Nossos catadores:</p>
-                    <div class="flex gap-2 mr-10">
-                        <button onclick="document.querySelector('.carousel').scrollLeft -= 300" class="btn btn-circle btn-sm bg-[#9BB569] border-none text-white hover:bg-[#7a944d]">
-                            <i class="fa-solid fa-chevron-left"></i>
-                        </button>
-                        <button onclick="document.querySelector('.carousel').scrollLeft += 300" class="btn btn-circle btn-sm bg-[#9BB569] border-none text-white hover:bg-[#7a944d]">
-                            <i class="fa-solid fa-chevron-right"></i>
-                        </button>
-                    </div>
-                </div>
-
-
-                 <div class="ml-10 mt-8 carousel carousel-center rounded-box space-x-4">
-                    <div class="card bg-white shadow p-4 carousel-item">
-                        <img src="img/catador1.png" alt="" class=" w-70 h-70"/>
-                        <div class="flex flex-col gap-3">
-                            <div class="flex flex-col mt-4">
-                                <span class="text-gray-500 font-medium text-sm">NOME:</span>
-                                <p class="font-medium">João da Silva</p>
+        <section x-show="pagina === 'mapas'" class="flex min-h-screen bg-[#F7FAF5] drawer lg:drawer-open min-h-screen bg-[#F7FAF5]">
+                <section class="drawer lg:drawer-open min-h-screen bg-[#F7FAF5]">
+                <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+                    
+                    <div class="drawer-content flex flex-col">
+                        
+                        <div class="relative w-full p-6 md:p-10">
+                            
+                            <div class="absolute left-4 top-4 lg:hidden">
+                                <label for="my-drawer" class="btn btn-ghost btn-circle p-0 min-h-0 h-auto">
+                                    <i class="fa-solid fa-bars text-2xl"></i>
+                                </label>
                             </div>
 
-                            <div class="flex flex-col mt-4">
-                                <span class="text-gray-500 font-medium text-sm">NÚMERO PARA CONTATO:</span>
-                                <p class="font-medium">(84) 91111-1111</p>
-                            </div>
+                            <nav class="flex items-center justify-center md:justify-end gap-6 text-xl "> 
+                                <button><img src="img/Letra.png" alt="" class="w-6"></button> 
+                                <i class="fa-regular fa-message text-[#263A00]"></i>
+                                <i class="fa-regular fa-bell text-[#263A00]"></i>
+                            </nav>                
+                                                        
+                            <section class="flex min-h-screen bg-[#F7FAF5]">
 
-                             <div class="flex flex-col mt-4">
-                                <span class="text-gray-500 font-medium text-sm">TIPOS DE RESÍDUOS COM QUE TRABALHA:</span>
-                                <img src="img/residuo1.png" alt="" class="w-25">
-                            </div>
+                                <div class="flex-1 p-10">
+                                    <h1 class="text-3xl font-bold mb-2 text-[#263A00] ml-10">Confira o Mapeamento</h1>
+                                    <p class="mb-10 ml-10">Veja as lixeiras mais perto de você!</p>
 
-                            <button class="btn btn-warning w-full mt-2"> <i class="fa-solid fa-phone"></i> Contato</button>
-                        </div>
-                     
-                       
-                    </div>
 
-                    <div class="card bg-white shadow p-4  carousel-item">
-                        <img src="img/catador2.png" alt="" class=" w-70 h-70"/>
-                           <div class="flex flex-col gap-3">
-                            <div class="flex flex-col mt-4">
-                                <span class="text-gray-500 font-medium text-sm">NOME:</span>
-                                <p class="font-medium">Ana Oliveira</p>
-                            </div>
+                                    <div class="flex gap-6 items-start max-md:block max-md:space-y-6">
 
-                            <div class="flex flex-col mt-4">
-                                <span class="text-gray-500 font-medium text-sm">NÚMERO PARA CONTATO:</span>
-                                <p class="font-medium">(84) 92222-2222</p>
-                            </div>
+                                        <div id="meuMapa" class="flex-2 h-[500px] rounded-xl shadow-md z-0 border border-gray-300">
+                                        </div>
 
-                             <div class="flex flex-col mt-4">
-                                <span class="text-gray-500 font-medium text-sm">TIPOS DE RESÍDUOS COM QUE TRABALHA:</span>
-                                <img src="img/residuo2.png" alt="" class="w-40">
-                            </div>
-
-                            <button class="btn btn-warning w-full mt-2"> <i class="fa-solid fa-phone"></i> Contato</button>
+                                        <div class="w-70 bg-[#F2F2F2] p-6 shadow">
+                                            <h4 class="font-bold mb-3">Legenda</h4>
+                                            <ul class="space-y-2">
+                                                <li><span class="inline-block mr-3 w-5 h-5 bg-green-500"></span> Lixeira vazia</li>
+                                                <li><span class="inline-block mr-3 w-5 h-5 bg-orange-500"></span> Parcialmente cheia
+                                                </li>
+                                                <li><span class="inline-block mr-3 w-5 h-5 bg-blue-700"></span> Lixeira cheia</li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                            </section>
+                            
                         </div>
                     </div>
 
-                    <div class="card bg-white shadow p-4 carousel-item">
-                        <img src="img/catador3.png" alt="" class=" w-70 h-70"/>
-                           <div class="flex flex-col gap-3">
-                            <div class="flex flex-col mt-4">
-                                <span class="text-gray-500 font-medium text-sm">NOME:</span>
-                                <p class="font-medium">Maria de Souza</p>
+                    <div class="drawer-side z-50">
+                    <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                    <aside class="w-[260px] min-h-full bg-[#5C7E1B] text-white flex flex-col justify-between">
+                        <div>
+                            <div class="p-6 text-center">
+                                <img src="img/econtal_branca.png" alt="EcoNatal" class="w-15">
                             </div>
-
-                            <div class="flex flex-col mt-4">
-                                <span class="text-gray-500 font-medium text-sm">NÚMERO PARA CONTATO:</span>
-                                <p class="font-medium">(84) 93333-3333</p>
+                            <div class="flex flex-col gap-4 px-6 mt-10">
+                                <button @click="pagina='dashboard'; document.getElementById('my-drawer').checked = false" class="flex items-center gap-3 p-2 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                                    <i class="fa-solid fa-house"></i> Home
+                                </button>
+                                <button @click="pagina='mapas'; document.getElementById('my-drawer').checked = false" class="flex items-center gap-3 p-2 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                                    <i class="fa-solid fa-map"></i> Mapas
+                                </button>
+                                <button @click="pagina='catadores'; document.getElementById('my-drawer').checked = false" class="flex items-center gap-3 p-2 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                                    <i class="fa-solid fa-users"></i> Catadores
+                                </button>
+                                <button @click="fazerLogout(); document.getElementById('my-drawer').checked = false" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                                    <i class="fa-solid fa-arrow-right-from-bracket scale-x-[-1]"></i> Logout
+                                </button>
                             </div>
+                        </div>
+                        <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 hover:bg-[#9BB569] rounded-lg" @click="pagina='perfil'; document.getElementById('my-drawer').checked = false">
+                            <p class="text-[#263A00] font-bold cursor-pointer" x-text="usuarioLogado.nome"></p> 
+                        </div>
+                    </aside>
+                </div>
+                </section>
+            </section>
 
-                             <div class="flex flex-col mt-4">
-                                <span class="text-gray-500 font-medium text-sm">TIPOS DE RESÍDUOS COM QUE TRABALHA:</span>
-                                <img src="img/residuo3.png" alt="" class="w-35">
-                            </div>
-
-                            <button class="btn btn-warning w-full mt-2"> <i class="fa-solid fa-phone"></i> Contato</button>
+            <!-- Catadores -->
+            <section x-show="pagina === 'catadores'" class="flex min-h-screen bg-[#F7FAF5] max-md:flex-col max-md:ml-0 drawer lg:drawer-open">
+                <section class="drawer lg:drawer-open min-h-screen bg-[#F7FAF5]">
+                <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+                
+                <div class="drawer-content flex flex-col overflow-x-hidden">
+                    
+                    <div class="relative w-full p-6 md:p-10">
+                        
+                        <div class="absolute left-4 top-4 lg:hidden">
+                            <label for="my-drawer" class="btn btn-ghost btn-circle p-0 min-h-0 h-auto">
+                                <i class="fa-solid fa-bars text-2xl"></i>
+                            </label>
                         </div>
 
+                        <nav class="flex items-center justify-center md:justify-end gap-6 text-xl "> 
+                            <button><img src="img/Letra.png" alt="" class="w-6"></button> 
+                            <i class="fa-regular fa-message text-[#263A00]"></i>
+                            <i class="fa-regular fa-bell text-[#263A00]"></i>
+                        </nav>
+
+                        <section x-show="pagina === 'catadores'" class="flex ml-10 bg-[#F7FAF5] max-md:flex-col max-md:ml-0"> 
+                            <div class="flex-1 p-10">
+                            <h1 class="text-3xl ml-10 font-bold mb-2 text-[#263A00]">Fale com um catador</h1>
+                                <p class="mb-8 ml-10">Entre em contato com catadores parceiros da EcoNatal.</p>
+                                <div class="font-medium text-[#263A00] flex justify-between items-center">
+                                    <p class="text-xl ml-10">Nossos catadores:</p>
+                                    <div class="flex gap-2 mr-10">
+                                        <button onclick="document.querySelector('.carousel').scrollLeft -= 300" class="btn btn-circle btn-sm bg-[#9BB569] border-none text-white hover:bg-[#7a944d]">
+                                            <i class="fa-solid fa-chevron-left"></i>
+                                        </button>
+                                        <button onclick="document.querySelector('.carousel').scrollLeft += 300" class="btn btn-circle btn-sm bg-[#9BB569] border-none text-white hover:bg-[#7a944d]">
+                                            <i class="fa-solid fa-chevron-right"></i>
+                                        </button>
+                                    </div>
+                                </div>
+
+                                <div class="ml-10 mt-8 carousel carousel-center rounded-box space-x-4 overflow-x-auto touch-pan-x snap-x snap-mandatory max-md:ml-4">
+
+                                    <div class="card bg-white shadow p-4 carousel-item snap-center">
+                                        <img src="img/catador1.png" alt="" class=" w-70 h-70"/>
+                                        <div class="flex flex-col gap-3">
+                                            <div class="flex flex-col mt-4">
+                                                <span class="text-gray-500 font-medium text-sm">NOME:</span>
+                                                <p class="font-medium">João da Silva</p>
+                                            </div>
+
+                                            <div class="flex flex-col mt-4">
+                                                <span class="text-gray-500 font-medium text-sm">NÚMERO PARA CONTATO:</span>
+                                                <p class="font-medium">(84) 91111-1111</p>
+                                            </div>
+
+                                            <div class="flex flex-col mt-4">
+                                                <span class="text-gray-500 font-medium text-sm">TIPOS DE RESÍDUOS COM QUE TRABALHA:</span>
+                                                <img src="img/residuo1.png" alt="" class="w-25">
+                                            </div>
+
+                                            <button class="btn btn-warning w-full mt-2"> <i class="fa-solid fa-phone"></i> Contato</button>
+                                        </div>
+                                    
+                                        
+                                    </div>
+
+                                    <div class="card bg-white shadow p-4 carousel-item  snap-center">
+                                        <img src="img/catador2.png" alt="" class=" w-70 h-70"/>
+                                        <div class="flex flex-col gap-3">
+                                            <div class="flex flex-col mt-4">
+                                                <span class="text-gray-500 font-medium text-sm">NOME:</span>
+                                                <p class="font-medium">Ana Oliveira</p>
+                                            </div>
+
+                                            <div class="flex flex-col mt-4">
+                                                <span class="text-gray-500 font-medium text-sm">NÚMERO PARA CONTATO:</span>
+                                                <p class="font-medium">(84) 92222-2222</p>
+                                            </div>
+
+                                            <div class="flex flex-col mt-4">
+                                                <span class="text-gray-500 font-medium text-sm">TIPOS DE RESÍDUOS COM QUE TRABALHA:</span>
+                                                <img src="img/residuo2.png" alt="" class="w-40">
+                                            </div>
+
+                                            <button class="btn btn-warning w-full mt-2"> <i class="fa-solid fa-phone"></i> Contato</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="card bg-white shadow p-4 carousel-item  snap-center">
+                                        <img src="img/catador3.png" alt="" class=" w-70 h-70"/>
+                                        <div class="flex flex-col gap-3">
+                                            <div class="flex flex-col mt-4">
+                                                <span class="text-gray-500 font-medium text-sm">NOME:</span>
+                                                <p class="font-medium">João da Silva</p>
+                                            </div>
+
+                                            <div class="flex flex-col mt-4">
+                                                <span class="text-gray-500 font-medium text-sm">NÚMERO PARA CONTATO:</span>
+                                                <p class="font-medium">(84) 91111-1111</p>
+                                            </div>
+
+                                            <div class="flex flex-col mt-4">
+                                                <span class="text-gray-500 font-medium text-sm">TIPOS DE RESÍDUOS COM QUE TRABALHA:</span>
+                                                <img src="img/residuo3.png" alt="" class="w-35">
+                                            </div>
+
+                                            <button class="btn btn-warning w-full mt-2"> <i class="fa-solid fa-phone"></i> Contato</button>
+                                        </div>
+
+                                    </div>
+
+                                    <div class="card bg-white shadow p-4 carousel-item snap-center">
+                                        <img src="img/catador4.png" alt="" class=" w-70 h-70"/>
+                                        <div class="flex flex-col gap-3">
+                                            <div class="flex flex-col mt-4">
+                                                <span class="text-gray-500 font-medium text-sm">NOME:</span>
+                                                <p class="font-medium">João da Silva</p>
+                                            </div>
+
+                                            <div class="flex flex-col mt-4">
+                                                <span class="text-gray-500 font-medium text-sm">NÚMERO PARA CONTATO:</span>
+                                                <p class="font-medium">(84) 91111-1111</p>
+                                            </div>
+
+                                            <div class="flex flex-col mt-4">
+                                                <span class="text-gray-500 font-medium text-sm">TIPOS DE RESÍDUOS COM QUE TRABALHA:</span>
+                                                <img src="img/residuo4.png" alt="" class="w-20">
+                                            </div>
+
+                                            <button class="btn btn-warning w-full mt-2"> <i class="fa-solid fa-phone"></i> Contato</button>
+                                        </div>
+                                    
+                                    </div>
+
+                            </div>
+                        </div>
                     </div>
+                </div>
 
-                    <div class="card bg-white shadow p-4 carousel-item">
-                        <img src="img/catador4.png" alt="" class="w-70 h-70"/>
-                           <div class="flex flex-col gap-3">
-                            <div class="flex flex-col mt-4">
-                                <span class="text-gray-500 font-medium text-sm">NOME:</span>
-                                <p class="font-medium">Júlio Cezar</p>
+                <div class="drawer-side z-50">
+                    <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                    <aside class="w-[260px] min-h-full bg-[#5C7E1B] text-white flex flex-col justify-between">
+                        <div>
+                            <div class="p-6 text-center">
+                                <img src="img/econtal_branca.png" alt="EcoNatal" class="w-15">
                             </div>
-
-                            <div class="flex flex-col mt-4">
-                                <span class="text-gray-500 font-medium text-sm">NÚMERO PARA CONTATO:</span>
-                                <p class="font-medium">(84) 94444-4444</p>
+                            <div class="flex flex-col gap-4 px-6 mt-10">
+                                <button @click="pagina = 'dashboard'; document.getElementById('my-drawer').checked = false" class="flex items-center gap-3 p-2 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                                    <i class="fa-solid fa-house"></i> Home
+                                </button>
+                                <button @click="pagina = 'mapas'; document.getElementById('my-drawer').checked = false" class="flex items-center gap-3 p-2 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                                    <i class="fa-solid fa-map"></i> Mapas
+                                </button>
+                                <button @click="pagina = 'catadores'; document.getElementById('my-drawer').checked = false" class="flex items-center gap-3 p-2 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                                    <i class="fa-solid fa-users"></i> Catadores
+                                </button>
+                                <button @click="fazerLogout(); document.getElementById('my-drawer').checked = false" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                                    <i class="fa-solid fa-arrow-right-from-bracket scale-x-[-1]"></i> Logout
+                                </button>
                             </div>
-
-                             <div class="flex flex-col mt-4">
-                                <span class="text-gray-500 font-medium text-sm">TIPOS DE RESÍDUOS COM QUE TRABALHA:</span>
-                                <img src="img/residuo4.png" alt="" class="w-20">
-                            </div>
-
-                            <button class="btn btn-warning w-full mt-2"> <i class="fa-solid fa-phone"></i> Contato</button>
-                        </div>                    
-                    </div>
-            </div>
+                        </div>
+                        <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 hover:bg-[#9BB569] rounded-lg" @click="pagina='perfil'; document.getElementById('my-drawer').checked = false">
+                        <p class="text-[#263A00] font-bold cursor-pointer" x-text="usuarioLogado.nome"></p> 
+                        </div>
+                    </aside>
+                </div>
+            </section>
         </section>
 
         <!-- Página Perfil -->
         <section x-show="pagina === 'perfil'" class="flex min-h-screen bg-[#F7FAF5]">
-            <aside class="w-[260px] bg-[#5C7E1B] text-white flex flex-col justify-between">
-                <div>
-                    <div class="p-6">
-                        <img src="img/econatal-branca.png" alt="EcoNatal">
-                    </div>
-
-                    <div class="flex flex-col gap-4 px-6 mt-50">
-                        <button @click="pagina = 'dashboard'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
-                            <i class="fa-solid fa-house"></i> Home
-                        </button>
-                        <button @click="pagina = 'mapas'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
-                            <i class="fa-solid fa-map"></i> Mapas
-                        </button>
-                        <button @click="pagina='catadores'" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
-                            <i class="fa-solid fa-users"></i> Catadores
-                        </button>
-                        <button @click="fazerLogout()" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
-                            <i class="fa-solid fa-arrow-right-from-bracket scale-x-[-1]"></i> Logout
-                        </button>
-                    </div>
-                </div>
-
-                <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 hover:bg-[#9BB569] rounded-lg" @click="pagina = 'perfil'">
-                   <p class="text-[#263A00] font-bold cursor-pointer" x-text="usuarioLogado.nome"></p> 
-                </div>
-            </aside>
-
-                <div class="flex-1 p-10">
+            <section class="drawer lg:drawer-open min-h-screen bg-[#F7FAF5]">
+                <input id="my-drawer" type="checkbox" class="drawer-toggle" />
+                
+                <div class="drawer-content flex flex-col">
                     
-                    <nav class="flex justify-end gap-6 text-xl"> 
-                        <button><img src="img/Letra.png" alt=""></button> 
-                        <i class="fa-regular fa-message"></i>
-                        <i class="fa-regular fa-bell"></i>
-                    </nav>
+                    <div class="relative w-full p-6 md:p-10">
+                        
+                        <div class="absolute left-4 top-4 lg:hidden">
+                            <label for="my-drawer" class="btn btn-ghost btn-circle p-0 min-h-0 h-auto">
+                                <i class="fa-solid fa-bars text-2xl"></i>
+                            </label>
+                        </div>
 
-                    <h1 class="text-3xl font-bold mb-6 text-[#263A00] ml-10">Perfil</h1>
- 
-                    <section x-show="pagina === 'perfil'" class="flex min-h-screen ml-40 bg-[#F7FAF5]">
-                        <div class="flex-1 p-10">
-                           
-                            <div class="bg-white shadow p-8 w-[80%] h-[60%] flex flex-col gap-4">
-                                <div>
-                                    <span class="font-light text-gray-500">Nome completo</span>
-                                    <p x-text="usuarioLogado.nome"></p>
+                        <nav class="flex items-center justify-center md:justify-end gap-6 text-xl"> 
+                            <button><img src="img/Letra.png" alt="" class="w-6"></button> 
+                            <i class="fa-regular fa-message text-[#263A00]"></i>
+                            <i class="fa-regular fa-bell text-[#263A00]"></i>
+                        </nav>
+
+                        <h1 class="text-3xl font-bold mb-6 text-[#263A00] ml-10 max-md:ml-0 max-md:text-center mt-5">Perfil</h1>
+    
+                        <section class="flex min-h-screen ml-40 bg-[#F7FAF5] max-md:flex-col max-md:ml-0">
+                            <div class="flex-1 p-10">
+                            
+                                <div class="bg-white shadow p-8 w-[80%] h-[60%] flex flex-col gap-4 max-md:w-full max-md:h-auto">
+                                    <div>
+                                        <span class="font-light text-gray-500">Nome completo</span>
+                                        <p x-text="usuarioLogado.nome"></p>
+                                    </div>
+
+                                    <div>
+                                        <span class="font-light text-gray-500">E-mail</span>
+                                        <p x-text="usuarioLogado.email"></p>
+                                    </div>
+
+                                    <div>
+                                        <span class="font-light text-gray-500">Endereço</span>
+                                        <p x-text="usuarioLogado.endereco"></p>
+                                    </div>
+
+                                    <div class="mt-15">
+                                        <button class="btn btn-outline border-[#263A00]">Editar perfil <i class="fa-solid fa-pencil text-[#263A00]"></i></button>
+                                    </div>                                            
                                 </div>
-
-                                <div>
-                                    <span class="font-light text-gray-500">E-mail</span>
-                                    <p x-text="usuarioLogado.email"></p>
-                                </div>
-
-                                <div>
-                                    <span class="font-light text-gray-500">Endereço</span>
-                                    <p x-text="usuarioLogado.endereco"></p>
-                                </div>
-
-                                <div class="mt-15">
-                                    <button class="btn btn-outline border-[#263A00]">Editar perfil <i class="fa-solid fa-pencil text-[#263A00]"></i></button>
-                                </div>                                
                             </div>
                         </div>
-                    </section>
-                </div>
-        </section> 
+                    </div>
+                </div> 
 
-        
+                <div class="drawer-side z-50"">
+                    <label for="my-drawer" aria-label="close sidebar" class="drawer-overlay"></label>
+                    <aside class="w-[260px] min-h-full bg-[#5C7E1B] text-white flex flex-col justify-between">
+                        <div>
+                            <div class="p-6 text-center">
+                                <img src="img/econtal_branca.png" alt="EcoNatal" class="w-15">
+                            </div>
+                            <div class="flex flex-col gap-4 px-6 mt-10">
+                                <button @click="pagina = 'dashboard'; document.getElementById('my-drawer').checked = false" class="flex items-center gap-3 p-2 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                                    <i class="fa-solid fa-house"></i> Home
+                                </button>
+                                <button @click="pagina = 'mapas'; document.getElementById('my-drawer').checked = false" class="flex items-center gap-3 p-2 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                                    <i class="fa-solid fa-map"></i> Mapas
+                                </button>
+                                <button @click="pagina = 'catadores'; document.getElementById('my-drawer').checked = false" class="flex items-center gap-3 p-2 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                                    <i class="fa-solid fa-users"></i> Catadores
+                                </button>
+                                <button @click="fazerLogout(); document.getElementById('my-drawer').checked = false" class="flex items-center p-2 gap-3 cursor-pointer hover:bg-[#4a6616] rounded-lg">
+                                    <i class="fa-solid fa-arrow-right-from-bracket scale-x-[-1]"></i> Logout
+                                </button>
+                            </div>
+                        </div>
+                        <div class="p-6 bg-base-300 w-60 mr-5 ml-3 mb-5 hover:bg-[#9BB569] rounded-lg" @click="pagina='perfil'; document.getElementById('my-drawer').checked = false">
+                            <p class="text-[#263A00] font-bold cursor-pointer" x-text="usuarioLogado.nome"></p> 
+                        </div>
+                    </aside>
+                </div>
+            </section>
+        </section>         
     </main>
 
     <footer x-show="pagina === 'homepage' | pagina === 'contato' | pagina === 'projeto'"
